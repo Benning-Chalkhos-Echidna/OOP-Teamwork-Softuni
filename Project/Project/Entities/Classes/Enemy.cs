@@ -8,7 +8,7 @@ namespace Project
     public class Enemy : NPC
     {
 
-        public Enemy(string name, int hp, int agi, int str)
+        public Enemy(string name, int hp, int agi, int str) : base(name,hp,agi,str)
         {
             base.Name = name;
             base.Agi = agi;

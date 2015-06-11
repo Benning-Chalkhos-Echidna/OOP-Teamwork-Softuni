@@ -32,7 +32,7 @@ namespace Project
             set { level = value; }
         }
 
-        public Player(string name, int agi, int str, int intel)
+        protected Player(string name, int agi, int str, int intel)
         {
             base.Name = name;
         }

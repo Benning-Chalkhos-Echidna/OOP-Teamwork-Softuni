@@ -7,8 +7,12 @@ namespace Project
 {
     public class Hunter : Player
     {
+        private const int HunterAgility = 30;
+        private const int HunterStrength = 10;
+        private const int HunterIntelligence = 10;
+
         public Hunter(string name, int agi, int str, int intel)
-            : base(name, 30, 10, 10)
+            : base(name, HunterAgility, HunterStrength, HunterIntelligence)
         {
             base.Intel = intel;
             base.Agi = agi;

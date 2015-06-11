@@ -7,7 +7,7 @@ namespace Project
 {
     public abstract class NPC : Entity
     {
-        public NPC(string name, int hp, int agi, int str)
+        protected NPC(string name, int hp, int agi, int str)
         {
             base.Name = name;
             base.Agi = agi;
