@@ -71,7 +71,7 @@
     <Compile Include="Inventory\Equipable\Mace.cs" />
     <Compile Include="Inventory\Equipable\ManaPotion.cs" />
     <Compile Include="Inventory\Equipable\Potion.cs" />
-    <Compile Include="Inventory\Program.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\Classes\Warrior.cs" />
     <Compile Include="Inventory\Equipable\SpellTome.cs" />
