@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Project
+namespace Project.Entities.Classes
 {
     public abstract class Player : Entity
     {
@@ -32,7 +32,7 @@ namespace Project
             set { level = value; }
         }
 
-        public Player(string name, int agi, int str, int intel)
+        protected Player(string name, int agi, int str, int intel)
         {
             base.Name = name;
         }

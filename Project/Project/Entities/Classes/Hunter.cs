@@ -3,16 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Project
+namespace Project.Entities.Classes
 {
     public class Hunter : Player
     {
-        public Hunter(string name, int agi, int str, int intel)
-            : base(name, 30, 10, 10)
+        private const int HunterAgility = 30;
+        private const int HunterStrength = 10;
+        private const int HunterIntelligence = 10;
+
+        public Hunter(string name)
+            : base(name, HunterAgility, HunterStrength, HunterIntelligence)
         {
-            base.Intel = intel;
+            
+        }
+        public Hunter(string name, int agi, int str, int intel)
+            : base(name, agi, str, intel)
+        {
+            base.Name = name;
             base.Agi = agi;
             base.Str = str;
+            base.Intel = intel;
         }
     }
 }

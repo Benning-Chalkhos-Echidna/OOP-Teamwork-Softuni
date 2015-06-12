@@ -5,10 +5,9 @@ using System.Text;
 
 namespace Project.Entities.Classes
 {
-    public class Enemy : NPC
+    public class Ally : NPC
     {
-
-        public Enemy(string name, int hp, int agi, int str) : base(name,hp,agi,str)
+        public Ally(string name, int hp, int agi, int str) : base(name,hp,agi,str)
         {
             base.Name = name;
             base.Agi = agi;
