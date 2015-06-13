@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using GameServer.GameEngine.Items;
+using GameServer.DataValidator;
 
-namespace GameServer.GameEngine.GameCharacters
+namespace Project.Entities.GameCharacters
 {
     class Player:Entity
     {
@@ -19,7 +19,7 @@ namespace GameServer.GameEngine.GameCharacters
         {
             get { return _money; }
             set
-            {DataValidator.DataValidator.CheckValidInt(Convert.ToInt32(value));//!!!!
+            {DataValidator.CheckValidInt(Convert.ToInt32(value));//!!!!
                 _money = value;
             }
         }

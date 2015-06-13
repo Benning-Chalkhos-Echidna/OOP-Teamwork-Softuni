@@ -2,7 +2,7 @@
 
 namespace GameServer.GameEngine.GameCharacters
 {
-    class Enemy:Entity
+    public class Enemy:Entity
     {
         private int _xpReward;
 

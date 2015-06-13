@@ -46,14 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\BattleReport\BattleReport.cs" />
+    <Compile Include="Entities\GameCharacters\Entity.cs" />
+    <Compile Include="Entities\GameCharacters\Player.cs" />
     <Compile Include="Inventory\Equipable\AgiTome.cs" />
     <Compile Include="Inventory\Equipable\IntelTome.cs" />
     <Compile Include="Inventory\Equipable\Armor.cs" />
     <Compile Include="Inventory\Equipable\Axe.cs" />
     <Compile Include="Inventory\Equipable\Chest.cs" />
     <Compile Include="Inventory\Equipable\Consumable.cs" />
-    <Compile Include="Entities\Classes\Enemy.cs" />
-    <Compile Include="Entities\Classes\Entity.cs" />
     <Compile Include="Inventory\Equipable\Equipable.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -63,10 +64,6 @@
       <DependentUpon>MainForm.cs</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="Entities\Classes\NPC.cs" />
-    <Compile Include="Entities\Classes\Player.cs" />
-    <Compile Include="Entities\Classes\Hunter.cs" />
-    <Compile Include="Entities\Classes\Mage.cs" />
     <Compile Include="Inventory\Equipable\Head.cs" />
     <Compile Include="Inventory\Equipable\HealthPotion.cs" />
     <Compile Include="Inventory\Item.cs" />
@@ -76,7 +73,6 @@
     <Compile Include="Inventory\Equipable\Potion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Entities\Classes\Warrior.cs" />
     <Compile Include="Inventory\Equipable\SpellTome.cs" />
     <Compile Include="Inventory\Equipable\Sword.cs" />
     <Compile Include="Inventory\Equipable\Weapon.cs" />
@@ -115,6 +111,10 @@
     <Folder Include="Inventory\Consumable\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GameServer\GameServer.csproj">
+      <Project>{E494E48A-9B5A-4247-B4C1-FEF0672A5D04}</Project>
+      <Name>GameServer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IWcfServiceble\IWcfServiceble.csproj">
       <Project>{bb639b55-0a04-4d5a-b753-371d9d7bc6d1}</Project>
       <Name>IWcfServiceble</Name>

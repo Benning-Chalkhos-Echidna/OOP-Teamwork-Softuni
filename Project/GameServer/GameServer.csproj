@@ -47,7 +47,15 @@
     <Compile Include="GameEngine\GameCharacters\Enemy.cs" />
     <Compile Include="GameEngine\GameCharacters\Entity.cs" />
     <Compile Include="GameEngine\GameCharacters\Player.cs" />
+    <Compile Include="GameEngine\Interfaces\IAtacable.cs" />
+    <Compile Include="GameEngine\Items\Boots.cs" />
     <Compile Include="GameEngine\Items\CharacterItem.cs" />
+    <Compile Include="GameEngine\Items\ChestArmor.cs" />
+    <Compile Include="GameEngine\Items\Glove.cs" />
+    <Compile Include="GameEngine\Items\Helmet.cs" />
+    <Compile Include="GameEngine\Items\Pants.cs" />
+    <Compile Include="GameEngine\Items\Shield.cs" />
+    <Compile Include="GameEngine\Items\Weapon.cs" />
     <Compile Include="Server\GameService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -62,7 +70,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="GameEngine\Interfaces\" />
     <Folder Include="GameEngine\Missions\" />
     <Folder Include="Serialisation\" />
     <Folder Include="Storage\" />
