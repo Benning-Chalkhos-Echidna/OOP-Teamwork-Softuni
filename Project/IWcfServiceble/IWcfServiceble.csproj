@@ -41,7 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IGameServic.cs" />
+    <Compile Include="BattleCalculator\BattleCalculator.cs" />
+    <Compile Include="DataValidator\DataValidator.cs" />
+    <Compile Include="GameCharacters\Ally.cs" />
+    <Compile Include="GameCharacters\Enemy.cs" />
+    <Compile Include="GameCharacters\Entity.cs" />
+    <Compile Include="GameCharacters\Player.cs" />
+    <Compile Include="Interfaces\IAtacable.cs" />
+    <Compile Include="Items\CharacterItem.cs" />
+    <Compile Include="Items\Armor.cs" />
+    <Compile Include="Items\Weapon.cs" />
+    <Compile Include="Service References\IGameServic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

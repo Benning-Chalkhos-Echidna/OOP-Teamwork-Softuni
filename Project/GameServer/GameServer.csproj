@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataValidator\DataValidator.cs" />
+    <Compile Include="GameEngine\BattleCalculator\BattleCalculator.cs" />
     <Compile Include="GameEngine\GameCharacters\Ally.cs" />
     <Compile Include="GameEngine\GameCharacters\Enemy.cs" />
     <Compile Include="GameEngine\GameCharacters\Entity.cs" />

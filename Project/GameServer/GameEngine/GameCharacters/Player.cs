@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using GameServer.GameEngine.Interfaces;
 using GameServer.GameEngine.Items;
 
 namespace GameServer.GameEngine.GameCharacters
 {
-    class Player:Entity
+    class Player:Entity,IAtacable
     {
         
         private int _xp;
@@ -32,6 +33,13 @@ namespace GameServer.GameEngine.GameCharacters
             this.Xp = xp;
             this.Money = money;
             this.CharacterInventuryBonus=new Dictionary<string, int>();
+        }
+
+        
+
+        public void Attack(object enemy)
+        {
+            throw new NotImplementedException();
         }
     }
 }
