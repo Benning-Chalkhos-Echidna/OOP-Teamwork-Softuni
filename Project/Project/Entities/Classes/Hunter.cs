@@ -19,10 +19,10 @@ namespace Project.Entities.Classes
         public Hunter(string name, int agi, int str, int intel)
             : base(name, agi, str, intel)
         {
-            base.Name = name;
-            base.Agi = agi;
-            base.Str = str;
-            base.Intel = intel;
+            Name = name;
+            Agi = agi;
+            Str = str;
+            Intel = intel;
         }
     }
 }

@@ -9,9 +9,9 @@ namespace Project.Entities.Classes
     {
         protected NPC(string name, int hp, int agi, int str)
         {
-            base.Name = name;
-            base.Agi = agi;
-            base.Str = str;
+            Name = name;
+            Agi = agi;
+            Str = str;
         }
     }
 }

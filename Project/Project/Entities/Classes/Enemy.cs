@@ -10,9 +10,9 @@ namespace Project.Entities.Classes
 
         public Enemy(string name, int hp, int agi, int str) : base(name,hp,agi,str)
         {
-            base.Name = name;
-            base.Agi = agi;
-            base.Str = str;
+            Name = name;
+            Agi = agi;
+            Str = str;
         }
     }
 }

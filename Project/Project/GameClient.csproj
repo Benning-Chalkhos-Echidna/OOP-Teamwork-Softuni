@@ -34,6 +34,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -111,6 +113,12 @@
   <ItemGroup>
     <Folder Include="Entities\Interfaces\" />
     <Folder Include="Inventory\Consumable\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IWcfServiceble\IWcfServiceble.csproj">
+      <Project>{bb639b55-0a04-4d5a-b753-371d9d7bc6d1}</Project>
+      <Name>IWcfServiceble</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

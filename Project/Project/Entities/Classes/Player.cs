@@ -20,7 +20,7 @@ namespace Project.Entities.Classes
         {
             get
             {
-                return (this.Intel * 2) + 50;
+                return (Intel * 2) + 50;
             }
         }
 
@@ -34,7 +34,7 @@ namespace Project.Entities.Classes
 
         protected Player(string name, int agi, int str, int intel)
         {
-            base.Name = name;
+            Name = name;
         }
     }
 }

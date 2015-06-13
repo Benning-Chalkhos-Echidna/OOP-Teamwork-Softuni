@@ -11,7 +11,7 @@ namespace Project.Entities.Classes
         private int hp;
         public int HP
         {
-            get { return ((this.str + this.agi) * 3) + 500; }
+            get { return ((str + agi) * 3) + 500; }
         }
 
         //Entity Details
@@ -43,14 +43,14 @@ namespace Project.Entities.Classes
         {
             get
             {
-                return (this.agi*2) + 50;
+                return (agi*2) + 50;
             }
         }
         public int Damage
         {
             get
             {
-                return (this.str * 2) + 50;
+                return (str * 2) + 50;
             }
         }
     }

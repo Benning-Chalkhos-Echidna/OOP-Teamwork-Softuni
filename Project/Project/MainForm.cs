@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IWcfServiceble;
 
 namespace Project
 {
     public partial class MainForm : Form
     {
+        public static IGameServic ProxyGameServic;
         public MainForm()
         {
             InitializeComponent();
@@ -23,6 +25,11 @@ namespace Project
         }
 
         private void panel26_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
         {
 
         }
