@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.ServiceModel;
-using GameServer.Server;
+using GameInterfaces;
 
 namespace GameServer
 {
@@ -12,10 +8,10 @@ namespace GameServer
     {
         static void Main(string[] args)
         {
-            using (ServiceHost host = new ServiceHost(typeof(GameService)))
+            using (var host = new ServiceHost(typeof(WcfGameService)))
             {
                 host.Open();
-                Console.WriteLine( @"Game server running");
+                Console.WriteLine(@"Game server running");
                 Console.ReadLine();
             }
         }

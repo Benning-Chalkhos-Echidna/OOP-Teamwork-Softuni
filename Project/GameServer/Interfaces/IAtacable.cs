@@ -1,4 +1,4 @@
-﻿namespace IWcfServiceble.Interfaces
+﻿namespace GameServer.Interfaces
 {
    public interface IAtacable
    {

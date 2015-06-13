@@ -1,11 +1,14 @@
-﻿namespace Project
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace Project
 {
     partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -840,85 +843,85 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabHero;
-        private System.Windows.Forms.TabPage tabBattleField;
-        private System.Windows.Forms.TabPage tabAllies;
-        private System.Windows.Forms.TabPage tabSocial;
-        private System.Windows.Forms.Panel panelHeroStats;
-        private System.Windows.Forms.ProgressBar progressBarHealtPoints;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.ListBox listRang;
-        private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.Panel panel19;
-        private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.Panel panel20;
-        private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.Panel panel21;
-        private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Panel panel22;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Panel panel23;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Panel panel24;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Panel panel25;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.RichTextBox richTextBox3;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.Panel panel27;
-        private System.Windows.Forms.Panel panel28;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.Panel panel29;
-        private System.Windows.Forms.Panel panel30;
-        private System.Windows.Forms.Panel panel31;
-        private System.Windows.Forms.Panel panel32;
-        private System.Windows.Forms.Panel panel33;
-        private System.Windows.Forms.Panel panel34;
-        private System.Windows.Forms.Panel panel35;
-        private System.Windows.Forms.Panel panel36;
-        private System.Windows.Forms.Panel panel37;
-        private System.Windows.Forms.Panel panel38;
-        private System.Windows.Forms.Panel panel39;
-        private System.Windows.Forms.Panel panel40;
-        private System.Windows.Forms.Panel panel41;
-        private System.Windows.Forms.Panel panel42;
-        private System.Windows.Forms.Panel panel43;
-        private System.Windows.Forms.Panel panel44;
-        private System.Windows.Forms.Panel panel45;
-        private System.Windows.Forms.Panel panel46;
-        private System.Windows.Forms.Panel panel47;
-        private System.Windows.Forms.Panel panel48;
-        private System.Windows.Forms.RichTextBox richTextBox4;
-        private System.Windows.Forms.Button button8;
+        private TabControl tabControl1;
+        private TabPage tabHero;
+        private TabPage tabBattleField;
+        private TabPage tabAllies;
+        private TabPage tabSocial;
+        private Panel panelHeroStats;
+        private ProgressBar progressBarHealtPoints;
+        private Label label4;
+        private Label label3;
+        private Label label2;
+        private Label label1;
+        private Panel panel1;
+        private Label label5;
+        private Label label6;
+        private Label label7;
+        private Label label8;
+        private ProgressBar progressBar1;
+        private Button button6;
+        private Button button5;
+        private Button button4;
+        private Button button3;
+        private Button button2;
+        private Button button1;
+        private RichTextBox richTextBox1;
+        private Panel panel5;
+        private Panel panel3;
+        private Panel panel4;
+        private ListBox listRang;
+        private Panel panel18;
+        private Panel panel17;
+        private Panel panel19;
+        private Panel panel16;
+        private Panel panel20;
+        private Panel panel15;
+        private Panel panel21;
+        private Panel panel14;
+        private Panel panel22;
+        private Panel panel13;
+        private Panel panel23;
+        private Panel panel12;
+        private Panel panel24;
+        private Panel panel11;
+        private Panel panel25;
+        private Panel panel10;
+        private Panel panel9;
+        private Panel panel8;
+        private Panel panel7;
+        private Panel panel6;
+        private Panel panel2;
+        private Label label9;
+        private Button button7;
+        private ListBox listBox1;
+        private RichTextBox richTextBox3;
+        private RichTextBox richTextBox2;
+        private Panel panel27;
+        private Panel panel28;
+        private ListBox listBox2;
+        private Panel panel29;
+        private Panel panel30;
+        private Panel panel31;
+        private Panel panel32;
+        private Panel panel33;
+        private Panel panel34;
+        private Panel panel35;
+        private Panel panel36;
+        private Panel panel37;
+        private Panel panel38;
+        private Panel panel39;
+        private Panel panel40;
+        private Panel panel41;
+        private Panel panel42;
+        private Panel panel43;
+        private Panel panel44;
+        private Panel panel45;
+        private Panel panel46;
+        private Panel panel47;
+        private Panel panel48;
+        private RichTextBox richTextBox4;
+        private Button button8;
     }
 }
 

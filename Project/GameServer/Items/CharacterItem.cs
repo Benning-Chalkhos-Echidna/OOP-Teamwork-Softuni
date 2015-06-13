@@ -1,4 +1,4 @@
-﻿namespace GameServer.GameEngine.Items
+﻿namespace GameServer.Items
 {
    public abstract class CharacterItem
     {

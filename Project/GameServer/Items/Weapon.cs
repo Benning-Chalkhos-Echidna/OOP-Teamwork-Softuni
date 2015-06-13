@@ -1,4 +1,4 @@
-﻿namespace IWcfServiceble.Items
+﻿namespace GameServer.Items
 {
    public class Weapon:CharacterItem
    {

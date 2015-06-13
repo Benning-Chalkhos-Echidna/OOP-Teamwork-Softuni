@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BB639B55-0A04-4D5A-B753-371D9D7BC6D1}</ProjectGuid>
+    <ProjectGuid>{6F355EB0-D9B6-44EA-A78D-EE722C313D91}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IWcfServiceble</RootNamespace>
-    <AssemblyName>IWcfServiceble</AssemblyName>
+    <RootNamespace>GameInterfaces</RootNamespace>
+    <AssemblyName>GameInterFaces</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,7 +32,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,21 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BattleCalculator\BattleCalculator.cs" />
-    <Compile Include="DataValidator\DataValidator.cs" />
-    <Compile Include="GameCharacters\Ally.cs" />
-    <Compile Include="GameCharacters\Enemy.cs" />
-    <Compile Include="GameCharacters\Entity.cs" />
-    <Compile Include="GameCharacters\Player.cs" />
-    <Compile Include="Interfaces\IAtacable.cs" />
-    <Compile Include="Items\CharacterItem.cs" />
-    <Compile Include="Items\Armor.cs" />
-    <Compile Include="Items\Weapon.cs" />
-    <Compile Include="Service References\IGameServic.cs" />
+    <Compile Include="IWCFGameService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

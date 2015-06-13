@@ -1,9 +1,9 @@
-﻿namespace IWcfServiceble.Items
+﻿namespace GameServer.Items
 {
     public enum TypeArmor { Head, Leg, Glove, Boots, Pants }
     public class Armor:CharacterItem
     {
-        public IWcfServiceble.Items.TypeArmor TypeArmor { get; set; }
+        public TypeArmor TypeArmor { get; set; }
 
         private int _defenceBonus;
         public int DefenceBonus

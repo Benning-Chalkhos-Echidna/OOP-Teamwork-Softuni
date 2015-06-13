@@ -1,7 +1,7 @@
 ﻿using System;
-using IWcfServiceble.Interfaces;
+using GameServer.Interfaces;
 
-namespace IWcfServiceble.GameCharacters
+namespace GameServer.GameCharacters
 {
     public class Ally:Entity,IAtacable
     {

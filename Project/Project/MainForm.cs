@@ -1,23 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ServiceModel;
 using System.Windows.Forms;
-using IWcfServiceble;
-using IWcfServiceble.Service_References;
+using GameInterfaces;
 
 namespace Project
 {
     public partial class MainForm : Form
     {
-        public static IGameServic ProxyGameServic;
+        //public static IGameServic ProxyGameServic;
         public MainForm()
         {
             InitializeComponent();
+            ChannelFactory<IWcfGameService> channelFactory = new ChannelFactory<IWcfGameService>("ClientSerEndpoint");
+            IWcfGameService proxyService = channelFactory.CreateChannel();
+            MessageBox.Show(proxyService.SayHello());
         }
 
         private void tabHero_Click(object sender, EventArgs e)

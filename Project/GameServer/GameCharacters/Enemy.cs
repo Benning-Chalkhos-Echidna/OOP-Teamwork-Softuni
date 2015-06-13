@@ -1,7 +1,7 @@
 ﻿using System;
-using GameServer.GameEngine.Interfaces;
+using GameServer.Interfaces;
 
-namespace GameServer.GameEngine.GameCharacters
+namespace GameServer.GameCharacters
 {
     public class Enemy:Entity,IAtacable
     {

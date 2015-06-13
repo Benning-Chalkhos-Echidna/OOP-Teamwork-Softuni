@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using IWcfServiceble.Interfaces;
-using IWcfServiceble.Items;
+using GameServer.Interfaces;
+using GameServer.Items;
 
-namespace IWcfServiceble.GameCharacters
+namespace GameServer.GameCharacters
 {
     public class Player:Entity,IAtacable
     {

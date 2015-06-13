@@ -1,5 +1,5 @@
 ﻿
-namespace IWcfServiceble.GameCharacters
+namespace GameServer.GameCharacters
 {
     public abstract class Entity
     {

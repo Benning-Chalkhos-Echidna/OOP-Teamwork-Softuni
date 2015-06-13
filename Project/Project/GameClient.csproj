@@ -110,13 +110,13 @@
     <Folder Include="Inventory\Consumable\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GameInterFaces\GameInterfaces.csproj">
+      <Project>{6f355eb0-d9b6-44ea-a78d-ee722c313d91}</Project>
+      <Name>GameInterfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GameServer\GameServer.csproj">
       <Project>{E494E48A-9B5A-4247-B4C1-FEF0672A5D04}</Project>
       <Name>GameServer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IWcfServiceble\IWcfServiceble.csproj">
-      <Project>{bb639b55-0a04-4d5a-b753-371d9d7bc6d1}</Project>
-      <Name>IWcfServiceble</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
