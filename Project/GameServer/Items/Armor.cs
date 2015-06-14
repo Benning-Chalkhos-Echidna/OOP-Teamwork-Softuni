@@ -14,8 +14,8 @@
                 _defenceBonus = value;
             }
         }
-        public Armor(int price, int dropShance, int defenceBonus,TypeArmor typeArmor)
-            : base(price, dropShance)
+        public Armor(int price, int dropShance,string itemName,int defenceBonus,TypeArmor typeArmor)
+            : base(price, dropShance,itemName)
         {
             this.DefenceBonus = defenceBonus;
             this.TypeArmor = typeArmor;

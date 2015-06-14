@@ -12,8 +12,8 @@
                _attackBonus = value;
            }
        }
-       public Weapon(int price, int dropShance, int attackBonus)
-           : base(price, dropShance)
+       public Weapon(int price, int dropShance,string itemName, int attackBonus)
+           : base(price, dropShance,itemName)
        {
            this.AttackBonus = attackBonus;
        }
