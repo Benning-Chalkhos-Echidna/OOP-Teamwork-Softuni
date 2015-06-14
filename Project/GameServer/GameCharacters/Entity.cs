@@ -1,8 +1,12 @@
 ﻿
+using GameServer.Interfaces;
+
 namespace GameServer.GameCharacters
 {
-    public abstract class Entity
+    public abstract class Entity:IAtacable
     {
+        public bool IsAlive { get; set; }
+
         private string _creatureName;
         public string CreatureName
         {
@@ -52,6 +56,20 @@ namespace GameServer.GameCharacters
             this.HealtPoint = healtPoint;
             this.AttackPoints = attackPoint;
             this.DefencePoints = defencePoint;
+            this.IsAlive = true;
+        }
+        public void Gethit(Entity character, int atackPower)
+        {
+            this.HealtPoint -= atackPower;
+            if (this.HealtPoint<=0)
+            {
+                this.IsAlive = false;
+            }
+        }
+
+        public void Attack(object enemy)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

@@ -3,7 +3,7 @@ using GameServer.Interfaces;
 
 namespace GameServer.GameCharacters
 {
-    public class Enemy:Entity,IAtacable
+    public class Enemy:Entity
     {
         private int _xpReward;
 
@@ -46,9 +46,6 @@ namespace GameServer.GameCharacters
             this.Dificulty = dificulty;
         }
 
-        public void Attack(object enemy)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

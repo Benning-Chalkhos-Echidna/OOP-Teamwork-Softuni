@@ -8,13 +8,13 @@ namespace Project
     public partial class MainForm : Form
     {
         private readonly IWcfGameService _proxyService;
-        readonly ChannelFactory<IWcfGameService> channelFactory = new ChannelFactory<IWcfGameService>("ClientSerEndpoint");
+        readonly ChannelFactory<IWcfGameService> _channelFactory = new ChannelFactory<IWcfGameService>("ClientSerEndpoint");
         //public static IGameServic ProxyGameServic;
         public MainForm()
         {
             InitializeComponent();
             
-            _proxyService = channelFactory.CreateChannel();
+            _proxyService = _channelFactory.CreateChannel();
             
         }
 

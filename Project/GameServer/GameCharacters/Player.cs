@@ -5,10 +5,11 @@ using GameServer.Items;
 
 namespace GameServer.GameCharacters
 {
-    public class Player:Entity,IAtacable
+    public class Player:Entity
     {
         
         private int _xp;
+
         public int Xp
         {
             get { return _xp; }
@@ -44,22 +45,19 @@ namespace GameServer.GameCharacters
                 _defenceBonus = value;
             }
         }
+
+
         public Player(string creatureName, int healtPoint, int attackPoint, int defencePoint, int xp, double money)
             : base(creatureName, healtPoint, attackPoint, defencePoint)
         {
-
             this.Xp = xp;
             this.Money = money;
-            
+            this.AttackBonus = 0;
+            this.DefenceBonus = 0;
+
         }
 
-        
-
-        public void Attack(object enemy)
-        {
-            throw new NotImplementedException();
-        }
-
+      
         public void CalckAttackBonusStats(Weapon weapon)
         {
             this.AttackBonus = weapon.AttackBonus;
@@ -72,5 +70,8 @@ namespace GameServer.GameCharacters
                 this.DefenceBonus += armor.DefenceBonus;
             }
         }
+
+
+        
     }
 }
