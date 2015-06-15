@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GameServer.DataValidator
+namespace Project.DataValidator
 {
  public   static  class DataValidator
     {

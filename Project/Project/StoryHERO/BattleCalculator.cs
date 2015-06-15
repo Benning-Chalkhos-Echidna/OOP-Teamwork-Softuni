@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using GameServer.GameCharacters;
-using GameServer.Items;
+using Project.GameCharacters;
+using Project.Items;
 
-namespace GameServer.BattleCalculator
+namespace Project.StoryHERO
 {
 
     public static class BattleCalculator
     {
-        private static readonly Random _randomElement = new Random();
-        private static StringBuilder _stringBuilder = new StringBuilder();
+        private static readonly Random RandomElement = new Random();
+        private static readonly StringBuilder StringBuilder = new StringBuilder();
+        
         public static string CalculaterBattleResult(List<Entity> goodGuysList, List<Entity> badGuysList)
         {
             
@@ -59,16 +60,11 @@ namespace GameServer.BattleCalculator
 
         }
 
-        private static List<Entity> GetGoodGuysList(Player player, Ally ally)
-        {
-            List<Entity> goodGuys = new List<Entity> {player, ally};
-            return goodGuys;
-        }
-
+        
         public static void SetArmorBonusStats(Player player, List<Armor> armorsList)
         {
             player.CalcDeffenceBonusStats(armorsList);
-            _stringBuilder.AppendLine(string.Format("{0}get bonus {1} armor from equipmed items",
+            StringBuilder.AppendLine(string.Format("{0}get bonus {1} armor from equipmed items",
                 player.CreatureName, armorsList.Sum(item=>item.DefenceBonus)));//DEBUG! 
             
         }
@@ -76,7 +72,7 @@ namespace GameServer.BattleCalculator
         public static void SetAttackBonusStats(Player player, Weapon weapon)
         {
             player.CalckAttackBonusStats(weapon);
-            _stringBuilder.AppendLine(string.Format("{0}get bonus {1} attack from {2}", //DEBUG
+            StringBuilder.AppendLine(string.Format("{0}get bonus {1} attack from {2}", //DEBUG
                 player.CreatureName, weapon.AttackBonus, weapon.ItemName));
         }
 
@@ -86,7 +82,7 @@ namespace GameServer.BattleCalculator
             int cshosedTargerIndex;
             do
             {
-                cshosedTargerIndex = _randomElement.Next(0, entitiesList.Count-1);
+                cshosedTargerIndex = RandomElement.Next(0, entitiesList.Count-1);
                 System.Threading.Thread.Sleep(1);//SAME RANDOM SEED BUGS!!
             } while (entitiesList[cshosedTargerIndex].IsAlive);
           
@@ -96,14 +92,13 @@ namespace GameServer.BattleCalculator
                 attackPower = 1;
             }
             entitiesList[cshosedTargerIndex].HealtPoint = (entitiesList[cshosedTargerIndex].HealtPoint - attackPower);
-            _stringBuilder.AppendLine(string.Format("{0} attack {1} for {2} point life!",
+            StringBuilder.AppendLine(string.Format("{0} attack {1} for {2} point life!",
                 entity.CreatureName,entitiesList[cshosedTargerIndex].CreatureName,attackPower));                                               
             if (entitiesList[cshosedTargerIndex].HealtPoint<=0)
             {
                 entitiesList[cshosedTargerIndex].IsAlive = false;
             }
         }
-       
     }
 }
 

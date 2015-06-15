@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using GameServer.Interfaces;
-using GameServer.Items;
+using Project.Items;
 
-namespace GameServer.GameCharacters
+namespace Project.GameCharacters
 {
     public class Player:Entity
     {

@@ -32,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -46,16 +50,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\BattleReport\BattleReport.cs" />
-    <Compile Include="Entities\GameCharacters\Entity.cs" />
-    <Compile Include="Entities\GameCharacters\Player.cs" />
-    <Compile Include="Inventory\Equipable\AgiTome.cs" />
-    <Compile Include="Inventory\Equipable\IntelTome.cs" />
-    <Compile Include="Inventory\Equipable\Armor.cs" />
-    <Compile Include="Inventory\Equipable\Axe.cs" />
-    <Compile Include="Inventory\Equipable\Chest.cs" />
-    <Compile Include="Inventory\Equipable\Consumable.cs" />
-    <Compile Include="Inventory\Equipable\Equipable.cs" />
+    <Compile Include="Storage\Storage.cs" />
+    <Compile Include="StoryHERO\BattleCalculator.cs" />
+    <Compile Include="DataValidator\DataValidator.cs" />
+    <Compile Include="GameCharacters\Ally.cs" />
+    <Compile Include="GameCharacters\Enemy.cs" />
+    <Compile Include="GameCharacters\Entity.cs" />
+    <Compile Include="GameCharacters\Player.cs" />
+    <Compile Include="Interfaces\IAtacable.cs" />
+    <Compile Include="Interfaces\ITrainable.cs" />
+    <Compile Include="Items\Armor.cs" />
+    <Compile Include="Items\CharacterItem.cs" />
+    <Compile Include="Items\Weapon.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -64,20 +70,9 @@
       <DependentUpon>MainForm.cs</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="Inventory\Equipable\Head.cs" />
-    <Compile Include="Inventory\Equipable\HealthPotion.cs" />
-    <Compile Include="Inventory\Item.cs" />
-    <Compile Include="Inventory\Equipable\Legs.cs" />
-    <Compile Include="Inventory\Equipable\Mace.cs" />
-    <Compile Include="Inventory\Equipable\ManaPotion.cs" />
-    <Compile Include="Inventory\Equipable\Potion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Inventory\Equipable\SpellTome.cs" />
-    <Compile Include="Inventory\Equipable\Sword.cs" />
-    <Compile Include="Inventory\Equipable\Weapon.cs" />
-    <Compile Include="Inventory\Equipable\StrTome.cs" />
-    <Compile Include="RegenPotion.cs" />
+    <Compile Include="StoryHERO\Storytailer.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -91,7 +86,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Inventory\InventoryDiagram.cd" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -105,20 +100,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entities\Interfaces\" />
-    <Folder Include="Inventory\Consumable\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\GameInterFaces\GameInterfaces.csproj">
-      <Project>{6f355eb0-d9b6-44ea-a78d-ee722c313d91}</Project>
-      <Name>GameInterfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GameServer\GameServer.csproj">
-      <Project>{E494E48A-9B5A-4247-B4C1-FEF0672A5D04}</Project>
-      <Name>GameServer</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

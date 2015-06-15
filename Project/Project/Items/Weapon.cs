@@ -1,4 +1,4 @@
-﻿namespace GameServer.Items
+﻿namespace Project.Items
 {
    public class Weapon:CharacterItem
    {

@@ -1,6 +1,6 @@
-﻿using GameServer.GameCharacters;
+﻿using Project.GameCharacters;
 
-namespace GameServer.Interfaces
+namespace Project.Interfaces
 {
    public interface IAtacable
    {

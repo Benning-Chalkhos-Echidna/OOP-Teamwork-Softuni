@@ -1,9 +1,9 @@
 ﻿using System;
-using GameServer.Interfaces;
+using Project.Interfaces;
 
-namespace GameServer.GameCharacters
+namespace Project.GameCharacters
 {
-    public class Ally:Entity,IAtacable
+    public class Ally:Entity
     {
         private int _helpPotencial;
         public int HelpPotencial
@@ -20,9 +20,6 @@ namespace GameServer.GameCharacters
         }
 
     
-        public void Attack(object enemy)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

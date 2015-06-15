@@ -1,7 +1,7 @@
 ﻿
-using GameServer.Interfaces;
+using Project.Interfaces;
 
-namespace GameServer.GameCharacters
+namespace Project.GameCharacters
 {
     public abstract class Entity:IAtacable
     {

@@ -1,7 +1,6 @@
 ﻿using System;
-using GameServer.Interfaces;
 
-namespace GameServer.GameCharacters
+namespace Project.GameCharacters
 {
     public class Enemy:Entity
     {

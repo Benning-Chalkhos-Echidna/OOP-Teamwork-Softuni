@@ -1,4 +1,4 @@
-﻿namespace GameServer.Items
+﻿namespace Project.Items
 {
     public enum TypeArmor { Head, Leg, Glove, Boots, Pants }
     public class Armor:CharacterItem
