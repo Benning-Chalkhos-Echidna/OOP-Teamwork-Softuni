@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Game.CharacterClasses.Druid">
+    <Position X="2.75" Y="3" Width="1.5" />
+    <InheritanceLine Type="Game.CharacterClasses.Entity" FixedFromPoint="true">
+      <Path>
+        <Point X="5.25" Y="1.062" />
+        <Point X="5.25" Y="2.625" />
+        <Point X="3.5" Y="2.625" />
+        <Point X="3.5" Y="3" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Engine\Classes\Druid.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Game.CharacterClasses.Entity" Collapsed="true">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAKQEABAEIAAAFAEAAABwAAMhAAAAQAAAAAgAAQEA=</HashCode>
+      <FileName>Engine\Classes\Entity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Game.CharacterClasses.Mage">
+    <Position X="2.75" Y="0.75" Width="1.5" />
+    <InheritanceLine Type="Game.CharacterClasses.Entity" FixedFromPoint="true">
+      <Path>
+        <Point X="5.25" Y="1.062" />
+        <Point X="5.25" Y="1.746" />
+        <Point X="4.25" Y="1.746" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Engine\Classes\Mage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Game.CharacterClasses.Paladin">
+    <Position X="1" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Engine\Classes\Paladin.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Game.CharacterClasses.Warrior">
+    <Position X="1" Y="0.75" Width="1.5" />
+    <InheritanceLine Type="Game.CharacterClasses.Entity" FixedFromPoint="true">
+      <Path>
+        <Point X="5.25" Y="1.062" />
+        <Point X="5.25" Y="2.742" />
+        <Point X="3.583" Y="2.742" Type="JumpStart" />
+        <Point X="3.417" Y="2.742" Type="JumpEnd" />
+        <Point X="2.125" Y="2.742" />
+        <Point X="2.125" Y="2.367" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Engine\Classes\Warrior.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Game.CharacterClasses.IDamage">
+    <Position X="5.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Engine\Interfaces\IDamage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Game.CharacterClasses.IEntity">
+    <Position X="7" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAEAAAAAAAABAAAAAAwAAIhAAAAAAAAAAgAAQAA=</HashCode>
+      <FileName>Engine\Interfaces\IEntity.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Game.CharacterClasses.IHeal">
+    <Position X="8.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Engine\Interfaces\IHeal.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Game.CharacterClasses.EntityGender">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAABA=</HashCode>
+      <FileName>Engine\Classes\Entity.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

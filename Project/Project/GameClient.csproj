@@ -50,30 +50,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Storage\Storage.cs" />
-    <Compile Include="StoryHERO\BattleCalculator.cs" />
-    <Compile Include="DataValidator\DataValidator.cs" />
-    <Compile Include="GameCharacters\Ally.cs" />
-    <Compile Include="GameCharacters\Enemy.cs" />
-    <Compile Include="GameCharacters\Entity.cs" />
-    <Compile Include="GameCharacters\Player.cs" />
-    <Compile Include="Interfaces\IAtacable.cs" />
-    <Compile Include="Interfaces\ITrainable.cs" />
-    <Compile Include="Items\Armor.cs" />
-    <Compile Include="Items\CharacterItem.cs" />
-    <Compile Include="Items\Weapon.cs" />
-    <Compile Include="MainForm.cs">
+    <Compile Include="Engine\Items\Consumable.cs" />
+    <Compile Include="Engine\Classes\Druid.cs" />
+    <Compile Include="Engine\Constants.cs" />
+    <Compile Include="Engine\Engine.cs" />
+    <Compile Include="Engine\Player.cs" />
+    <Compile Include="Engine\Classes\Entity.cs" />
+    <Compile Include="Engine\Interfaces\IDamage.cs" />
+    <Compile Include="Engine\Interfaces\IEntity.cs" />
+    <Compile Include="Engine\Interfaces\IHeal.cs" />
+    <Compile Include="Engine\Classes\Mage.cs" />
+    <Compile Include="Engine\Classes\Paladin.cs" />
+    <Compile Include="Engine\MainForm.cs">
       <SubType>Form</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Engine\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Engine\Program.cs" />
+    <Compile Include="Engine\Items\Equipable.cs" />
+    <Compile Include="Engine\Items\HealthPotion.cs" />
+    <Compile Include="Engine\Items\Item.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StoryHERO\Storytailer.cs" />
-    <EmbeddedResource Include="MainForm.resx">
+    <Compile Include="Engine\UI.cs" />
+    <Compile Include="Engine\Classes\Warrior.cs" />
+    <Compile Include="Engine\Items\StatsPotion.cs" />
+    <EmbeddedResource Include="Engine\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -86,6 +90,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Engine\Engine Diagram.cd" />
+    <None Include="Engine\Entity Diagram.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
