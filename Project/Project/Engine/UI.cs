@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Windows.Forms;
 
 namespace Game
 {
@@ -14,132 +15,32 @@ namespace Game
         //Implement rest of the UI and Menus.
         //We also need to implement a way to save files.
         public static Player Player;
-        private static int PlayerIndex = 0;
 
-        public static void PrintMainMenu()
+        public static void CreatePlayer(string name, Entity entity)
         {
-            Console.Clear();
-            Console.WriteLine("Character name?");
-            string charName = Console.ReadLine();
-            Console.WriteLine("(M)ale / (F)emale");
-            ConsoleKeyInfo key = Console.ReadKey(true);
-            EntityGender genderType;
-            if (key.KeyChar == 'm') genderType = EntityGender.Male;
-            else genderType = EntityGender.Female;
-            Console.WriteLine("(W)arrior, (M)age, (D)ruid, or (P)aladin?");
-            ConsoleKeyInfo classKey = Console.ReadKey(true);
-            switch (classKey.KeyChar)
+            UI.Player = new Player(name);
+            UI.Player.Character = entity;
+        }
+        public static Entity CreateEntity(Game.Engine.Player.PlayerClass playerClass, EntityGender entityGender, string name)
+        {
+            if (string.IsNullOrWhiteSpace(name) || name.Length == 0)
             {
-                case 'w':
-                    Player.setCharacter(new Warrior(genderType, charName));
-                    UI.Player.Characters.Add(PlayerIndex, UI.Player.Character);
-                    PlayerIndex++;
-                    break;
-                case 'm':
-                    Player.setCharacter(new Mage(genderType, charName));
-                    UI.Player.Characters.Add(PlayerIndex, UI.Player.Character);
-                    PlayerIndex++;
-                    break;
-                case 'd':
-                    Player.setCharacter(new Druid(genderType, charName));
-                    UI.Player.Characters.Add(PlayerIndex, UI.Player.Character);
-                    PlayerIndex++;
-                    break;
-                case 'p':
-                    Player.setCharacter(new Paladin(genderType, charName));
-                    UI.Player.Characters.Add(PlayerIndex, UI.Player.Character);
-                    PlayerIndex++;
-                    break;
+                MessageBox.Show("Name cannot be empty!");
+                Application.Restart();
+            }
+            switch (playerClass)
+            {
+                case Player.PlayerClass.Druid:
+                    return new Druid(entityGender, name);
+                case Player.PlayerClass.Mage:
+                    return new Mage(entityGender, name);
+                case Player.PlayerClass.Warrior:
+                    return new Warrior(entityGender, name);
+                case Player.PlayerClass.Paladin:
+                    return new Paladin(entityGender, name);
                 default:
-                    break;
+                    return new Mage(entityGender, name);
             }
-
-            Msg(Constants.successfulCharCreation);
-            Msg(string.Format("{0} - the {1} {2}!",
-                UI.Player.Character.Name, UI.Player.Character.EntityGender, UI.Player.Character.GetType().Name));
-
-        }
-        public static void PrintLoginScreen()
-        {
-            Console.Clear();
-            Console.WriteLine("(L)ogin / (R)egister");
-            ConsoleKeyInfo key = Console.ReadKey(true);
-            switch (key.KeyChar)
-            {
-                case 'l':
-                    LoginInput();
-                    break;
-                case 'r':
-                    RegisterInput();
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        private static void RegisterInput()
-        {
-            //This should take the input from the console and transfer it to the txt file holding
-            //all username and password values.
-            Console.Write("Enter new username: ");
-            string username = Console.ReadLine();
-            Console.Write("\nEnter new password: ");
-            string password = Console.ReadLine();
-
-            List<string> input = File.ReadLines("Resources\\usernames.txt").ToList<string>();
-            for (int i = 0; i < input.Count; i++)
-            {
-                string inputLn = input[i];
-                string[] pair = inputLn.Split(new char[] { ',', '|' });
-                string currentUser = pair[0];
-                if (currentUser == username) Msg(Constants.userExists);
-
-            }
-            input.Add(username + "|" + password);
-            File.WriteAllLines("Resources\\usernames.txt", input);
-            //We set the global player to a new player.
-            UI.Player = new Player(username, password);
-            Msg(Constants.successfulRegister);
-
-        }
-        private static void LoginInput()
-        {
-            //This should check the values if they exist in the database.
-            //If they don't, an exception is thrown.
-            //If they do, the login succeeds.
-            Console.Write("Account Username: ");
-            string username = Console.ReadLine();
-            Console.Write("\nAccount Password: ");
-            string password = Console.ReadLine();
-
-            bool noUserFlag = true;
-            bool passMismatchFlag = true;
-
-            List<string> input = File.ReadLines("Resources\\usernames.txt").ToList<string>();
-            for (int i = 0; i < input.Count; i++)
-            {
-                string inputLn = input[i];
-                string[] pair = inputLn.Split(new char[] { ',', '|' });
-                string currentUser = pair[0];
-                if (currentUser == username)
-                {
-                    noUserFlag = false;
-                    string currentPass = pair[1];
-                    if (currentPass == password) passMismatchFlag = false;
-                }
-
-            }
-            if (!noUserFlag && !passMismatchFlag) Msg(Constants.loginWelcome);
-            else if (noUserFlag) Msg(Constants.noUserName);
-            else if (passMismatchFlag) Msg(Constants.passMismatch);
-        }
-
-        public static void Msg(string message)
-        {
-            Console.Clear();
-            Console.WriteLine(message);
-            Thread.Sleep(2222);
-            Engine.Engine eng = new Engine.Engine();
         }
     }
 }

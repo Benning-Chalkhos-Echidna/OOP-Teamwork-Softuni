@@ -26,6 +26,7 @@ namespace Game.CharacterClasses
 
             base._attack = 25;
             base._defense = 15;
+            base.EntityClass = Engine.Player.PlayerClass.Paladin;
         }
         #region Methods
         public override void Engage(Entity target)

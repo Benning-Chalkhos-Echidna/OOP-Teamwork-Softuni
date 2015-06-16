@@ -14,8 +14,7 @@ namespace Game.Engine
         }
         private void Start()
         {
-            UI.PrintLoginScreen();
-            UI.PrintMainMenu();
+
             //Take and Process Input
             //Iterate the time
             //Collision checks

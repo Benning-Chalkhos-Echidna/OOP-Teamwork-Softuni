@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Game.Engine;
 namespace Game.CharacterClasses
 {
     public enum EntityGender { Male, Female, Unknown }
@@ -12,6 +12,7 @@ namespace Game.CharacterClasses
     {
         protected string _name;
         protected EntityGender _entityGender;
+        protected Game.Engine.Player.PlayerClass _entityClass;
 
         protected int _strength,
             _agility,
@@ -77,8 +78,17 @@ namespace Game.CharacterClasses
             get { return this._defense + this.Intellect; }
             set { this._defense = value; }
         }
-
+        public Player.PlayerClass EntityClass
+        {
+            get { return this._entityClass; }
+            set { this._entityClass = value; }
+        }
         public abstract void Engage(Entity target);
         public abstract void Defend(Entity target);
+
+        public override string ToString()
+        {
+            return string.Format("{0} - {1} {2}", this.Name, this.EntityGender, this.EntityClass);
+        }
     }
 }

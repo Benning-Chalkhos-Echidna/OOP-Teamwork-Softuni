@@ -26,6 +26,7 @@ namespace Game.CharacterClasses
 
             base._attack = 20;
             base._defense = 10;
+            base.EntityClass = Engine.Player.PlayerClass.Mage;
         }
         #region Methods
         public override void Engage(Entity target)

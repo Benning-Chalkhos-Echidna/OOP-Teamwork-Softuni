@@ -50,10 +50,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Engine\Form\CharacterCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Engine\Form\CharacterCreate.Designer.cs">
+      <DependentUpon>CharacterCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Engine\Items\Consumable.cs" />
     <Compile Include="Engine\Classes\Druid.cs" />
     <Compile Include="Engine\Constants.cs" />
     <Compile Include="Engine\Engine.cs" />
+    <Compile Include="Engine\Form\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Engine\Form\MainForm.designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Engine\Player.cs" />
     <Compile Include="Engine\Classes\Entity.cs" />
     <Compile Include="Engine\Interfaces\IDamage.cs" />
@@ -61,14 +73,6 @@
     <Compile Include="Engine\Interfaces\IHeal.cs" />
     <Compile Include="Engine\Classes\Mage.cs" />
     <Compile Include="Engine\Classes\Paladin.cs" />
-    <Compile Include="Engine\MainForm.cs">
-      <SubType>Form</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="Engine\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
     <Compile Include="Engine\Program.cs" />
     <Compile Include="Engine\Items\Equipable.cs" />
     <Compile Include="Engine\Items\HealthPotion.cs" />
@@ -77,19 +81,17 @@
     <Compile Include="Engine\UI.cs" />
     <Compile Include="Engine\Classes\Warrior.cs" />
     <Compile Include="Engine\Items\StatsPotion.cs" />
-    <EmbeddedResource Include="Engine\MainForm.resx">
+    <EmbeddedResource Include="Engine\Form\CharacterCreate.resx">
+      <DependentUpon>CharacterCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Engine\Form\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="Engine\Engine Diagram.cd" />
     <None Include="Engine\Entity Diagram.cd" />
     <None Include="packages.config" />
@@ -97,6 +99,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -106,7 +113,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\video games rpg guild wars guild wars nightfall fantasy art guild wars eye of the north 1280x960_www.wallpaperhi.com_16.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
