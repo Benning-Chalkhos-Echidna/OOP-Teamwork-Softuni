@@ -20,9 +20,9 @@ namespace Game.CharacterClasses
             base.EntityGender = entityGender;
             base.Name = name;
 
-            base._agilityModifier = 12;
+            base._agilityModifier = 6;
             base._strengthModifier = 6;
-            base._intellectModifier = 12;
+            base._intellectModifier = 18;
 
             base._attack = 25;
             base._defense = 15;

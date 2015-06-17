@@ -63,10 +63,50 @@ namespace Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Druid {
+            get {
+                object obj = ResourceManager.GetObject("Druid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Mage {
+            get {
+                object obj = ResourceManager.GetObject("Mage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Paladin {
+            get {
+                object obj = ResourceManager.GetObject("Paladin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap video_games_rpg_guild_wars_guild_wars_nightfall_fantasy_art_guild_wars_eye_of_the_north_1280x960_www_wallpaperhi_com_16 {
             get {
                 object obj = ResourceManager.GetObject("video games rpg guild wars guild wars nightfall fantasy art guild wars eye of the" +
                         " north 1280x960_www.wallpaperhi.com_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Warrior {
+            get {
+                object obj = ResourceManager.GetObject("Warrior", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

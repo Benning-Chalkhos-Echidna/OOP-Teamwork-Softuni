@@ -65,15 +65,39 @@ namespace Project
 
         private void Create_Click(object sender, EventArgs e)
         {
-            UI.CreatePlayer(name, UI.CreateEntity(playerClass, entityGender, name));
-            MessageBox.Show(UI.Player.Character.ToString());
-            Form form = new Form();
-            switch (playerClass)
+            if (this.entityGender == EntityGender.Unknown)
             {
-                case Game.Engine.Player.PlayerClass.Druid:
-                    break;
+                MessageBox.Show("The \"Unknown\" GenderType is just a joke! Select a valid one!");
+                Close();
+                Application.Restart();
             }
-            form.Show();
+            else
+            {
+                if (!string.IsNullOrWhiteSpace(name) && name.Length != 0)
+                {
+                    if (name.Length < 3)
+                    {
+                        MessageBox.Show("Name must be longer than 3 characters!");
+                        Close();
+                        Application.Restart();
+                    }
+                    else if (name.Length > 15)
+                    {
+                        MessageBox.Show("Name must be less than 15 characters!");
+                        Close();
+                        Application.Restart();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Name cannot have null or whitespace value!");
+                    Close();
+                    Application.Restart();
+                }
+            }
+            UI.CreatePlayer(name, UI.CreateEntity(playerClass, entityGender, name));
+            MessageBox.Show("Character Successfully Created!\n" + UI.Player.Character.ToString());
+            Close();
         }
     }
 }

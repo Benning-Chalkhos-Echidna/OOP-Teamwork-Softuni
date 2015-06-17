@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    static class Program
+    public static class Program
     {
         /// <summary>
         /// The main entry point for the application.
@@ -13,7 +13,9 @@ namespace Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CharacterCreate());
+            gameMenu = new GameMenu();
+            Application.Run(gameMenu);
         }
+        public static GameMenu gameMenu;
     }
 }

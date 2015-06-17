@@ -23,11 +23,6 @@ namespace Game
         }
         public static Entity CreateEntity(Game.Engine.Player.PlayerClass playerClass, EntityGender entityGender, string name)
         {
-            if (string.IsNullOrWhiteSpace(name) || name.Length == 0)
-            {
-                MessageBox.Show("Name cannot be empty!");
-                Application.Restart();
-            }
             switch (playerClass)
             {
                 case Player.PlayerClass.Druid:

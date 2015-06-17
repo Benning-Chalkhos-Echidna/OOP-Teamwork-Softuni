@@ -59,7 +59,6 @@
     <Compile Include="Engine\Items\Consumable.cs" />
     <Compile Include="Engine\Classes\Druid.cs" />
     <Compile Include="Engine\Constants.cs" />
-    <Compile Include="Engine\Engine.cs" />
     <Compile Include="Engine\Form\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,12 +76,21 @@
     <Compile Include="Engine\Items\Equipable.cs" />
     <Compile Include="Engine\Items\HealthPotion.cs" />
     <Compile Include="Engine\Items\Item.cs" />
+    <Compile Include="Engine\Form\GameMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Engine\Form\GameMenu.Designer.cs">
+      <DependentUpon>GameMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Engine\UI.cs" />
     <Compile Include="Engine\Classes\Warrior.cs" />
     <Compile Include="Engine\Items\StatsPotion.cs" />
     <EmbeddedResource Include="Engine\Form\CharacterCreate.resx">
       <DependentUpon>CharacterCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Engine\Form\GameMenu.resx">
+      <DependentUpon>GameMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Engine\Form\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -115,6 +123,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\video games rpg guild wars guild wars nightfall fantasy art guild wars eye of the north 1280x960_www.wallpaperhi.com_16.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Druid.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Paladin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warrior.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
