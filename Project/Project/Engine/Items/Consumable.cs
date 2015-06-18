@@ -1,10 +1,4 @@
-﻿using Project.Items;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Project
+﻿namespace Project.Engine.Items
 {
     public abstract class Consumable : Item
     {

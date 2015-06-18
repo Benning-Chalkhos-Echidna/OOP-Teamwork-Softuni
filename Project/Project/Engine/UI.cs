@@ -1,15 +1,7 @@
-﻿using Game.CharacterClasses;
-using Game.Engine;
-using Project;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Windows.Forms;
+﻿using Project.Engine.Classes;
+using Project.Engine.Interfaces;
 
-namespace Game
+namespace Project.Engine
 {
     public static class UI
     {
@@ -23,7 +15,7 @@ namespace Game
             UI.Player = new Player(name);
             UI.Player.Character = entity;
         }
-        public static Entity CreateEntity(Game.Engine.Player.PlayerClass playerClass, EntityGender entityGender, string name)
+        public static Entity CreateEntity(Player.PlayerClass playerClass, EntityGender entityGender, string name)
         {
             switch (playerClass)
             {

@@ -1,46 +1,38 @@
-﻿using Game;
-using Game.CharacterClasses;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
+using Project.Engine.Classes;
 
-namespace Project
+namespace Project.Engine.Form
 {
-    public partial class CharacterCreate : Form
+    public partial class CharacterCreate : System.Windows.Forms.Form
     {
         public CharacterCreate()
         {
             InitializeComponent();
         }
 
-        private Game.Engine.Player.PlayerClass playerClass;
+        private Player.PlayerClass playerClass;
         private EntityGender entityGender;
         private string name;
 
         private void Mage_Click(object sender, EventArgs e)
         {
-            playerClass = Game.Engine.Player.PlayerClass.Mage;
+            playerClass = Player.PlayerClass.Mage;
         }
 
         private void Warrior_Click(object sender, EventArgs e)
         {
-            playerClass = Game.Engine.Player.PlayerClass.Warrior;
+            playerClass = Player.PlayerClass.Warrior;
         }
 
         private void Paladin_Click(object sender, EventArgs e)
         {
-            playerClass = Game.Engine.Player.PlayerClass.Paladin;
+            playerClass = Player.PlayerClass.Paladin;
         }
 
         private void Druid_Click(object sender, EventArgs e)
         {
-            playerClass = Game.Engine.Player.PlayerClass.Druid;
+            playerClass = Player.PlayerClass.Druid;
         }
 
         private void Male_Click(object sender, EventArgs e)

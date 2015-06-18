@@ -1,4 +1,4 @@
-﻿namespace Project
+﻿namespace Project.Engine.Form
 {
     partial class CharacterCreate
     {

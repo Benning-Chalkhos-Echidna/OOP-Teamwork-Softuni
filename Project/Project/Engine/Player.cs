@@ -1,11 +1,6 @@
-﻿using Game.CharacterClasses;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Project.Engine.Classes;
 
-namespace Game.Engine
+namespace Project.Engine
 {
     public class Player
     {

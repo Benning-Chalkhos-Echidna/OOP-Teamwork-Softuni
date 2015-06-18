@@ -1,4 +1,4 @@
-﻿namespace Project.Items
+﻿namespace Project.Engine.Items
 {
     public abstract class Item
     {

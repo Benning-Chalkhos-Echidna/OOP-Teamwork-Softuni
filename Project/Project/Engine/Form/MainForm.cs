@@ -1,10 +1,9 @@
 ﻿using System;
-using System.ServiceModel;
 using System.Windows.Forms;
 
-namespace Project
+namespace Project.Engine.Form
 {
-    public partial class MainForm : Form
+    public partial class MainForm : System.Windows.Forms.Form
     {
         //public static IGameServic ProxyGameServic;
         public MainForm()

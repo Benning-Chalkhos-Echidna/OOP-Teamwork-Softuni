@@ -1,9 +1,9 @@
-﻿using Game;
-using Game.CharacterClasses;
-using System;
+﻿using System;
 using System.Windows.Forms;
+using Project.Engine.Classes;
+using Project.Engine.Form;
 
-namespace Project
+namespace Project.Engine
 {
     public static class Program
     {

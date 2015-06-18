@@ -1,18 +1,9 @@
-﻿using Game;
-using Game.CharacterClasses;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System;
+using Project.Engine.Classes;
 
-namespace Project
+namespace Project.Engine.Form
 {
-    public partial class GameMenu : Form
+    public partial class GameMenu : System.Windows.Forms.Form
     {
         public GameMenu()
         {
@@ -32,16 +23,16 @@ namespace Project
 
             switch (playerChar.EntityClass)
             {
-                case Game.Engine.Player.PlayerClass.Druid:
+                case Player.PlayerClass.Druid:
                     this.CharacterPortrait.Image = global::Project.Properties.Resources.Druid;
                     break;
-                case Game.Engine.Player.PlayerClass.Warrior:
+                case Player.PlayerClass.Warrior:
                     this.CharacterPortrait.Image = global::Project.Properties.Resources.Warrior;
                     break;
-                case Game.Engine.Player.PlayerClass.Paladin:
+                case Player.PlayerClass.Paladin:
                     this.CharacterPortrait.Image = global::Project.Properties.Resources.Paladin;
                     break;
-                case Game.Engine.Player.PlayerClass.Mage:
+                case Player.PlayerClass.Mage:
                     this.CharacterPortrait.Image = global::Project.Properties.Resources.Mage;
                     break;
             }

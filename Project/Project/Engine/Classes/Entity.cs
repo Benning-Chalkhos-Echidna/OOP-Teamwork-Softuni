@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Game.Engine;
-namespace Game.CharacterClasses
+﻿using Project.Engine.Interfaces;
+using Project.Engine.Items;
+
+namespace Project.Engine.Classes
 {
     public enum EntityGender { Male, Female, Unknown }
 
@@ -12,7 +9,8 @@ namespace Game.CharacterClasses
     {
         protected string _name;
         protected EntityGender _entityGender;
-        protected Game.Engine.Player.PlayerClass _entityClass;
+        protected Player.PlayerClass _entityClass;
+        protected Inventory inventory;
 
         protected int _strength,
             _agility,

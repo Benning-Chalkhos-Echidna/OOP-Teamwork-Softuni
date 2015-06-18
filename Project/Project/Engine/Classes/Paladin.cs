@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Project.Engine.Interfaces;
 
-namespace Game.CharacterClasses
+namespace Project.Engine.Classes
 {
     class Paladin : Entity, IEntity, IHeal
     {

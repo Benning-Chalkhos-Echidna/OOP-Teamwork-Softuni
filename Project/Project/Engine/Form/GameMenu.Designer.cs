@@ -1,5 +1,4 @@
-﻿using Game;
-namespace Project
+﻿namespace Project.Engine.Form
 {
     partial class GameMenu
     {

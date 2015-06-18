@@ -1,7 +1,7 @@
 ﻿
 namespace Project.Engine.Items
 {
-    public abstract class Equipable : Item
+    public class Equipped
     {
 
     }
