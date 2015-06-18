@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Project.Engine.UI">
-    <Position X="4" Y="0.75" Width="1.5" />
+    <Position X="0.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AACAAAEAAAAABAAAAAAAAAAAAAAAAQAAAAAAAQIAAAA=</HashCode>
       <FileName>Engine\UI.cs</FileName>
@@ -22,46 +22,119 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Project.Engine.Program">
-    <Position X="0.5" Y="3" Width="1.5" />
+    <Position X="0.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Engine\Program.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Project.Engine.Items.Consumable" Collapsed="true">
-    <Position X="6" Y="2.5" Width="1.5" />
+  <Class Name="Project.Engine.Items.ChestGear">
+    <Position X="17.75" Y="3.75" Width="1.5" />
+    <InheritanceLine Type="Project.Engine.Items.Equipable" FixedToPoint="true">
+      <Path>
+        <Point X="12" Y="3.425" />
+        <Point X="12" Y="3.533" />
+        <Point X="18.375" Y="3.533" />
+        <Point X="18.375" Y="3.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Items\ChestGear.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project.Engine.Items.Consumable">
+    <Position X="7.75" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
       <FileName>Engine\Items\Consumable.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Project.Engine.Items.Equipable" Collapsed="true">
-    <Position X="8.25" Y="2.5" Width="1.5" />
+  <Class Name="Project.Engine.Items.Equipable">
+    <Position X="11.25" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
       <FileName>Engine\Items\Equipable.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Project.Engine.Items.HealthPotion" Collapsed="true">
-    <Position X="7" Y="4" Width="1.5" />
+  <Class Name="Project.Engine.Items.Equipped" Collapsed="true">
+    <Position X="0.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AIEAAAAgAAAAgQAAAAAAAgAACAAAAQgAAAEAFAAAABQ=</HashCode>
+      <FileName>Engine\Items\Equipped.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project.Engine.Items.HandsGear">
+    <Position X="10.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Items\HandsGear.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project.Engine.Items.HeadGear">
+    <Position X="16" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Items\HeadGear.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project.Engine.Items.HealthPotion">
+    <Position X="6.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Engine\Items\HealthPotion.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Project.Engine.Items.StatsPotion" Collapsed="true">
-    <Position X="4.75" Y="4" Width="1.5" />
+  <Class Name="Project.Engine.Items.Inventory" Collapsed="true">
+    <Position X="2.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Engine\Items\StatsPotion.cs</FileName>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAABAAAAAAQAAAEAAAAAAA=</HashCode>
+      <FileName>Engine\Items\Inventory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Project.Engine.Items.Item" Collapsed="true">
-    <Position X="6.25" Y="1.25" Width="1.5" />
+    <Position X="9.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CEAAAAQAAAAEAAAAAAAEAAAAAAAEAIAAAACAAAgAAgA=</HashCode>
       <FileName>Engine\Items\Item.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Project.Engine.Items.LegsGear">
+    <Position X="12.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Items\LegsGear.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project.Engine.Items.StatsPotion">
+    <Position X="8.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Items\StatsPotion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project.Engine.Items.Weapon">
+    <Position X="14.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Items\Weapon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Project.Engine.Interfaces.IEquippable">
+    <Position X="13" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Interfaces\IEquippable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Project.Engine.Items.IConsumable">
+    <Position X="6" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Engine\Interfaces\IConsumable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

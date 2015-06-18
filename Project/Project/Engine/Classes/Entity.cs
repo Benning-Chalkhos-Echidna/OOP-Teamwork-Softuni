@@ -98,45 +98,63 @@ namespace Project.Engine.Classes
             }
         }
 
-        public void EquipItem(Item item)    // ugly right now with this switch, has to be improved
+        public void EquipItem(Item item)
         {
             if (item is IEquippable)
             {
                 Item oldItem;
-                switch (item.GetType().Name)
+                if (item is Weapon)
                 {
-                    case "Weapon":
-                        oldItem = this.equippedItems.Weapon;
-                        this.equippedItems.Weapon = (Weapon) item;
-                        this.inventory.InventoryItems.Remove(item);
-                        this.inventory.InventoryItems.Add(oldItem);
-                        break;
-                    case "HeadGear":
-                        oldItem = this.equippedItems.HeadGear;
-                        this.equippedItems.HeadGear = (HeadGear) item;
-                        this.inventory.InventoryItems.Remove(item);
-                        this.inventory.InventoryItems.Add(oldItem);
-                        break;
-                    case "ChestGear":
-                        oldItem = this.equippedItems.ChestGear;
-                        this.equippedItems.ChestGear = (ChestGear)item;
-                        this.inventory.InventoryItems.Remove(item);
-                        this.inventory.InventoryItems.Add(oldItem);
-                        break;
-                    case "HandsGear":
-                        oldItem = this.equippedItems.HandsGear;
-                        this.equippedItems.HandsGear = (HandsGear) item;
-                        this.inventory.InventoryItems.Remove(item);
-                        this.inventory.InventoryItems.Add(oldItem);
-                        break;
-                    case "LegsGear":
-                        oldItem = this.equippedItems.LegsGear;
-                        this.equippedItems.LegsGear = (LegsGear) item;
-                        this.inventory.InventoryItems.Remove(item);
-                        this.inventory.InventoryItems.Add(oldItem);
-                        break;
+                    oldItem = this.equippedItems.Weapon;
+                    this.equippedItems.Weapon = item as Weapon;
+                    this.inventory.InventoryItems.Remove(item);
+                    this.inventory.InventoryItems.Add(oldItem);
                 }
+                else if (item is HeadGear)
+                {
+                    oldItem = this.equippedItems.HeadGear;
+                    this.equippedItems.HeadGear = item as HeadGear;
+                    this.inventory.InventoryItems.Remove(item);
+                    this.inventory.InventoryItems.Add(oldItem);
+                }
+                else if (item is ChestGear)
+                {
+                    oldItem = this.equippedItems.ChestGear;
+                    this.equippedItems.ChestGear = item as ChestGear;
+                    this.inventory.InventoryItems.Remove(item);
+                    this.inventory.InventoryItems.Add(oldItem);
+                }
+                else if (item is HandsGear)
+                {
+                    oldItem = this.equippedItems.HandsGear;
+                    this.equippedItems.HandsGear = item as HandsGear;
+                    this.inventory.InventoryItems.Remove(item);
+                    this.inventory.InventoryItems.Add(oldItem);
+                }
+                else if (item is LegsGear)
+                {
+                    oldItem = this.equippedItems.LegsGear;
+                    this.equippedItems.LegsGear = item as LegsGear;
+                    this.inventory.InventoryItems.Remove(item);
+                    this.inventory.InventoryItems.Add(oldItem);
+                }
+
                 AddModifiersFromEquippedItems();
+            }
+            else if (item is IConsumable)
+            {
+                if (item is HealthPotion)
+                {
+                    this._healthModifier += (item as HealthPotion).HPModifier;
+                    (item as HealthPotion).Charges--;
+                }
+                else if (item is StatsPotion)
+                {
+                    this._intellectModifier += (item as StatsPotion).HPModifier;
+                    this._agilityModifier += (item as StatsPotion).HPModifier;
+                    this._strengthModifier += (item as StatsPotion).HPModifier;
+                    (item as StatsPotion).Charges--;
+                }
             }
             else
             {

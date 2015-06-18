@@ -9,5 +9,10 @@ namespace Project.Engine.Items
         {
             
         }
+
+        public override void Consume(Item item)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
