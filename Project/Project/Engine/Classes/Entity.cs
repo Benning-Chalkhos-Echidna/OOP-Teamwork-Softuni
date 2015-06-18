@@ -136,6 +136,7 @@ namespace Project.Engine.Classes
                         this.inventory.InventoryItems.Add(oldItem);
                         break;
                 }
+                AddModifiersFromEquippedItems();
             }
             else
             {
@@ -146,6 +147,15 @@ namespace Project.Engine.Classes
         public void RemoveItemFromInventory(Item item)
         {
             this.inventory.InventoryItems.Remove(item);
+        }
+
+        public void AddModifiersFromEquippedItems()
+        {
+            this.equippedItems.CalculateEquippedItemsModifiers();
+            this._strengthModifier = this.equippedItems.EquippedItemsStrModifier;
+            this._agilityModifier = this.equippedItems.EquippedItemsAgiModifier;
+            this._intellectModifier = this.equippedItems.EquippedItemsIntModifier;
+            this._healthModifier = this.equippedItems.EquippedItemsHPModifier;
         }
 
         public override string ToString()
