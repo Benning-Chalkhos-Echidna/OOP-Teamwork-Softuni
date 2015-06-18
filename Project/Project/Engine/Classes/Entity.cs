@@ -1,4 +1,5 @@
-﻿using Project.Engine.Interfaces;
+﻿using System.Linq;
+using Project.Engine.Interfaces;
 using Project.Engine.Items;
 
 namespace Project.Engine.Classes
@@ -11,6 +12,7 @@ namespace Project.Engine.Classes
         protected EntityGender _entityGender;
         protected Player.PlayerClass _entityClass;
         protected Inventory inventory;
+        protected Equipped equippedItems;
 
         protected int _strength,
             _agility,
@@ -83,6 +85,58 @@ namespace Project.Engine.Classes
         }
         public abstract void Engage(Entity target);
         public abstract void Defend(Entity target);
+
+        public void AddItemToInventory(Item item)
+        {
+            if (this.inventory.InventoryItemsCount == 30)
+            {
+                // TODO "inventory is full" logic
+            }
+            else
+            {
+                this.inventory.InventoryItems.Add(item);
+            }
+        }
+
+        public void EquipItem(Item item)    // ugly right now with this switch, has to be improved
+        {
+            if (item is IEquippable)
+            {
+                Item oldItem;
+                switch (item.GetType().Name)
+                {
+                    case "Weapon":
+                        oldItem = this.equippedItems.Weapon;
+                        this.equippedItems.Weapon = (Weapon)item;
+                        this.inventory.InventoryItems.Remove(item);
+                        this.inventory.InventoryItems.Add(oldItem);
+                        break;
+                    case "HeadGear":
+                        oldItem = this.equippedItems.HeadGear;
+                        this.equippedItems.HeadGear = (HeadGear)item;
+                        this.inventory.InventoryItems.Remove(item);
+                        this.inventory.InventoryItems.Add(oldItem);
+                        break;
+                    case "HandsGear":
+                        oldItem = this.equippedItems.HandsGear;
+                        this.equippedItems.HandsGear = (HandsGear)item;
+                        this.inventory.InventoryItems.Remove(item);
+                        this.inventory.InventoryItems.Add(oldItem);
+                        break;
+                    case "LegsGear":
+                        oldItem = this.equippedItems.LegsGear;
+                        this.equippedItems.LegsGear = (LegsGear)item;
+                        this.inventory.InventoryItems.Remove(item);
+                        this.inventory.InventoryItems.Add(oldItem);
+                        break;
+                }
+            }
+        }
+
+        public void RemoveItemFromInventory(Item item)
+        {
+            this.inventory.InventoryItems.Remove(item);
+        }
 
         public override string ToString()
         {
