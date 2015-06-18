@@ -5,7 +5,8 @@ using System.Text;
 
 namespace Project
 {
-    public class Equipable : Project.Items.Item
+    public abstract class Equipable : Project.Items.Item
     {
+
     }
 }

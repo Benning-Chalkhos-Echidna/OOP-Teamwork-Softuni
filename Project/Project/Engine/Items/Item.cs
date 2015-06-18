@@ -10,7 +10,7 @@
             intModifier,
             hpModifier;
 
-        public Item(long id, string name, int str, int agi, int intel, int hp)
+        protected Item(long id, string name, int str, int agi, int intel, int hp)
         {
             this.id = id;
             this.name = name;
@@ -20,7 +20,7 @@
             this.IntModifier = intel;
             this.HPModifier = hp;
         }
-        public Item()
+        protected Item()
         {
 
         }
@@ -42,7 +42,7 @@
         public int HPModifier
         {
             get { return this.hpModifier; }
-            set { this.HPModifier = value; }
+            set { this.hpModifier = value; }
         }
     }
 }

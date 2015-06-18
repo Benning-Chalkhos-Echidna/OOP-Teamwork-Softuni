@@ -9,12 +9,12 @@ namespace Project
     public abstract class Consumable : Item
     {
         private int charges;
-        public Consumable(long id, string name, int str, int agi, int intel, int hp, int charges)
+        protected Consumable(long id, string name, int str, int agi, int intel, int hp, int charges)
             : base(id, name, str, agi, intel, hp)
         {
             this.Charges = charges;
         }
-        public Consumable()
+        protected Consumable()
         {
 
         }

@@ -26,7 +26,7 @@ namespace Game.CharacterClasses
 
         protected int _attack, _defense;
 
-        public Entity()
+        protected Entity()
         {
             this.Strength = 10;
             this.Agility = 10;
