@@ -11,7 +11,7 @@ namespace Project.Engine.Classes
 
         }
         #endregion
-        public Mage(EntityGender entityGender, string name)
+        public Mage(EntityGender entityGender, string name, EntityTeam team)
         {
             base.EntityGender = entityGender;
             base.Name = name;
@@ -19,20 +19,15 @@ namespace Project.Engine.Classes
             base.Agility += 5;
             base.Strength += 5;
             base.Intellect += 20;
-
-            base.Attack = 20;
-            base.Defense = 10;
             base.EntityClass = Engine.Player.PlayerClass.Mage;
+
+            base.Attack = base.Intellect;
+            base.Defense = base.Strength;
+
+            base.Team = team;
         }
         #region Methods
-        public override void Engage(Entity target)
-        {
-            target.Health -= this.Attack;
-        }
-        public override void Defend(Entity target)
-        {
-            this.Health -= (target.Attack - this.Defense);
-        }
+
         #endregion
     }
 }

@@ -11,7 +11,7 @@ namespace Project.Engine.Classes
 
         }
         #endregion
-        public Paladin(EntityGender entityGender, string name)
+        public Paladin(EntityGender entityGender, string name, EntityTeam team)
         {
             base.EntityGender = entityGender;
             base.Name = name;
@@ -19,20 +19,15 @@ namespace Project.Engine.Classes
             base.Agility += 12;
             base.Strength += 6;
             base.Intellect += 12;
-
-            base.Attack = 25;
-            base.Defense = 15;
             base.EntityClass = Engine.Player.PlayerClass.Paladin;
+
+            base.Attack = base.Intellect;
+            base.Defense = base.Strength;
+
+            base.Team = team;
         }
         #region Methods
-        public override void Engage(Entity target)
-        {
-            target.Health += this.Attack;
-        }
-        public override void Defend(Entity target)
-        {
-            this.Health -= (target.Attack - this.Defense);
-        }
+
         #endregion
     }
 }

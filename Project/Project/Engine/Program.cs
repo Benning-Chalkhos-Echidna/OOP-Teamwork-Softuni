@@ -7,7 +7,7 @@ namespace Project.Engine
 {
     public static class Program
     {
-        public static Entity enemyTest = new Warrior(EntityGender.Male, "Enemy");
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -17,6 +17,7 @@ namespace Project.Engine
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             gameMenu = new GameMenu();
+            
             Application.Run(gameMenu);
 
         }

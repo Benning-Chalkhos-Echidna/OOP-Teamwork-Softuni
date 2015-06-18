@@ -5,6 +5,7 @@ using Project.Engine.Items;
 namespace Project.Engine.Classes
 {
     public enum EntityGender { Male, Female, Unknown }
+    public enum EntityTeam { Ally, Enemy, Player }
 
     public abstract class Entity : IEntity
     {
@@ -19,11 +20,6 @@ namespace Project.Engine.Classes
             _intellect,
             _health;
 
-        protected int _strengthModifier,
-            _agilityModifier,
-            _intellectModifier,
-            _healthModifier;
-
         protected int _attack, _defense;
 
         protected Entity()
@@ -32,9 +28,8 @@ namespace Project.Engine.Classes
             this.Agility = 10;
             this.Intellect = 10;
             this.Health = 100;
-
             this.Name = "";
-            this._healthModifier = 50;
+            this.isAlive = true;
         }
 
         public string Name
@@ -49,42 +44,31 @@ namespace Project.Engine.Classes
         }
         public int Strength
         {
-            get { return this._strength + this._strengthModifier; }
+            get { return this._strength; }
             set { this._strength = value; }
         }
         public int Agility
         {
-            get { return this._agility + this._agilityModifier; }
+            get { return this._agility; }
             set { this._agility = value; }
         }
+        public bool isAlive { get; set; }
         public int Intellect
         {
-            get { return this._intellect + this._intellectModifier; }
+            get { return this._intellect; }
             set { this._intellect = value; }
         }
         public int Health
         {
-            get { return this._health + this._healthModifier; }
+            get { return this._health; }
             set { this._health = value; }
         }
 
-        public int Attack
-        {
-            get { return this._attack + this.Strength + this.Agility; }
-            set { this._attack = value; }
-        }
-        public int Defense
-        {
-            get { return this._defense + this.Intellect; }
-            set { this._defense = value; }
-        }
         public Player.PlayerClass EntityClass
         {
             get { return this._entityClass; }
             set { this._entityClass = value; }
         }
-        public abstract void Engage(Entity target);
-        public abstract void Defend(Entity target);
 
         public void AddItemToInventory(Item item)
         {
@@ -97,7 +81,7 @@ namespace Project.Engine.Classes
                 this.inventory.InventoryItems.Add(item);
             }
         }
-
+        public EntityTeam Team { get; set; }
         public void EquipItem(Item item)
         {
             if (item is IEquippable)
@@ -145,14 +129,14 @@ namespace Project.Engine.Classes
             {
                 if (item is HealthPotion)
                 {
-                    this._healthModifier += (item as HealthPotion).HPModifier;
+                    this.Health += (item as HealthPotion).HPModifier;
                     (item as HealthPotion).Charges--;
                 }
                 else if (item is StatsPotion)
                 {
-                    this._intellectModifier += (item as StatsPotion).HPModifier;
-                    this._agilityModifier += (item as StatsPotion).HPModifier;
-                    this._strengthModifier += (item as StatsPotion).HPModifier;
+                    this.Intellect += (item as StatsPotion).IntModifier;
+                    this.Agility += (item as StatsPotion).AgiModifier;
+                    this.Strength += (item as StatsPotion).StrModifier;
                     (item as StatsPotion).Charges--;
                 }
             }
@@ -170,15 +154,41 @@ namespace Project.Engine.Classes
         public void AddModifiersFromEquippedItems()
         {
             this.equippedItems.CalculateEquippedItemsModifiers();
-            this._strengthModifier = this.equippedItems.EquippedItemsStrModifier;
-            this._agilityModifier = this.equippedItems.EquippedItemsAgiModifier;
-            this._intellectModifier = this.equippedItems.EquippedItemsIntModifier;
-            this._healthModifier = this.equippedItems.EquippedItemsHPModifier;
+            this.Strength = this.equippedItems.EquippedItemsStrModifier;
+            this.Agility = this.equippedItems.EquippedItemsAgiModifier;
+            this.Intellect = this.equippedItems.EquippedItemsIntModifier;
+            this.Health = this.equippedItems.EquippedItemsHPModifier;
         }
 
         public override string ToString()
         {
             return string.Format("{0} - {1} {2}", this.Name, this.EntityGender, this.EntityClass);
+        }
+
+
+        public int Attack
+        {
+            get
+            {
+                return this._attack;
+            }
+            set
+            {
+                this._attack = value;
+            }
+        }
+
+
+        public int Defense
+        {
+            get
+            {
+                return this._defense;
+            }
+            set
+            {
+                this._defense = value;
+            }
         }
     }
 }

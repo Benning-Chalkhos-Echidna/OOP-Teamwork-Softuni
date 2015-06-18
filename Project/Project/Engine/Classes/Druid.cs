@@ -11,7 +11,7 @@ namespace Project.Engine.Classes
 
         }
         #endregion
-        public Druid(EntityGender entityGender, string name)
+        public Druid(EntityGender entityGender, string name, EntityTeam team)
         {
             base.EntityGender = entityGender;
             base.Name = name;
@@ -19,20 +19,12 @@ namespace Project.Engine.Classes
             base.Agility += 6;
             base.Strength += 6;
             base.Intellect += 18;
-
-            base.Attack = 25;
-            base.Defense = 15;
             base.EntityClass = Engine.Player.PlayerClass.Druid;
+
+            base.Attack = base.Agility;
+            base.Defense = base.Strength;
+
+            base.Team = team;
         }
-        #region Methods
-        public override void Engage(Entity target)
-        {
-            target.Health += this.Attack;
-        }
-        public override void Defend(Entity target)
-        {
-            this.Health -= (target.Attack - this.Defense);
-        }
-        #endregion
     }
 }

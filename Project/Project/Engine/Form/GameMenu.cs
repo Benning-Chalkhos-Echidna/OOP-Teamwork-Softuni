@@ -51,8 +51,9 @@ namespace Project.Engine.Form
 
         private void RoundButton_Click(object sender, EventArgs e)
         {
-            UI.Round(UI.Player.Character, Program.enemyTest);
-            this.BattleConsole.Text += "\n" + UI.RoundOutcome(UI.Player.Character, Program.enemyTest);
+            UI.PassEngagerAndTarget();
+            //UI.Round(UI.Player.Character, UI.enemyTest);
+            this.BattleConsole.Text += "\n" + UI.RoundOutcome(UI.Player.Character, UI.enemyTest);
 
         }
     }
