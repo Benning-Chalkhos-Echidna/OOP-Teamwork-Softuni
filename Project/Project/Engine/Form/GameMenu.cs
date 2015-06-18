@@ -54,7 +54,15 @@ namespace Project
                     this.GenderValue.Text = EntityGender.Male.ToString();
                     break;
             }
+
             this.NameValue.Text = playerChar.Name;
+        }
+
+        private void RoundButton_Click(object sender, EventArgs e)
+        {
+            UI.Round(UI.Player.Character, Program.enemyTest);
+            this.BattleConsole.Text += "\n" + UI.RoundOutcome(UI.Player.Character, Program.enemyTest);
+
         }
     }
 }

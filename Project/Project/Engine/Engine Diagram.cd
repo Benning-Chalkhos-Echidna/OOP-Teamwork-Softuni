@@ -1,12 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Game.Constants">
-    <Position X="0.5" Y="2.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAgAgAAAAAgAAABQ=</HashCode>
-      <FileName>Engine\Constants.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Game.UI">
     <Position X="4" Y="0.75" Width="1.5" />
     <TypeIdentifier>
@@ -29,7 +22,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Project.Program">
-    <Position X="2.25" Y="4.25" Width="1.5" />
+    <Position X="0.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Engine\Program.cs</FileName>

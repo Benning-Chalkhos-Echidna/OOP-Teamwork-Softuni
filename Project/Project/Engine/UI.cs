@@ -1,5 +1,6 @@
 ﻿using Game.CharacterClasses;
 using Game.Engine;
+using Project;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,6 +16,7 @@ namespace Game
         //Implement rest of the UI and Menus.
         //We also need to implement a way to save files.
         public static Player Player;
+        public static int RoundCount = 0;
 
         public static void CreatePlayer(string name, Entity entity)
         {
@@ -36,6 +38,22 @@ namespace Game
                 default:
                     return new Mage(entityGender, name);
             }
+        }
+        public static void Round(Entity engager, Entity target)
+        {
+            RoundCount++;
+            engager.Engage(target);
+            target.Health -= engager.Attack;
+        }
+        public static string RoundOutcome(Entity engager, Entity target)
+        {
+            string output = string.Empty;
+            if (engager is IHeal) output += string.Format("Healer {0} heals {1} for {2} points.",
+                engager.Name, target.Name, engager.Attack);
+            else if (engager is IDamage) output += string.Format("Damage dealer {0} attacks {1} for {2} points.",
+                engager.Name, target.Name, engager.Attack);
+            output += string.Format("\n{0} is left with {1} health points.", target.Name, target.Health);
+            return output;
         }
     }
 }

@@ -31,6 +31,16 @@ namespace Project
         {
             this.TabControl = new System.Windows.Forms.TabControl();
             this.CharacterPanel = new System.Windows.Forms.TabPage();
+            this.NameValue = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.GenderValue = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.DefValue = new System.Windows.Forms.TextBox();
+            this.AttValue = new System.Windows.Forms.TextBox();
+            this.HpValue = new System.Windows.Forms.TextBox();
+            this.IntValue = new System.Windows.Forms.TextBox();
+            this.AgiValue = new System.Windows.Forms.TextBox();
+            this.StrValue = new System.Windows.Forms.TextBox();
             this.DefenseLabel = new System.Windows.Forms.Label();
             this.HealthLabel = new System.Windows.Forms.Label();
             this.AttackLabel = new System.Windows.Forms.Label();
@@ -40,21 +50,14 @@ namespace Project
             this.StatsLabel = new System.Windows.Forms.Label();
             this.CharacterClassValue = new System.Windows.Forms.TextBox();
             this.CharacterClass = new System.Windows.Forms.Label();
-            this.BattleMenu = new System.Windows.Forms.TabPage();
-            this.StrValue = new System.Windows.Forms.TextBox();
-            this.AgiValue = new System.Windows.Forms.TextBox();
-            this.IntValue = new System.Windows.Forms.TextBox();
-            this.HpValue = new System.Windows.Forms.TextBox();
-            this.AttValue = new System.Windows.Forms.TextBox();
-            this.DefValue = new System.Windows.Forms.TextBox();
             this.CharacterPortrait = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.GenderValue = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.NameValue = new System.Windows.Forms.TextBox();
+            this.BattleMenu = new System.Windows.Forms.TabPage();
+            this.RoundButton = new System.Windows.Forms.Button();
+            this.BattleConsole = new System.Windows.Forms.RichTextBox();
             this.TabControl.SuspendLayout();
             this.CharacterPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CharacterPortrait)).BeginInit();
+            this.BattleMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // TabControl
@@ -96,6 +99,88 @@ namespace Project
             this.CharacterPanel.TabIndex = 0;
             this.CharacterPanel.Text = "CharacterPanel";
             this.CharacterPanel.UseVisualStyleBackColor = true;
+            // 
+            // NameValue
+            // 
+            this.NameValue.Location = new System.Drawing.Point(452, 23);
+            this.NameValue.Name = "NameValue";
+            this.NameValue.ReadOnly = true;
+            this.NameValue.Size = new System.Drawing.Size(133, 20);
+            this.NameValue.TabIndex = 19;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(449, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Name";
+            // 
+            // GenderValue
+            // 
+            this.GenderValue.Location = new System.Drawing.Point(294, 286);
+            this.GenderValue.Name = "GenderValue";
+            this.GenderValue.ReadOnly = true;
+            this.GenderValue.Size = new System.Drawing.Size(133, 20);
+            this.GenderValue.TabIndex = 17;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(294, 270);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Gender";
+            // 
+            // DefValue
+            // 
+            this.DefValue.Location = new System.Drawing.Point(344, 225);
+            this.DefValue.Name = "DefValue";
+            this.DefValue.ReadOnly = true;
+            this.DefValue.Size = new System.Drawing.Size(133, 20);
+            this.DefValue.TabIndex = 15;
+            // 
+            // AttValue
+            // 
+            this.AttValue.Location = new System.Drawing.Point(344, 199);
+            this.AttValue.Name = "AttValue";
+            this.AttValue.ReadOnly = true;
+            this.AttValue.Size = new System.Drawing.Size(133, 20);
+            this.AttValue.TabIndex = 14;
+            // 
+            // HpValue
+            // 
+            this.HpValue.Location = new System.Drawing.Point(344, 173);
+            this.HpValue.Name = "HpValue";
+            this.HpValue.ReadOnly = true;
+            this.HpValue.Size = new System.Drawing.Size(133, 20);
+            this.HpValue.TabIndex = 13;
+            // 
+            // IntValue
+            // 
+            this.IntValue.Location = new System.Drawing.Point(344, 140);
+            this.IntValue.Name = "IntValue";
+            this.IntValue.ReadOnly = true;
+            this.IntValue.Size = new System.Drawing.Size(133, 20);
+            this.IntValue.TabIndex = 12;
+            // 
+            // AgiValue
+            // 
+            this.AgiValue.Location = new System.Drawing.Point(344, 114);
+            this.AgiValue.Name = "AgiValue";
+            this.AgiValue.ReadOnly = true;
+            this.AgiValue.Size = new System.Drawing.Size(133, 20);
+            this.AgiValue.TabIndex = 11;
+            // 
+            // StrValue
+            // 
+            this.StrValue.Location = new System.Drawing.Point(344, 88);
+            this.StrValue.Name = "StrValue";
+            this.StrValue.ReadOnly = true;
+            this.StrValue.Size = new System.Drawing.Size(133, 20);
+            this.StrValue.TabIndex = 10;
             // 
             // DefenseLabel
             // 
@@ -177,64 +262,6 @@ namespace Project
             this.CharacterClass.TabIndex = 1;
             this.CharacterClass.Text = "Class";
             // 
-            // BattleMenu
-            // 
-            this.BattleMenu.Location = new System.Drawing.Point(4, 22);
-            this.BattleMenu.Name = "BattleMenu";
-            this.BattleMenu.Padding = new System.Windows.Forms.Padding(3);
-            this.BattleMenu.Size = new System.Drawing.Size(920, 437);
-            this.BattleMenu.TabIndex = 1;
-            this.BattleMenu.Text = "BattleMenu";
-            this.BattleMenu.UseVisualStyleBackColor = true;
-            // 
-            // StrValue
-            // 
-            this.StrValue.Location = new System.Drawing.Point(344, 88);
-            this.StrValue.Name = "StrValue";
-            this.StrValue.ReadOnly = true;
-            this.StrValue.Size = new System.Drawing.Size(133, 20);
-            this.StrValue.TabIndex = 10;
-            // 
-            // AgiValue
-            // 
-            this.AgiValue.Location = new System.Drawing.Point(344, 114);
-            this.AgiValue.Name = "AgiValue";
-            this.AgiValue.ReadOnly = true;
-            this.AgiValue.Size = new System.Drawing.Size(133, 20);
-            this.AgiValue.TabIndex = 11;
-            // 
-            // IntValue
-            // 
-            this.IntValue.Location = new System.Drawing.Point(344, 140);
-            this.IntValue.Name = "IntValue";
-            this.IntValue.ReadOnly = true;
-            this.IntValue.Size = new System.Drawing.Size(133, 20);
-            this.IntValue.TabIndex = 12;
-            // 
-            // HpValue
-            // 
-            this.HpValue.Location = new System.Drawing.Point(344, 173);
-            this.HpValue.Name = "HpValue";
-            this.HpValue.ReadOnly = true;
-            this.HpValue.Size = new System.Drawing.Size(133, 20);
-            this.HpValue.TabIndex = 13;
-            // 
-            // AttValue
-            // 
-            this.AttValue.Location = new System.Drawing.Point(344, 199);
-            this.AttValue.Name = "AttValue";
-            this.AttValue.ReadOnly = true;
-            this.AttValue.Size = new System.Drawing.Size(133, 20);
-            this.AttValue.TabIndex = 14;
-            // 
-            // DefValue
-            // 
-            this.DefValue.Location = new System.Drawing.Point(344, 225);
-            this.DefValue.Name = "DefValue";
-            this.DefValue.ReadOnly = true;
-            this.DefValue.Size = new System.Drawing.Size(133, 20);
-            this.DefValue.TabIndex = 15;
-            // 
             // CharacterPortrait
             // 
             this.CharacterPortrait.Image = global::Project.Properties.Resources.Warrior;
@@ -245,39 +272,35 @@ namespace Project
             this.CharacterPortrait.TabIndex = 0;
             this.CharacterPortrait.TabStop = false;
             // 
-            // label1
+            // BattleMenu
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(294, 270);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 13);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Gender";
+            this.BattleMenu.Controls.Add(this.BattleConsole);
+            this.BattleMenu.Controls.Add(this.RoundButton);
+            this.BattleMenu.Location = new System.Drawing.Point(4, 22);
+            this.BattleMenu.Name = "BattleMenu";
+            this.BattleMenu.Padding = new System.Windows.Forms.Padding(3);
+            this.BattleMenu.Size = new System.Drawing.Size(920, 437);
+            this.BattleMenu.TabIndex = 1;
+            this.BattleMenu.Text = "BattleMenu";
+            this.BattleMenu.UseVisualStyleBackColor = true;
             // 
-            // GenderValue
+            // RoundButton
             // 
-            this.GenderValue.Location = new System.Drawing.Point(294, 286);
-            this.GenderValue.Name = "GenderValue";
-            this.GenderValue.ReadOnly = true;
-            this.GenderValue.Size = new System.Drawing.Size(133, 20);
-            this.GenderValue.TabIndex = 17;
+            this.RoundButton.Location = new System.Drawing.Point(611, 401);
+            this.RoundButton.Name = "RoundButton";
+            this.RoundButton.Size = new System.Drawing.Size(75, 23);
+            this.RoundButton.TabIndex = 1;
+            this.RoundButton.Text = "Fight";
+            this.RoundButton.UseVisualStyleBackColor = true;
+            this.RoundButton.Click += new System.EventHandler(this.RoundButton_Click);
             // 
-            // label2
+            // BattleConsole
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(449, 7);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Name";
-            // 
-            // NameValue
-            // 
-            this.NameValue.Location = new System.Drawing.Point(452, 23);
-            this.NameValue.Name = "NameValue";
-            this.NameValue.ReadOnly = true;
-            this.NameValue.Size = new System.Drawing.Size(133, 20);
-            this.NameValue.TabIndex = 19;
+            this.BattleConsole.Location = new System.Drawing.Point(301, 6);
+            this.BattleConsole.Name = "BattleConsole";
+            this.BattleConsole.Size = new System.Drawing.Size(304, 418);
+            this.BattleConsole.TabIndex = 2;
+            this.BattleConsole.Text = "";
             // 
             // GameMenu
             // 
@@ -291,6 +314,7 @@ namespace Project
             this.CharacterPanel.ResumeLayout(false);
             this.CharacterPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CharacterPortrait)).EndInit();
+            this.BattleMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -320,5 +344,7 @@ namespace Project
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox NameValue;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button RoundButton;
+        private System.Windows.Forms.RichTextBox BattleConsole;
     }
 }
