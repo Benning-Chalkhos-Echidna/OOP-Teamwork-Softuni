@@ -57,6 +57,7 @@
       <DependentUpon>CharacterCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Engine\Interfaces\IEquippable.cs" />
+    <Compile Include="Engine\Items\ChestGear.cs" />
     <Compile Include="Engine\Items\Consumable.cs" />
     <Compile Include="Engine\Classes\Druid.cs" />
     <Compile Include="Engine\Form\MainForm.cs">

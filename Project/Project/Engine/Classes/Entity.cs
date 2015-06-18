@@ -107,29 +107,39 @@ namespace Project.Engine.Classes
                 {
                     case "Weapon":
                         oldItem = this.equippedItems.Weapon;
-                        this.equippedItems.Weapon = (Weapon)item;
+                        this.equippedItems.Weapon = (Weapon) item;
                         this.inventory.InventoryItems.Remove(item);
                         this.inventory.InventoryItems.Add(oldItem);
                         break;
                     case "HeadGear":
                         oldItem = this.equippedItems.HeadGear;
-                        this.equippedItems.HeadGear = (HeadGear)item;
+                        this.equippedItems.HeadGear = (HeadGear) item;
+                        this.inventory.InventoryItems.Remove(item);
+                        this.inventory.InventoryItems.Add(oldItem);
+                        break;
+                    case "ChestGear":
+                        oldItem = this.equippedItems.ChestGear;
+                        this.equippedItems.ChestGear = (ChestGear)item;
                         this.inventory.InventoryItems.Remove(item);
                         this.inventory.InventoryItems.Add(oldItem);
                         break;
                     case "HandsGear":
                         oldItem = this.equippedItems.HandsGear;
-                        this.equippedItems.HandsGear = (HandsGear)item;
+                        this.equippedItems.HandsGear = (HandsGear) item;
                         this.inventory.InventoryItems.Remove(item);
                         this.inventory.InventoryItems.Add(oldItem);
                         break;
                     case "LegsGear":
                         oldItem = this.equippedItems.LegsGear;
-                        this.equippedItems.LegsGear = (LegsGear)item;
+                        this.equippedItems.LegsGear = (LegsGear) item;
                         this.inventory.InventoryItems.Remove(item);
                         this.inventory.InventoryItems.Add(oldItem);
                         break;
                 }
+            }
+            else
+            {
+                //todo "This item cannot be equipped" logic
             }
         }
 

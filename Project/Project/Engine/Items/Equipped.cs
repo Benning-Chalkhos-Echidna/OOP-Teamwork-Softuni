@@ -7,6 +7,7 @@ namespace Project.Engine.Items
 
         private Weapon weapon;
         private HeadGear headgear;
+        private ChestGear chestGear;
         private HandsGear handsGear;
         private LegsGear legsGear;
 
@@ -20,6 +21,12 @@ namespace Project.Engine.Items
         {
             get { return this.headgear; }
             set { this.headgear = value; }
+        }
+
+        public ChestGear ChestGear
+        {
+            get { return this.chestGear; }
+            set { this.chestGear = value; }
         }
 
         public HandsGear HandsGear
