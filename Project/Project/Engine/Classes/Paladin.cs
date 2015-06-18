@@ -16,12 +16,12 @@ namespace Project.Engine.Classes
             base.EntityGender = entityGender;
             base.Name = name;
 
-            base._agilityModifier = 12;
-            base._strengthModifier = 6;
-            base._intellectModifier = 12;
+            base.Agility += 12;
+            base.Strength += 6;
+            base.Intellect += 12;
 
-            base._attack = 25;
-            base._defense = 15;
+            base.Attack = 25;
+            base.Defense = 15;
             base.EntityClass = Engine.Player.PlayerClass.Paladin;
         }
         #region Methods

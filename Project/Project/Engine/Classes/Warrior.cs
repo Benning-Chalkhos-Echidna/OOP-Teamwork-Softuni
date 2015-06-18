@@ -16,12 +16,12 @@ namespace Project.Engine.Classes
             base.EntityGender = entityGender;
             base.Name = name;
 
-            base._agilityModifier = 10;
-            base._strengthModifier = 15;
-            base._intellectModifier = 5;
+            base.Agility += 10;
+            base.Strength += 15;
+            base.Intellect += 5;
 
-            base._attack = 35;
-            base._defense = 5;
+            base.Attack = 35;
+            base.Defense = 5;
             base.EntityClass = Engine.Player.PlayerClass.Warrior;
         }
         #region Methods

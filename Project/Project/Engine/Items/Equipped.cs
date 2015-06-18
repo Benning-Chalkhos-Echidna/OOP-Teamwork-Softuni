@@ -1,4 +1,6 @@
 ﻿
+using Project.Engine.Classes;
+
 namespace Project.Engine.Items
 {
     public class Equipped
@@ -53,7 +55,7 @@ namespace Project.Engine.Items
 
         public void CalculateEquippedItemsModifiers()
         {
-            this.EquippedItemsStrModifier =
+            this.EquippedItemsStrModifier = 
                 this.Weapon.StrModifier + this.HeadGear.StrModifier + this.ChestGear.StrModifier +
                 this.HandsGear.StrModifier + this.LegsGear.StrModifier;
             this.EquippedItemsAgiModifier =
