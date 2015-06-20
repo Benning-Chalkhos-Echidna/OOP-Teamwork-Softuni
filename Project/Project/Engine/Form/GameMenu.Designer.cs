@@ -49,14 +49,14 @@
             this.StatsLabel = new System.Windows.Forms.Label();
             this.CharacterClassValue = new System.Windows.Forms.TextBox();
             this.CharacterClass = new System.Windows.Forms.Label();
-            this.CharacterPortrait = new System.Windows.Forms.PictureBox();
             this.BattleMenu = new System.Windows.Forms.TabPage();
-            this.RoundButton = new System.Windows.Forms.Button();
             this.BattleConsole = new System.Windows.Forms.RichTextBox();
+            this.RoundButton = new System.Windows.Forms.Button();
+            this.CharacterPortrait = new System.Windows.Forms.PictureBox();
             this.TabControl.SuspendLayout();
             this.CharacterPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CharacterPortrait)).BeginInit();
             this.BattleMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CharacterPortrait)).BeginInit();
             this.SuspendLayout();
             // 
             // TabControl
@@ -261,16 +261,6 @@
             this.CharacterClass.TabIndex = 1;
             this.CharacterClass.Text = "Class";
             // 
-            // CharacterPortrait
-            // 
-            this.CharacterPortrait.Image = global::Project.Properties.Resources.Warrior;
-            this.CharacterPortrait.Location = new System.Drawing.Point(3, 3);
-            this.CharacterPortrait.Name = "CharacterPortrait";
-            this.CharacterPortrait.Size = new System.Drawing.Size(278, 431);
-            this.CharacterPortrait.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.CharacterPortrait.TabIndex = 0;
-            this.CharacterPortrait.TabStop = false;
-            // 
             // BattleMenu
             // 
             this.BattleMenu.Controls.Add(this.BattleConsole);
@@ -283,6 +273,14 @@
             this.BattleMenu.Text = "BattleMenu";
             this.BattleMenu.UseVisualStyleBackColor = true;
             // 
+            // BattleConsole
+            // 
+            this.BattleConsole.Location = new System.Drawing.Point(301, 6);
+            this.BattleConsole.Name = "BattleConsole";
+            this.BattleConsole.Size = new System.Drawing.Size(304, 418);
+            this.BattleConsole.TabIndex = 2;
+            this.BattleConsole.Text = "";
+            // 
             // RoundButton
             // 
             this.RoundButton.Location = new System.Drawing.Point(611, 401);
@@ -293,13 +291,15 @@
             this.RoundButton.UseVisualStyleBackColor = true;
             this.RoundButton.Click += new System.EventHandler(this.RoundButton_Click);
             // 
-            // BattleConsole
+            // CharacterPortrait
             // 
-            this.BattleConsole.Location = new System.Drawing.Point(301, 6);
-            this.BattleConsole.Name = "BattleConsole";
-            this.BattleConsole.Size = new System.Drawing.Size(304, 418);
-            this.BattleConsole.TabIndex = 2;
-            this.BattleConsole.Text = "";
+            this.CharacterPortrait.Image = global::Project.Properties.Resources.femaleMage;
+            this.CharacterPortrait.Location = new System.Drawing.Point(3, 3);
+            this.CharacterPortrait.Name = "CharacterPortrait";
+            this.CharacterPortrait.Size = new System.Drawing.Size(278, 431);
+            this.CharacterPortrait.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.CharacterPortrait.TabIndex = 0;
+            this.CharacterPortrait.TabStop = false;
             // 
             // GameMenu
             // 
@@ -312,8 +312,8 @@
             this.TabControl.ResumeLayout(false);
             this.CharacterPanel.ResumeLayout(false);
             this.CharacterPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CharacterPortrait)).EndInit();
             this.BattleMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.CharacterPortrait)).EndInit();
             this.ResumeLayout(false);
 
         }

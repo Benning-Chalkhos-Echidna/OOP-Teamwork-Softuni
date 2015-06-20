@@ -1,5 +1,6 @@
 ﻿using System;
 using Project.Engine.Classes;
+using Project.Engine.Interfaces;
 
 namespace Project.Engine.Form
 {
@@ -24,16 +25,28 @@ namespace Project.Engine.Form
             switch (playerChar.EntityClass)
             {
                 case Player.PlayerClass.Druid:
-                    this.CharacterPortrait.Image = global::Project.Properties.Resources.Druid;
+                    if (playerChar.EntityGender.Equals(EntityGender.Male))
+                        this.CharacterPortrait.Image = global::Project.Properties.Resources.Druid;
+                    else
+                        this.CharacterPortrait.Image = global::Project.Properties.Resources.femaleDruid;
                     break;
                 case Player.PlayerClass.Warrior:
-                    this.CharacterPortrait.Image = global::Project.Properties.Resources.Warrior;
+                    if (playerChar.EntityGender.Equals(EntityGender.Male))
+                        this.CharacterPortrait.Image = global::Project.Properties.Resources.Warrior;
+                    else
+                        this.CharacterPortrait.Image = global::Project.Properties.Resources.femaleWarrior;
                     break;
                 case Player.PlayerClass.Paladin:
-                    this.CharacterPortrait.Image = global::Project.Properties.Resources.Paladin;
+                    if (playerChar.EntityGender.Equals(EntityGender.Male))
+                        this.CharacterPortrait.Image = global::Project.Properties.Resources.Paladin;
+                    else
+                        this.CharacterPortrait.Image = global::Project.Properties.Resources.femalePaladin;
                     break;
                 case Player.PlayerClass.Mage:
-                    this.CharacterPortrait.Image = global::Project.Properties.Resources.Mage;
+                    if (playerChar.EntityGender.Equals(EntityGender.Male))
+                        this.CharacterPortrait.Image = global::Project.Properties.Resources.Mage;
+                    else
+                        this.CharacterPortrait.Image = global::Project.Properties.Resources.femaleMage;
                     break;
             }
             switch (playerChar.EntityGender)
@@ -51,10 +64,55 @@ namespace Project.Engine.Form
 
         private void RoundButton_Click(object sender, EventArgs e)
         {
-            UI.PassEngagerAndTarget();
-            //UI.Round(UI.Player.Character, UI.enemyTest);
-            this.BattleConsole.Text += "\n" + UI.RoundOutcome(UI.Player.Character, UI.enemyTest);
+            //UI.PassEngagerAndTarget();
+            this.BattleConsole.Text += string.Format("\nROUND {0}", UI.roundCounter);
+            UI.roundCounter++;
+            int nextNum = UI.rnd.Next(1, UI.Enemies.Count);
+            while (UI.Enemies[nextNum].isAlive == false)
+            { nextNum = UI.rnd.Next(1, UI.Enemies.Count); }
+            if (UI.Player.Character.isAlive == true)
+            {
+                if (UI.Player.Character is IDamage)
+                {
+                    UI.Round(UI.Player.Character, UI.Enemies[nextNum]);
+                    this.BattleConsole.Text += "\n" + UI.RoundOutcome(UI.Player.Character, UI.Enemies[nextNum]);
+                    if (UI.Enemies[nextNum] is IDamage)
+                    {
+                        UI.Round(UI.Enemies[nextNum], UI.Player.Character);
+                        this.BattleConsole.Text += "\n" + UI.RoundOutcome(UI.Enemies[nextNum], UI.Player.Character);
+                    }
+                    else if (UI.Enemies[nextNum] is IHeal)
+                    {
+                        int nextOne = UI.rnd.Next(1, UI.Enemies.Count);
+                        UI.Round(UI.Enemies[nextNum], UI.Enemies[nextOne]);
+                        this.BattleConsole.Text += "\n" + UI.RoundOutcome(UI.Enemies[nextNum],
+                            UI.Enemies[nextOne]);
+                    }
 
+                }
+                else if (UI.Player.Character is IHeal)
+                {
+                    nextNum = UI.rnd.Next(1, UI.Allies.Count);
+
+                    UI.Round(UI.Player.Character, UI.Allies[nextNum]);
+                    if (UI.Allies[nextNum] is IDamage)
+                    {
+                        UI.Round(UI.Allies[nextNum], UI.Player.Character);
+                        this.BattleConsole.Text += "\n" + UI.RoundOutcome(UI.Player.Character, UI.Allies[nextNum]);
+                    }
+                    else if (UI.Allies[nextNum] is IHeal)
+                    {
+                        int nextOne = UI.rnd.Next(1, UI.Allies.Count);
+                        UI.Round(UI.Allies[nextNum], UI.Allies[nextOne]);
+                        this.BattleConsole.Text += "\n" + UI.RoundOutcome(UI.Allies[nextNum],
+                            UI.Enemies[nextOne]);
+                    }
+                }
+            }
+            else
+            {
+                //Game Over
+            }
         }
     }
 }
