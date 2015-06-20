@@ -23,9 +23,9 @@ namespace Project.Engine.Items
         private static readonly string[] weaponsTxt = 
             File.ReadAllLines(@"..\..\Resources\weapons.txt");
         
-        public static dynamic GetRandomItem()
+        public static Item GetRandomItem()
         {
-            dynamic randomItem = null;
+            Item randomItem;
             var mergedItemsTxt = new List<String[]>
             {
                 headGearTxt,
@@ -44,40 +44,42 @@ namespace Project.Engine.Items
                     (long.Parse(itemSplit[0]),itemSplit[1].Replace('_', ' '),
                         int.Parse(itemSplit[2]),int.Parse(itemSplit[3]), int.Parse(itemSplit[4]),
                         int.Parse(itemSplit[5]));
+                return (HeadGear)randomItem;
             }
-            else if (itemSplit[0].Length == 4)
+            if (itemSplit[0].Length == 4)
             {
                 randomItem = new ChestGear
                     (long.Parse(itemSplit[0]), itemSplit[1].Replace('_', ' '),
                         int.Parse(itemSplit[2]), int.Parse(itemSplit[3]), int.Parse(itemSplit[4]),
                         int.Parse(itemSplit[5]));
+                return (ChestGear)randomItem;
             }
-            else if (itemSplit[0].Length == 5)
+            if (itemSplit[0].Length == 5)
             {
                 randomItem = new HandsGear
                     (long.Parse(itemSplit[0]), itemSplit[1].Replace('_', ' '),
                         int.Parse(itemSplit[2]), int.Parse(itemSplit[3]), int.Parse(itemSplit[4]),
                         int.Parse(itemSplit[5]));
+                return (HandsGear)randomItem;
             }
-            else if (itemSplit[0].Length == 6)
+            if (itemSplit[0].Length == 6)
             {
                 randomItem = new LegsGear
                     (long.Parse(itemSplit[0]), itemSplit[1].Replace('_', ' '),
                         int.Parse(itemSplit[2]), int.Parse(itemSplit[3]), int.Parse(itemSplit[4]),
                         int.Parse(itemSplit[5]));
+                return (LegsGear)randomItem;
             }
-            else if (itemSplit[0].Length == 7)
+            if (itemSplit[0].Length == 7)
             {
                 randomItem = new Weapon
                     (long.Parse(itemSplit[0]), itemSplit[1].Replace('_', ' '),
                         int.Parse(itemSplit[2]), int.Parse(itemSplit[3]), int.Parse(itemSplit[4]),
                         int.Parse(itemSplit[5]));
+                return (Weapon)randomItem;
             }
-            if (randomItem == null)
-            {
-                throw new InvalidItemException("Item creation error!");
-            }
-            return randomItem;
+
+            throw new InvalidItemException("Item creation error!");
         }
     }
 }
