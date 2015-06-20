@@ -72,6 +72,7 @@
     <Compile Include="Engine\Items\HeadGear.cs" />
     <Compile Include="Engine\Interfaces\IConsumable.cs" />
     <Compile Include="Engine\Items\Inventory.cs" />
+    <Compile Include="Engine\Items\ItemCreate.cs" />
     <Compile Include="Engine\Items\LegsGear.cs" />
     <Compile Include="Engine\Items\Weapon.cs" />
     <Compile Include="Engine\Player.cs" />
