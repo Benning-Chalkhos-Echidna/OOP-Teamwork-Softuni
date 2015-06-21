@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using Project.Engine.Classes;
 using Project.Engine.Form;
-using Project.Engine.Items;
 
 namespace Project.Engine
 {
