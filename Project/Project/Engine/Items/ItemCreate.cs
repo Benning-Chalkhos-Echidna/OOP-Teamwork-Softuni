@@ -9,14 +9,20 @@ namespace Project.Engine.Items
 {
     public class ItemCreate
     {
+        private const string ItemListsPath = @"..\..\Resources\item_lists\";
         private static readonly Dictionary<string, string[]> ItemsMap = 
             new Dictionary<string, string[]>
         {
-            {"HeadGear", File.ReadAllLines(@"..\..\Resources\item_lists\headgear.txt")},
-            {"ChestGear", File.ReadAllLines(@"..\..\Resources\item_lists\chestgear.txt")},
-            {"HandsGear", File.ReadAllLines(@"..\..\Resources\item_lists\handsgear.txt")},
-            {"LegsGear", File.ReadAllLines(@"..\..\Resources\item_lists\legsgear.txt")},
-            {"Weapon", File.ReadAllLines(@"..\..\Resources\item_lists\weapons.txt")}
+            {"HeadGear", File.ReadAllLines(Path.GetFullPath(string.Format("{0}headgear.txt",
+                ItemListsPath)))},
+            {"ChestGear", File.ReadAllLines(Path.GetFullPath(string.Format("{0}chestgear.txt",
+                ItemListsPath)))},
+            {"HandsGear", File.ReadAllLines(Path.GetFullPath(string.Format("{0}handsgear.txt",
+                ItemListsPath)))},
+            {"LegsGear", File.ReadAllLines(Path.GetFullPath(string.Format("{0}legsgear.txt",
+                ItemListsPath)))},
+            {"Weapon", File.ReadAllLines(Path.GetFullPath(string.Format("{0}weapons.txt",
+                ItemListsPath)))}
         };
 
         public static Item GetRandomItem(string type)

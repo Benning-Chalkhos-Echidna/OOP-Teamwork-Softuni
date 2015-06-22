@@ -1,9 +1,13 @@
-﻿namespace Project.Engine.Items
+﻿using System.IO;
+
+namespace Project.Engine.Items
 {
     public abstract class Item
     {
+        private const string ItemsIconsPath = @"..\..\Resources\item_icons\";
         private long id;
-        private string name, subType;
+        private string name;
+        private readonly string subType;
 
         private int strModifier,
             agiModifier,
@@ -26,10 +30,10 @@
 
         }
 
-        // the path right now will probably be wrong
         public string ImgPath
         {
-            get { return string.Format(@"..\..\Resources\item_icons\" + this.subType + ".png"); }
+            get { return Path.GetFullPath(string.Format("{0}{1}.png", 
+                    ItemsIconsPath, this.subType)); }
         }
 
         public int StrModifier
