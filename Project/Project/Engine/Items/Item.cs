@@ -3,16 +3,17 @@
     public abstract class Item
     {
         private long id;
-        private string name;
+        private string name, subType;
 
         private int strModifier,
             agiModifier,
             intModifier,
             hpModifier;
 
-        protected Item(long id, string name, int str, int agi, int intel, int hp)
+        protected Item(long id, string subType, string name, int str, int agi, int intel, int hp)
         {
             this.id = id;
+            this.subType = subType;
             this.name = name;
 
             this.StrModifier = str;
@@ -24,6 +25,13 @@
         {
 
         }
+
+        // the path right now will probably be wrong
+        public string ImgPath
+        {
+            get { return string.Format(@"..\..\Resources\item_icons\" + this.subType + ".png"); }
+        }
+
         public int StrModifier
         {
             get { return this.strModifier; }

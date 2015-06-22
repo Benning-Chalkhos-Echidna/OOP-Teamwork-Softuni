@@ -5,8 +5,8 @@ namespace Project.Engine.Items
 {
     public class ChestGear : Equipable
     {
-        public ChestGear(long id, string name, int str, int agi, int intel, int hp)
-            : base(id, name, str, agi, intel, hp)
+        public ChestGear(long id, string subtype, string name, int str, int agi, int intel, int hp)
+            : base(id, subtype, name, str, agi, intel, hp)
         {
 
         }
