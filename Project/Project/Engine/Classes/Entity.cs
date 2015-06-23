@@ -31,6 +31,7 @@ namespace Project.Engine.Classes
             this.Name = "";
             this.isAlive = true;
             this.inventory = new Inventory();
+            this.equippedItems = new Equipped();
         }
 
         public string Name
@@ -147,9 +148,9 @@ namespace Project.Engine.Classes
             }
         }
 
-        public void RemoveItemFromInventory(Item item)
+        public void RemoveItemFromInventory(int index)
         {
-            this.inventory.InventoryItems.Remove(item);
+            this.inventory.InventoryItems.RemoveAt(index);
         }
 
         public void AddModifiersFromEquippedItems()
