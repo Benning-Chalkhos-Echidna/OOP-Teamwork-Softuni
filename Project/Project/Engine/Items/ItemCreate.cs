@@ -29,12 +29,22 @@ namespace Project.Engine.Items
                 ItemListsPath)))}
         };
 
-        public static Item GetRandomItem(string type)
+        public static Item GetRandomItem(string type = null)
         {
+            string[] categoryList;
             Random rand = new Random();
-            var itemList = ItemsMap[type];
-            var randomLine = itemList[rand.Next(itemList.Length)];
-            if (type != "HealthPotion" && type != "StatsPotion")
+            if (type == null)
+            {
+                var category = ItemsMap.ElementAt(rand.Next(0, ItemsMap.Count));
+                type = category.Key;
+                categoryList = category.Value;
+            }
+            else
+            {
+                categoryList = ItemsMap[type];
+            }
+            var randomLine = categoryList[rand.Next(categoryList.Length)];
+            if (type != "HealthPotion" && type != "StatsPotion") // too explicit right now
             {
                 var returnStats = ReturnEquipableStats(randomLine);
                 return ReturnEquipableItem(type, (long) returnStats[0], (string) returnStats[1],
@@ -45,28 +55,6 @@ namespace Project.Engine.Items
             {
                 var returnStats = ReturnConsumableStats(randomLine);
                 return ReturnConsumableItem(type, (long)returnStats[0], (string)returnStats[1],
-                    (string)returnStats[2], (int)returnStats[3], (int)returnStats[4],
-                    (int)returnStats[5], (int)returnStats[6], (int)returnStats[7]);
-            }
-        }
-        
-        public static Item GetRandomItem()
-        {
-            Random rand = new Random();
-            var randomCategory = ItemsMap.ElementAt(rand.Next(0, ItemsMap.Count));
-            var randomCategoryList = randomCategory.Value;
-            var randomLine = randomCategoryList[rand.Next(randomCategoryList.Length)];
-            if (randomCategory.Key != "HealthPotion" && randomCategory.Key != "StatsPotion")
-            {
-                var returnStats = ReturnEquipableStats(randomLine);
-                return ReturnEquipableItem(randomCategory.Key, (long) returnStats[0], (string) returnStats[1],
-                    (string) returnStats[2], (int) returnStats[3], (int) returnStats[4],
-                    (int) returnStats[5], (int) returnStats[6]);
-            }
-            else
-            {
-                var returnStats = ReturnConsumableStats(randomLine);
-                return ReturnConsumableItem(randomCategory.Key, (long)returnStats[0], (string)returnStats[1],
                     (string)returnStats[2], (int)returnStats[3], (int)returnStats[4],
                     (int)returnStats[5], (int)returnStats[6], (int)returnStats[7]);
             }
