@@ -9,6 +9,7 @@ namespace Project.Engine.Items
 {
     public static class ItemCreate
     {
+        private static Random rand = new Random();
         private const string ItemListsPath = @"..\..\Resources\item_lists\";
         private static readonly Dictionary<string, string[]> ItemsMap = 
             new Dictionary<string, string[]>
@@ -32,10 +33,9 @@ namespace Project.Engine.Items
         public static Item GetRandomItem(string type = null)
         {
             string[] categoryList;
-            Random rand = new Random();
             if (type == null)
             {
-                var category = ItemsMap.ElementAt(rand.Next(0, ItemsMap.Count));
+                var category = ItemsMap.ElementAt(rand.Next(ItemsMap.Count));
                 type = category.Key;
                 categoryList = category.Value;
             }
