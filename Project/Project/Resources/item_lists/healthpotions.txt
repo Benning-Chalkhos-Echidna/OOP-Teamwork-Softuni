@@ -1,0 +1,6 @@
+10000000	healthpotion	Small_Health_Potion	0	0	0	10	1
+10000001	healthpotion	Medium_Health_Potion	0	0	0	15	1
+10000002	healthpotion	Large_Health_Potion	0	0	0	20	1
+10000003	healthpotion	Small_Health_Bottle	0	0	0	10	2
+10000004	healthpotion	Medium_Health_Bottle	0	0	0	15	2
+10000005	healthpotion	Large_Health_Bottle	0	0	0	20	2

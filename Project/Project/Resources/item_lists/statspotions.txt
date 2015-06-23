@@ -1,0 +1,4 @@
+100000000	statspotion	Battleproven_Vial	2	0	0	0	1
+100000001	statspotion	Whirlwind_Calling_Flask	0	0	2	0	1
+100000002	statspotion	Tree_of_Life_Potion	0	0	0	4	1
+100000003	statspotion	Energy_Drink	0	2	0	0	1

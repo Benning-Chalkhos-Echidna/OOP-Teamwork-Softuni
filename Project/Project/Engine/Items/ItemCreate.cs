@@ -22,35 +22,57 @@ namespace Project.Engine.Items
             {"LegsGear", File.ReadAllLines(Path.GetFullPath(string.Format("{0}legsgear.txt",
                 ItemListsPath)))},
             {"Weapon", File.ReadAllLines(Path.GetFullPath(string.Format("{0}weapons.txt",
+                ItemListsPath)))},
+            {"HealthPotion",File.ReadAllLines(Path.GetFullPath(string.Format("{0}healthpotions.txt",
+                ItemListsPath)))},
+            {"StatsPotion",File.ReadAllLines(Path.GetFullPath(string.Format("{0}statspotions.txt",
                 ItemListsPath)))}
         };
 
         public static Item GetRandomItem(string type)
         {
             Random rand = new Random();
-            
             var itemList = ItemsMap[type];
             var randomLine = itemList[rand.Next(itemList.Length)];
-            var returnStats = ReturnStats(randomLine);
-            return ReturnItem(type, (long)returnStats[0], (string)returnStats[1], 
-                (string)returnStats[2], (int)returnStats[3], (int)returnStats[4], 
-                (int)returnStats[5], (int)returnStats[6]);
+            if (type != "HealthPotion" && type != "StatsPotion")
+            {
+                var returnStats = ReturnEquipableStats(randomLine);
+                return ReturnEquipableItem(type, (long) returnStats[0], (string) returnStats[1],
+                    (string) returnStats[2], (int) returnStats[3], (int) returnStats[4],
+                    (int) returnStats[5], (int) returnStats[6]);
+            }
+            else
+            {
+                var returnStats = ReturnConsumableStats(randomLine);
+                return ReturnConsumableItem(type, (long)returnStats[0], (string)returnStats[1],
+                    (string)returnStats[2], (int)returnStats[3], (int)returnStats[4],
+                    (int)returnStats[5], (int)returnStats[6], (int)returnStats[7]);
+            }
         }
         
         public static Item GetRandomItem()
         {
             Random rand = new Random();
-
             var randomCategory = ItemsMap.ElementAt(rand.Next(0, ItemsMap.Count));
             var randomCategoryList = randomCategory.Value;
             var randomLine = randomCategoryList[rand.Next(randomCategoryList.Length)];
-            var returnStats = ReturnStats(randomLine);
-            return ReturnItem(randomCategory.Key, (long)returnStats[0], (string)returnStats[1],
-                (string)returnStats[2], (int)returnStats[3], (int)returnStats[4],
-                (int)returnStats[5], (int)returnStats[6]);
+            if (randomCategory.Key != "HealthPotion" && randomCategory.Key != "StatsPotion")
+            {
+                var returnStats = ReturnEquipableStats(randomLine);
+                return ReturnEquipableItem(randomCategory.Key, (long) returnStats[0], (string) returnStats[1],
+                    (string) returnStats[2], (int) returnStats[3], (int) returnStats[4],
+                    (int) returnStats[5], (int) returnStats[6]);
+            }
+            else
+            {
+                var returnStats = ReturnConsumableStats(randomLine);
+                return ReturnConsumableItem(randomCategory.Key, (long)returnStats[0], (string)returnStats[1],
+                    (string)returnStats[2], (int)returnStats[3], (int)returnStats[4],
+                    (int)returnStats[5], (int)returnStats[6], (int)returnStats[7]);
+            }
         }
 
-        private static Item ReturnItem
+        private static Item ReturnEquipableItem
             (string type, long id, string subtype, string name, int str, int agi, int intel, int hp)
         {
             if (type == "HeadGear")
@@ -74,10 +96,25 @@ namespace Project.Engine.Items
                 return new Weapon(id, subtype, name, str, agi, intel, hp);
             }
 
-            throw new InvalidItemException("Item creation error!");
+            throw new InvalidItemException("Equipable item creation error!");
         }
 
-        private static List<object> ReturnStats(string line)
+        private static Item ReturnConsumableItem
+            (string type, long id, string subtype, string name, int str, int agi,
+                int intel, int hp, int charges)
+        {
+            if (type == "HealthPotion")
+            {
+                return new HealthPotion(id, subtype,name,str,agi,intel,hp,charges);
+            }
+            if (type == "StatsPotion")
+            {
+                return new StatsPotion(id, subtype,name,str,agi,intel,hp,charges);
+            }
+            throw new InvalidItemException("Consumable item creation error!");
+        }
+
+        private static List<object> ReturnEquipableStats(string line)
         {
             string[] itemSplit = Regex.Split(line, "\\s+");
             long id = long.Parse(itemSplit[0]);
@@ -88,6 +125,21 @@ namespace Project.Engine.Items
             int intel = int.Parse(itemSplit[5]);
             int hp = int.Parse(itemSplit[6]);
             var returnList = new List<object>{id,subtype,name,str,agi,intel,hp};
+            return returnList;
+        }
+
+        private static List<object> ReturnConsumableStats(string line)
+        {
+            string[] itemSplit = Regex.Split(line, "\\s+");
+            long id = long.Parse(itemSplit[0]);
+            string subtype = itemSplit[1];
+            string name = itemSplit[2].Replace('_', ' ');
+            int str = int.Parse(itemSplit[3]);
+            int agi = int.Parse(itemSplit[4]);
+            int intel = int.Parse(itemSplit[5]);
+            int hp = int.Parse(itemSplit[6]);
+            int charges = int.Parse(itemSplit[7]);
+            var returnList = new List<object> { id, subtype, name, str, agi, intel, hp, charges };
             return returnList;
         } 
     }
