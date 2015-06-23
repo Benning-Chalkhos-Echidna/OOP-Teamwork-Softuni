@@ -30,6 +30,7 @@ namespace Project.Engine.Classes
             this.Health = 100;
             this.Name = "";
             this.isAlive = true;
+            this.inventory = new Inventory();
         }
 
         public string Name
