@@ -22,12 +22,15 @@ namespace Project.Engine
         public static List<Entity> Allies = new List<Entity>();
         public static List<Entity> Enemies = new List<Entity>();
 
+        public static Action updateAllies;
+        public static Action updateEnemies;
+
         public static void CreatePlayer(string name, Entity entity)
         {
             UI.Player = new Player(name);
             UI.Player.Character = entity;
             allEntities.Add(entity);
-            gameType = GameType.FourVsFour;
+            gameType = GameType.TwoVsTwo;
             GenerateEnemiesAndAllies();
         }
         public static Entity CreateEntity(Player.PlayerClass playerClass, EntityGender entityGender, string name)
@@ -52,33 +55,53 @@ namespace Project.Engine
             if (engager is IHeal) target.Health += engager.Attack;
             else if (engager is IDamage) target.Health -= engager.Attack;
             if (target.Health < 0) target.isAlive = false;
+            UI.updateAllies.Invoke();
+            UI.updateEnemies.Invoke();
 
         }
         public static string RoundOutcome(Entity engager, Entity target)
         {
             string output = string.Empty;
-            if (engager.Team == EntityTeam.Player)
-            {
-                if (engager is IHeal)
-                    output += string.Format("Player {0} heals Ally {1} for {2} points.", engager.Name, target.Name, engager.Attack);
-                else if (engager is IDamage)
-                    output += string.Format("Player {0} attacks Enemy {1} for {2} points.", engager.Name, target.Name, engager.Attack);
-            }
-            else
-            {
-                if (engager is IHeal)
-                    output += string.Format("Healer {0} heals Ally {1} for {2} points.", engager.Name, target.Name, engager.Attack);
-                else if (engager is IDamage)
-                    output += string.Format("Damage dealer {0} attacks Enemy {1} for {2} points.", engager.Name, target.Name, engager.Attack);
-            }
             if (target.isAlive == true)
             {
-                output += string.Format("\n{0} is left with {1} health points.", target.Name, target.Health);
-            }
-            else if (target.isAlive == false)
-            {
-                output += string.Format("\n{0} {1} has been killed by {2} {3}!", target.EntityClass, target.Name,
-                    engager.EntityClass, engager.Name);
+                if (engager.isAlive == true)
+                {
+                    if (engager.Team == EntityTeam.Player)
+                    {
+                        if (engager is IHeal)
+                            output += string.Format("Player {0} heals Ally {1} for {2} points.", engager.Name, target.Name, engager.Attack);
+                        else if (engager is IDamage)
+                            output += string.Format("Player {0} attacks Enemy {1} for {2} points.", engager.Name, target.Name, engager.Attack);
+                    }
+                    else if (engager.Team == EntityTeam.Ally)
+                    {
+                        if (engager is IHeal)
+                            output += string.Format("Your allied healer {0} heals {1} for {2} health points.",
+                                engager.Name, target.Name, engager.Attack);
+                        else if (engager is IDamage)
+                            output += string.Format("Your allied damage dealer {0} attacks {1} for {2} health points.",
+                                engager.Name, target.Name, engager.Attack);
+                    }
+                    else if (engager.Team == EntityTeam.Enemy)
+                    {
+                        if (engager is IHeal)
+                            output += string.Format("Enemy healer {0} heals his ally {1} for {2} health points.",
+                                engager.Name, target.Name, engager.Attack);
+                        else if (engager is IDamage)
+                            output += string.Format("Enemy damage dealer {0} attacks {1} for {2} health points.",
+                                engager.Name, target.Name, engager.Attack);
+                    }
+                    if (target.isAlive == true)
+                    {
+                        output += string.Format("\n{0} is left with {1} health points.", target.Name, target.Health);
+                        return output;
+                    }
+                    else
+                    {
+                        output += string.Format("\n{0} has been slain!", target.Name);
+                        
+                    }
+                }
             }
             return output;
         }
