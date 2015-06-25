@@ -4,3 +4,9 @@
 10000003	healthpotion	Small_Health_Bottle	0	0	0	10	2
 10000004	healthpotion	Medium_Health_Bottle	0	0	0	15	2
 10000005	healthpotion	Large_Health_Bottle	0	0	0	20	2
+10000006	bread	Small_Bread	0	0	0	2	2
+10000007	bread	Large_Bread	0	0	0	4	2
+10000008	cheese	Small_Cheese	0	0	0	3	1
+10000009	cheese	Large_Cheese	0	0	0	5	1
+10000010	meat	Small_Steak	0	0	0	7	1
+10000011	meat	Large_Steak	0	0	0	10	1
