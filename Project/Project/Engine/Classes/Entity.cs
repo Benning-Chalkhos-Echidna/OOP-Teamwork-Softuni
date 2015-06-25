@@ -105,7 +105,8 @@ namespace Project.Engine.Classes
             }
 
             this.inventory.InventoryItems.Add(item);
-           
+            this.Gold -= item.Price;
+
         }
         public void EquipItem(Item item)
         {
