@@ -9,6 +9,7 @@ namespace Project.Engine.Classes
 
     public abstract class Entity : IEntity
     {
+        protected int gold;
         protected string _name;
         protected EntityGender _entityGender;
         protected Player.PlayerClass _entityClass;
@@ -24,6 +25,7 @@ namespace Project.Engine.Classes
 
         protected Entity()
         {
+            this.Gold = 1000;
             this.Strength = 10;
             this.Agility = 10;
             this.Intellect = 10;
@@ -38,6 +40,12 @@ namespace Project.Engine.Classes
         {
             get { return this._name; }
             set { this._name = value; }
+        }
+
+        public int Gold
+        {
+            get { return this.gold; }
+            set { this.gold = value; }
         }
         public EntityGender EntityGender
         {
@@ -74,7 +82,7 @@ namespace Project.Engine.Classes
 
         public void AddItemToInventory(Item item)
         {
-            if (this.inventory.InventoryItemsCount == 30)
+            if (this.inventory.InventoryItemsCount == 10)
             {
                 // TODO "inventory is full" logic
             }
@@ -84,6 +92,21 @@ namespace Project.Engine.Classes
             }
         }
         public EntityTeam Team { get; set; }
+
+        public void BuyItem(Item item)
+        {
+            if (this.inventory.InventoryItemsCount == 10)
+            {
+                // inventory is full - cannot buy
+            }
+            if (item.Price > this.Gold)
+            {
+                // not enough money - cannot buy
+            }
+
+            this.inventory.InventoryItems.Add(item);
+           
+        }
         public void EquipItem(Item item)
         {
             if (item is IEquippable)

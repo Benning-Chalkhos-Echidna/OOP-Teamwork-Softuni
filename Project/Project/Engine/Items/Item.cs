@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using Project.Engine.Interfaces;
 
 namespace Project.Engine.Items
 {
@@ -29,6 +30,8 @@ namespace Project.Engine.Items
         {
 
         }
+
+        public abstract int Price { get; }
 
         public string ImgPath
         {

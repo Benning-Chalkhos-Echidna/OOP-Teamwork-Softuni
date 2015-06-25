@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Engine\Exceptions\InvalidItemPriceException.cs" />
     <Compile Include="Engine\Exceptions\InvalidItemException.cs" />
     <Compile Include="Engine\Form\CharacterCreate.cs">
       <SubType>Form</SubType>
