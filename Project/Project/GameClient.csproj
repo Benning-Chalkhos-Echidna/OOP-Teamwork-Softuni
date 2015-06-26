@@ -75,6 +75,7 @@
     <Compile Include="Engine\Items\Inventory.cs" />
     <Compile Include="Engine\Items\ItemCreate.cs" />
     <Compile Include="Engine\Items\LegsGear.cs" />
+    <Compile Include="Engine\Items\Shop.cs" />
     <Compile Include="Engine\Items\Weapon.cs" />
     <Compile Include="Engine\Player.cs" />
     <Compile Include="Engine\Classes\Entity.cs" />

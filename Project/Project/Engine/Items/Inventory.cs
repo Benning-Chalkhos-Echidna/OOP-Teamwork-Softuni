@@ -15,11 +15,6 @@ namespace Project.Engine.Items
         public List<Item> InventoryItems
         {
             get { return this.inventoryItems; }
-        } 
-
-        public Inventory()
-        {
-            
         }
     }
 }

@@ -93,20 +93,21 @@ namespace Project.Engine.Classes
         }
         public EntityTeam Team { get; set; }
 
-        public void BuyItem(Item item)
+        public void BuyItem(Item item) // or by shop index
         {
             if (this.inventory.InventoryItemsCount == 10)
             {
                 // inventory is full - cannot buy
             }
-            if (item.Price > this.Gold)
+            else if (item.Price > this.Gold)
             {
                 // not enough money - cannot buy
             }
-
-            this.inventory.InventoryItems.Add(item);
-            this.Gold -= item.Price;
-
+            else
+            {
+                this.inventory.InventoryItems.Add(item);
+                this.Gold -= item.Price;
+            }
         }
         public void EquipItem(Item item)
         {
