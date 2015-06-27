@@ -142,11 +142,14 @@
   <data name="femalePaladin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\femalePaladin.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="attack" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\item_icons\attack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="defence" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\item_icons\defence.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="video games rpg guild wars guild wars nightfall fantasy art guild wars eye of the north 1280x960_www.wallpaperhi.com_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\video games rpg guild wars guild wars nightfall fantasy art guild wars eye of the north 1280x960_www.wallpaperhi.com_16.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="agility" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\item_icons\agility.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Paladin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Paladin.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,10 +160,10 @@
   <data name="strength" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\item_icons\strength.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="agility" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\item_icons\agility.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="attack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\item_icons\attack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="defence" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\item_icons\defence.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="gold" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\item_icons\gold.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

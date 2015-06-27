@@ -23,6 +23,8 @@ namespace Project.Engine.Form
             this.AttValue.Text = playerChar.Attack.ToString();
             this.DefValue.Text = playerChar.Defense.ToString();
 
+            this.GoldValue.Text = playerChar.Gold.ToString();
+
             switch (playerChar.EntityClass)
             {
                 case Player.PlayerClass.Druid:
