@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.TabControl = new System.Windows.Forms.TabControl();
+            this.shopTabCtrl = new System.Windows.Forms.TabControl();
             this.CharacterPanel = new System.Windows.Forms.TabPage();
             this.NameValue = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,7 +49,6 @@
             this.StatsLabel = new System.Windows.Forms.Label();
             this.CharacterClassValue = new System.Windows.Forms.TextBox();
             this.CharacterClass = new System.Windows.Forms.Label();
-            this.CharacterPortrait = new System.Windows.Forms.PictureBox();
             this.StrPlayer = new System.Windows.Forms.TabPage();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.RoundButton = new System.Windows.Forms.Button();
@@ -69,24 +68,46 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.BattleConsole = new System.Windows.Forms.RichTextBox();
-            this.TabControl.SuspendLayout();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.chPanelStrImg = new System.Windows.Forms.PictureBox();
+            this.CharacterPortrait = new System.Windows.Forms.PictureBox();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.shopTabCtrl.SuspendLayout();
             this.CharacterPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CharacterPortrait)).BeginInit();
             this.StrPlayer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chPanelStrImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CharacterPortrait)).BeginInit();
             this.SuspendLayout();
             // 
-            // TabControl
+            // shopTabCtrl
             // 
-            this.TabControl.Controls.Add(this.CharacterPanel);
-            this.TabControl.Controls.Add(this.StrPlayer);
-            this.TabControl.Location = new System.Drawing.Point(13, 12);
-            this.TabControl.Name = "TabControl";
-            this.TabControl.SelectedIndex = 0;
-            this.TabControl.Size = new System.Drawing.Size(928, 493);
-            this.TabControl.TabIndex = 0;
+            this.shopTabCtrl.Controls.Add(this.CharacterPanel);
+            this.shopTabCtrl.Controls.Add(this.StrPlayer);
+            this.shopTabCtrl.Controls.Add(this.tabPage1);
+            this.shopTabCtrl.Location = new System.Drawing.Point(13, 12);
+            this.shopTabCtrl.Name = "shopTabCtrl";
+            this.shopTabCtrl.SelectedIndex = 0;
+            this.shopTabCtrl.Size = new System.Drawing.Size(928, 493);
+            this.shopTabCtrl.TabIndex = 0;
             // 
             // CharacterPanel
             // 
+            this.CharacterPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CharacterPanel.Controls.Add(this.pictureBox5);
+            this.CharacterPanel.Controls.Add(this.pictureBox4);
+            this.CharacterPanel.Controls.Add(this.pictureBox3);
+            this.CharacterPanel.Controls.Add(this.pictureBox2);
+            this.CharacterPanel.Controls.Add(this.pictureBox1);
+            this.CharacterPanel.Controls.Add(this.chPanelStrImg);
             this.CharacterPanel.Controls.Add(this.NameValue);
             this.CharacterPanel.Controls.Add(this.label2);
             this.CharacterPanel.Controls.Add(this.GenderValue);
@@ -107,6 +128,7 @@
             this.CharacterPanel.Controls.Add(this.CharacterClassValue);
             this.CharacterPanel.Controls.Add(this.CharacterClass);
             this.CharacterPanel.Controls.Add(this.CharacterPortrait);
+            this.CharacterPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CharacterPanel.Location = new System.Drawing.Point(4, 22);
             this.CharacterPanel.Name = "CharacterPanel";
             this.CharacterPanel.Padding = new System.Windows.Forms.Padding(3);
@@ -117,175 +139,175 @@
             // 
             // NameValue
             // 
-            this.NameValue.Location = new System.Drawing.Point(452, 23);
+            this.NameValue.Location = new System.Drawing.Point(370, 36);
             this.NameValue.Name = "NameValue";
             this.NameValue.ReadOnly = true;
-            this.NameValue.Size = new System.Drawing.Size(133, 20);
+            this.NameValue.Size = new System.Drawing.Size(165, 26);
             this.NameValue.TabIndex = 19;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(449, 7);
+            this.label2.Location = new System.Drawing.Point(430, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(51, 20);
             this.label2.TabIndex = 18;
             this.label2.Text = "Name";
             // 
             // GenderValue
             // 
-            this.GenderValue.Location = new System.Drawing.Point(294, 286);
+            this.GenderValue.Location = new System.Drawing.Point(749, 36);
             this.GenderValue.Name = "GenderValue";
             this.GenderValue.ReadOnly = true;
-            this.GenderValue.Size = new System.Drawing.Size(133, 20);
+            this.GenderValue.Size = new System.Drawing.Size(103, 26);
             this.GenderValue.TabIndex = 17;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(294, 270);
+            this.label1.Location = new System.Drawing.Point(771, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 13);
+            this.label1.Size = new System.Drawing.Size(63, 20);
             this.label1.TabIndex = 16;
             this.label1.Text = "Gender";
             // 
             // DefValue
             // 
-            this.DefValue.Location = new System.Drawing.Point(344, 225);
+            this.DefValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DefValue.Location = new System.Drawing.Point(450, 334);
             this.DefValue.Name = "DefValue";
             this.DefValue.ReadOnly = true;
-            this.DefValue.Size = new System.Drawing.Size(133, 20);
+            this.DefValue.Size = new System.Drawing.Size(76, 26);
             this.DefValue.TabIndex = 15;
             // 
             // AttValue
             // 
-            this.AttValue.Location = new System.Drawing.Point(344, 199);
+            this.AttValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AttValue.Location = new System.Drawing.Point(450, 302);
             this.AttValue.Name = "AttValue";
             this.AttValue.ReadOnly = true;
-            this.AttValue.Size = new System.Drawing.Size(133, 20);
+            this.AttValue.Size = new System.Drawing.Size(76, 26);
             this.AttValue.TabIndex = 14;
             // 
             // HpValue
             // 
-            this.HpValue.Location = new System.Drawing.Point(344, 173);
+            this.HpValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.HpValue.Location = new System.Drawing.Point(450, 270);
             this.HpValue.Name = "HpValue";
             this.HpValue.ReadOnly = true;
-            this.HpValue.Size = new System.Drawing.Size(133, 20);
+            this.HpValue.Size = new System.Drawing.Size(76, 26);
             this.HpValue.TabIndex = 13;
             // 
             // IntValue
             // 
-            this.IntValue.Location = new System.Drawing.Point(344, 140);
+            this.IntValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.IntValue.Location = new System.Drawing.Point(450, 213);
             this.IntValue.Name = "IntValue";
             this.IntValue.ReadOnly = true;
-            this.IntValue.Size = new System.Drawing.Size(133, 20);
+            this.IntValue.Size = new System.Drawing.Size(76, 26);
             this.IntValue.TabIndex = 12;
             // 
             // AgiValue
             // 
-            this.AgiValue.Location = new System.Drawing.Point(344, 114);
+            this.AgiValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AgiValue.Location = new System.Drawing.Point(450, 182);
             this.AgiValue.Name = "AgiValue";
             this.AgiValue.ReadOnly = true;
-            this.AgiValue.Size = new System.Drawing.Size(133, 20);
+            this.AgiValue.Size = new System.Drawing.Size(76, 26);
             this.AgiValue.TabIndex = 11;
             // 
             // StrValue
             // 
-            this.StrValue.Location = new System.Drawing.Point(344, 88);
+            this.StrValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.StrValue.Location = new System.Drawing.Point(450, 150);
             this.StrValue.Name = "StrValue";
             this.StrValue.ReadOnly = true;
-            this.StrValue.Size = new System.Drawing.Size(133, 20);
+            this.StrValue.Size = new System.Drawing.Size(76, 26);
             this.StrValue.TabIndex = 10;
             // 
             // DefenseLabel
             // 
             this.DefenseLabel.AutoSize = true;
-            this.DefenseLabel.Location = new System.Drawing.Point(291, 228);
+            this.DefenseLabel.Location = new System.Drawing.Point(371, 337);
             this.DefenseLabel.Name = "DefenseLabel";
-            this.DefenseLabel.Size = new System.Drawing.Size(50, 13);
+            this.DefenseLabel.Size = new System.Drawing.Size(74, 20);
             this.DefenseLabel.TabIndex = 9;
             this.DefenseLabel.Text = "Defense:";
             // 
             // HealthLabel
             // 
             this.HealthLabel.AutoSize = true;
-            this.HealthLabel.Location = new System.Drawing.Point(291, 176);
+            this.HealthLabel.Location = new System.Drawing.Point(371, 273);
             this.HealthLabel.Name = "HealthLabel";
-            this.HealthLabel.Size = new System.Drawing.Size(44, 13);
+            this.HealthLabel.Size = new System.Drawing.Size(64, 20);
             this.HealthLabel.TabIndex = 8;
             this.HealthLabel.Text = "Health: ";
             // 
             // AttackLabel
             // 
             this.AttackLabel.AutoSize = true;
-            this.AttackLabel.Location = new System.Drawing.Point(291, 202);
+            this.AttackLabel.Location = new System.Drawing.Point(371, 305);
             this.AttackLabel.Name = "AttackLabel";
-            this.AttackLabel.Size = new System.Drawing.Size(41, 13);
+            this.AttackLabel.Size = new System.Drawing.Size(59, 20);
             this.AttackLabel.TabIndex = 7;
             this.AttackLabel.Text = "Attack:";
             // 
             // IntLabel
             // 
             this.IntLabel.AutoSize = true;
-            this.IntLabel.Location = new System.Drawing.Point(291, 143);
+            this.IntLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.IntLabel.Location = new System.Drawing.Point(368, 216);
             this.IntLabel.Name = "IntLabel";
-            this.IntLabel.Size = new System.Drawing.Size(50, 13);
+            this.IntLabel.Size = new System.Drawing.Size(73, 20);
             this.IntLabel.TabIndex = 6;
             this.IntLabel.Text = "Intellect: ";
             // 
             // AgiLabel
             // 
             this.AgiLabel.AutoSize = true;
-            this.AgiLabel.Location = new System.Drawing.Point(294, 117);
+            this.AgiLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AgiLabel.Location = new System.Drawing.Point(370, 185);
             this.AgiLabel.Name = "AgiLabel";
-            this.AgiLabel.Size = new System.Drawing.Size(40, 13);
+            this.AgiLabel.Size = new System.Drawing.Size(58, 20);
             this.AgiLabel.TabIndex = 5;
             this.AgiLabel.Text = "Agility: ";
             // 
             // StrLabel
             // 
             this.StrLabel.AutoSize = true;
-            this.StrLabel.Location = new System.Drawing.Point(291, 91);
+            this.StrLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.StrLabel.Location = new System.Drawing.Point(368, 153);
             this.StrLabel.Name = "StrLabel";
-            this.StrLabel.Size = new System.Drawing.Size(50, 13);
+            this.StrLabel.Size = new System.Drawing.Size(75, 20);
             this.StrLabel.TabIndex = 4;
             this.StrLabel.Text = "Strength:";
             // 
             // StatsLabel
             // 
             this.StatsLabel.AutoSize = true;
-            this.StatsLabel.Location = new System.Drawing.Point(288, 56);
+            this.StatsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.StatsLabel.Location = new System.Drawing.Point(431, 115);
             this.StatsLabel.Name = "StatsLabel";
-            this.StatsLabel.Size = new System.Drawing.Size(31, 13);
+            this.StatsLabel.Size = new System.Drawing.Size(52, 20);
             this.StatsLabel.TabIndex = 3;
             this.StatsLabel.Text = "Stats";
             // 
             // CharacterClassValue
             // 
-            this.CharacterClassValue.Location = new System.Drawing.Point(287, 23);
+            this.CharacterClassValue.Location = new System.Drawing.Point(564, 36);
             this.CharacterClassValue.Name = "CharacterClassValue";
             this.CharacterClassValue.ReadOnly = true;
-            this.CharacterClassValue.Size = new System.Drawing.Size(133, 20);
+            this.CharacterClassValue.Size = new System.Drawing.Size(133, 26);
             this.CharacterClassValue.TabIndex = 2;
             // 
             // CharacterClass
             // 
             this.CharacterClass.AutoSize = true;
-            this.CharacterClass.Location = new System.Drawing.Point(288, 7);
+            this.CharacterClass.Location = new System.Drawing.Point(608, 16);
             this.CharacterClass.Name = "CharacterClass";
-            this.CharacterClass.Size = new System.Drawing.Size(32, 13);
+            this.CharacterClass.Size = new System.Drawing.Size(48, 20);
             this.CharacterClass.TabIndex = 1;
             this.CharacterClass.Text = "Class";
-            // 
-            // CharacterPortrait
-            // 
-            this.CharacterPortrait.Image = global::Project.Properties.Resources.femaleMage;
-            this.CharacterPortrait.Location = new System.Drawing.Point(3, 3);
-            this.CharacterPortrait.Name = "CharacterPortrait";
-            this.CharacterPortrait.Size = new System.Drawing.Size(278, 431);
-            this.CharacterPortrait.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.CharacterPortrait.TabIndex = 0;
-            this.CharacterPortrait.TabStop = false;
             // 
             // StrPlayer
             // 
@@ -470,27 +492,113 @@
             this.BattleConsole.TabIndex = 2;
             this.BattleConsole.Text = "";
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackgroundImage = global::Project.Properties.Resources.defence;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox5.Location = new System.Drawing.Point(533, 334);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(28, 26);
+            this.pictureBox5.TabIndex = 25;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackgroundImage = global::Project.Properties.Resources.attack;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.Location = new System.Drawing.Point(533, 302);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(28, 26);
+            this.pictureBox4.TabIndex = 24;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::Project.Properties.Resources.life;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Location = new System.Drawing.Point(533, 270);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(28, 26);
+            this.pictureBox3.TabIndex = 23;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::Project.Properties.Resources.intelligence;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(532, 213);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(28, 26);
+            this.pictureBox2.TabIndex = 22;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Project.Properties.Resources.agility;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(532, 182);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(28, 26);
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
+            // 
+            // chPanelStrImg
+            // 
+            this.chPanelStrImg.BackgroundImage = global::Project.Properties.Resources.strength;
+            this.chPanelStrImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.chPanelStrImg.Location = new System.Drawing.Point(531, 150);
+            this.chPanelStrImg.Name = "chPanelStrImg";
+            this.chPanelStrImg.Size = new System.Drawing.Size(29, 26);
+            this.chPanelStrImg.TabIndex = 20;
+            this.chPanelStrImg.TabStop = false;
+            // 
+            // CharacterPortrait
+            // 
+            this.CharacterPortrait.Image = global::Project.Properties.Resources.femaleMage;
+            this.CharacterPortrait.Location = new System.Drawing.Point(3, 3);
+            this.CharacterPortrait.Name = "CharacterPortrait";
+            this.CharacterPortrait.Size = new System.Drawing.Size(278, 431);
+            this.CharacterPortrait.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.CharacterPortrait.TabIndex = 0;
+            this.CharacterPortrait.TabStop = false;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(920, 467);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Shop";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
             // GameMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(953, 508);
-            this.Controls.Add(this.TabControl);
+            this.Controls.Add(this.shopTabCtrl);
             this.Name = "GameMenu";
             this.Text = "GameMenu";
-            this.TabControl.ResumeLayout(false);
+            this.shopTabCtrl.ResumeLayout(false);
             this.CharacterPanel.ResumeLayout(false);
             this.CharacterPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CharacterPortrait)).EndInit();
             this.StrPlayer.ResumeLayout(false);
             this.StrPlayer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chPanelStrImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CharacterPortrait)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl TabControl;
+        private System.Windows.Forms.TabControl shopTabCtrl;
         private System.Windows.Forms.TabPage CharacterPanel;
         private System.Windows.Forms.TextBox CharacterClassValue;
         private System.Windows.Forms.Label CharacterClass;
@@ -531,5 +639,12 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.PictureBox chPanelStrImg;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.TabPage tabPage1;
     }
 }

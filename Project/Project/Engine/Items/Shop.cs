@@ -6,6 +6,13 @@ namespace Project.Engine.Items
     public class Shop
     {
         //private static List<Item> shopItems;
+        private const int WeaponCount = 9;
+        private const int HandsGearCount = 5;
+        private const int LegsGearCount = 4;
+        private const int ChestGearCount = 5;
+        private const int HeadGearCount = 7;
+        private const int HealthPotionCount = 7;
+        private const int StatsPotionCount = 3;
 
         public List<Item> ShopItems { get; set; }
 
@@ -13,18 +20,18 @@ namespace Project.Engine.Items
         {
             this.ShopItems = new List<Item>();
 
-            Fill("Weapon",9);
-            Fill("HandsGear",5);
-            Fill("LegsGear",4);
-            Fill("ChestGear",5);
-            Fill("HeadGear",7);
-            Fill("HealthPotion",7);
-            Fill("StatsPotion",3);
+            Fill("Weapon", WeaponCount);
+            Fill("HandsGear", HandsGearCount);
+            Fill("LegsGear", LegsGearCount);
+            Fill("ChestGear", ChestGearCount);
+            Fill("HeadGear", HeadGearCount);
+            Fill("HealthPotion", HealthPotionCount);
+            Fill("StatsPotion", StatsPotionCount);
             
             //Shuffle(this.ShopItems);
         }
 
-        public void ItemBought(int index)   // event should connect Entity.BuyItem with Shop.ItemBought
+        public void ItemBought(int index)   // an event should connect Entity.BuyItem with Shop.ItemBought
         {
             string typeOfBoughtItem = this.ShopItems[index].GetType().Name;
             this.ShopItems.RemoveAt(index);
@@ -45,9 +52,7 @@ namespace Project.Engine.Items
                         foundUnique = true;
                     }
                 }
-                
             }
-
         }
         public static void Shuffle<T>(IList<T> list)
         {

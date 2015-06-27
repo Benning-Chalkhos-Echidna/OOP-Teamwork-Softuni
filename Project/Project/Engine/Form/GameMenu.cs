@@ -56,7 +56,7 @@ namespace Project.Engine.Form
                     this.GenderValue.Text = EntityGender.Male.ToString();
                     break;
                 case EntityGender.Female:
-                    this.GenderValue.Text = EntityGender.Male.ToString();
+                    this.GenderValue.Text = EntityGender.Female.ToString();
                     break;
             }
 
@@ -181,7 +181,5 @@ namespace Project.Engine.Form
                 //Game Over
             }
         }
-
-
     }
 }

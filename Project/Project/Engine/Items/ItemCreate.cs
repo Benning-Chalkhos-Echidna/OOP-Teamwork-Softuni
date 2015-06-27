@@ -9,7 +9,7 @@ namespace Project.Engine.Items
 {
     public static class ItemCreate
     {
-        private static Random rand = new Random();
+        private static readonly Random Rand = new Random();
         private const string ItemListsPath = @"..\..\Resources\item_lists\";
         private static readonly Dictionary<string, string[]> ItemsMap = 
             new Dictionary<string, string[]>
@@ -35,7 +35,7 @@ namespace Project.Engine.Items
             string[] categoryList;
             if (type == null)
             {
-                var category = ItemsMap.ElementAt(rand.Next(ItemsMap.Count));
+                var category = ItemsMap.ElementAt(Rand.Next(ItemsMap.Count));
                 type = category.Key;
                 categoryList = category.Value;
             }
@@ -43,7 +43,7 @@ namespace Project.Engine.Items
             {
                 categoryList = ItemsMap[type];
             }
-            var randomLine = categoryList[rand.Next(categoryList.Length)];
+            var randomLine = categoryList[Rand.Next(categoryList.Length)];
             if (type != "HealthPotion" && type != "StatsPotion") // too explicit right now
             {
                 var returnStats = ReturnEquipableStats(randomLine);
