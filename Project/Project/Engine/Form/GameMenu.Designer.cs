@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.shopTabCtrl = new System.Windows.Forms.TabControl();
             this.CharacterPanel = new System.Windows.Forms.TabPage();
             this.EquippedItemsLabel = new System.Windows.Forms.Label();
@@ -85,6 +86,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.BattleConsole = new System.Windows.Forms.RichTextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.entityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.shopTabCtrl.SuspendLayout();
             this.CharacterPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -101,6 +103,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chPanelStrImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CharacterPortrait)).BeginInit();
             this.BattleTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.entityBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // shopTabCtrl
@@ -245,6 +248,7 @@
             // 
             this.GoldValue.BackColor = System.Drawing.SystemColors.Window;
             this.GoldValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.GoldValue.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.entityBindingSource, "Gold", true));
             this.GoldValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.GoldValue.Location = new System.Drawing.Point(682, 176);
             this.GoldValue.Name = "GoldValue";
@@ -316,6 +320,7 @@
             // NameValue
             // 
             this.NameValue.BackColor = System.Drawing.SystemColors.Window;
+            this.NameValue.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.entityBindingSource, "Name", true));
             this.NameValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameValue.Location = new System.Drawing.Point(370, 45);
             this.NameValue.Name = "NameValue";
@@ -336,6 +341,7 @@
             // GenderValue
             // 
             this.GenderValue.BackColor = System.Drawing.SystemColors.Window;
+            this.GenderValue.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.entityBindingSource, "EntityGender", true));
             this.GenderValue.Location = new System.Drawing.Point(749, 45);
             this.GenderValue.Name = "GenderValue";
             this.GenderValue.ReadOnly = true;
@@ -356,6 +362,7 @@
             // 
             this.DefValue.BackColor = System.Drawing.SystemColors.Window;
             this.DefValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DefValue.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.entityBindingSource, "Defense", true));
             this.DefValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.DefValue.Location = new System.Drawing.Point(448, 271);
             this.DefValue.Name = "DefValue";
@@ -368,6 +375,7 @@
             // 
             this.AttValue.BackColor = System.Drawing.SystemColors.Window;
             this.AttValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AttValue.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.entityBindingSource, "Attack", true));
             this.AttValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AttValue.Location = new System.Drawing.Point(448, 239);
             this.AttValue.Name = "AttValue";
@@ -380,6 +388,7 @@
             // 
             this.HpValue.BackColor = System.Drawing.SystemColors.Window;
             this.HpValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HpValue.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.entityBindingSource, "Health", true));
             this.HpValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.HpValue.Location = new System.Drawing.Point(682, 144);
             this.HpValue.Name = "HpValue";
@@ -392,6 +401,7 @@
             // 
             this.IntValue.BackColor = System.Drawing.SystemColors.Window;
             this.IntValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IntValue.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.entityBindingSource, "Intellect", true));
             this.IntValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.IntValue.Location = new System.Drawing.Point(448, 207);
             this.IntValue.Name = "IntValue";
@@ -404,6 +414,7 @@
             // 
             this.AgiValue.BackColor = System.Drawing.SystemColors.Window;
             this.AgiValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AgiValue.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.entityBindingSource, "Agility", true));
             this.AgiValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AgiValue.Location = new System.Drawing.Point(448, 176);
             this.AgiValue.Name = "AgiValue";
@@ -416,6 +427,7 @@
             // 
             this.StrValue.BackColor = System.Drawing.SystemColors.Window;
             this.StrValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.StrValue.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.entityBindingSource, "Strength", true));
             this.StrValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.StrValue.Location = new System.Drawing.Point(448, 144);
             this.StrValue.Name = "StrValue";
@@ -494,6 +506,7 @@
             // CharacterClassValue
             // 
             this.CharacterClassValue.BackColor = System.Drawing.SystemColors.Window;
+            this.CharacterClassValue.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.entityBindingSource, "EntityClass", true));
             this.CharacterClassValue.Location = new System.Drawing.Point(564, 45);
             this.CharacterClassValue.Name = "CharacterClassValue";
             this.CharacterClassValue.ReadOnly = true;
@@ -713,6 +726,10 @@
             this.tabPage1.Text = "Shop";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // entityBindingSource
+            // 
+            this.entityBindingSource.DataSource = typeof(Project.Engine.Classes.Entity);
+            // 
             // GameMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -739,6 +756,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.CharacterPortrait)).EndInit();
             this.BattleTab.ResumeLayout(false);
             this.BattleTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.entityBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -802,5 +820,6 @@
         private System.Windows.Forms.PictureBox ChestGearImgBox;
         private System.Windows.Forms.PictureBox HeadGearImgBox;
         private System.Windows.Forms.Label EquippedItemsLabel;
+        private System.Windows.Forms.BindingSource entityBindingSource;
     }
 }

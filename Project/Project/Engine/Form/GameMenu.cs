@@ -12,20 +12,22 @@ namespace Project.Engine.Form
         public GameMenu()
         {
             InitializeComponent();
+            
             CharacterCreate characterCreate = new CharacterCreate();
             characterCreate.ShowDialog();
             Entity playerChar = UI.Player.Character;
+            this.entityBindingSource.DataSource = playerChar;
 
-            this.CharacterClassValue.Text = playerChar.EntityClass.ToString();
-            this.StrValue.Text = playerChar.Strength.ToString();
-            this.AgiValue.Text = playerChar.Agility.ToString();
-            this.IntValue.Text = playerChar.Intellect.ToString();
+            //this.CharacterClassValue.Text = playerChar.EntityClass.ToString();
+            //this.StrValue.Text = playerChar.Strength.ToString();
+            //this.AgiValue.Text = playerChar.Agility.ToString();
+            //this.IntValue.Text = playerChar.Intellect.ToString();
 
-            this.HpValue.Text = playerChar.Health.ToString();
-            this.AttValue.Text = playerChar.Attack.ToString();
-            this.DefValue.Text = playerChar.Defense.ToString();
+            //this.HpValue.Text = playerChar.Health.ToString();
+            //this.AttValue.Text = playerChar.Attack.ToString();
+            //this.DefValue.Text = playerChar.Defense.ToString();
 
-            this.GoldValue.Text = playerChar.Gold.ToString();
+            //this.GoldValue.Text = playerChar.Gold.ToString();
 
             //this.HeadGearImgBox.Image = Image.FromFile(playerChar.equippedItems.HeadGear.ImgPath);
             //this.ChestGearImgBox.Image = Image.FromFile(playerChar.equippedItems.ChestGear.ImgPath);

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.ComponentModel;
+using System.Linq;
 using Project.Engine.Interfaces;
 using Project.Engine.Items;
 
@@ -7,7 +8,7 @@ namespace Project.Engine.Classes
     public enum EntityGender { Male, Female, Unknown }
     public enum EntityTeam { Ally, Enemy, Player }
 
-    public abstract class Entity : IEntity
+    public abstract class Entity : IEntity, INotifyPropertyChanged
     {
         protected int gold;
         protected string _name;
@@ -45,7 +46,11 @@ namespace Project.Engine.Classes
         public int Gold
         {
             get { return this.gold; }
-            set { this.gold = value; }
+            set
+            {
+                this.gold = value;
+                OnPropertyChanged("Gold");
+            }
         }
         public EntityGender EntityGender
         {
@@ -55,23 +60,39 @@ namespace Project.Engine.Classes
         public int Strength
         {
             get { return this._strength; }
-            set { this._strength = value; }
+            set
+            {
+                this._strength = value;
+                OnPropertyChanged("Strength");
+            }
         }
         public int Agility
         {
             get { return this._agility; }
-            set { this._agility = value; }
+            set
+            {
+                this._agility = value;
+                OnPropertyChanged("Agility");
+            }
         }
         public bool isAlive { get; set; }
         public int Intellect
         {
             get { return this._intellect; }
-            set { this._intellect = value; }
+            set
+            {
+                this._intellect = value;
+                OnPropertyChanged("Intellect");
+            }
         }
         public int Health
         {
             get { return this._health; }
-            set { this._health = value; }
+            set
+            {
+                this._health = value;
+                OnPropertyChanged("Health");
+            }
         }
 
         public Player.PlayerClass EntityClass
@@ -202,6 +223,7 @@ namespace Project.Engine.Classes
             set
             {
                 this._attack = value;
+                OnPropertyChanged("Attack");
             }
         }
 
@@ -215,6 +237,17 @@ namespace Project.Engine.Classes
             set
             {
                 this._defense = value;
+                OnPropertyChanged("Health");
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void OnPropertyChanged(string propertyName)
+        {
+            if (this.PropertyChanged != null)
+            {
+
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
     }

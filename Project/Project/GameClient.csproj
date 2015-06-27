@@ -116,6 +116,7 @@
     <None Include="Engine\Engine Diagram.cd" />
     <None Include="Engine\Entity Diagram.cd" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Project.Engine.Classes.Entity.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -182,9 +183,7 @@
   <ItemGroup>
     <None Include="Resources\item_icons\gold.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\DataSources\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
