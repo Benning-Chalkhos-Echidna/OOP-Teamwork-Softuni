@@ -2,6 +2,8 @@
 using Project.Engine.Classes;
 using Project.Engine.Interfaces;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Project.Engine.Form
 {
@@ -24,6 +26,9 @@ namespace Project.Engine.Form
             this.DefValue.Text = playerChar.Defense.ToString();
 
             this.GoldValue.Text = playerChar.Gold.ToString();
+
+            //this.HeadGearImgBox.Image = Image.FromFile(playerChar.equippedItems.HeadGear.ImgPath);
+            //this.ChestGearImgBox.Image = Image.FromFile(playerChar.equippedItems.ChestGear.ImgPath);
 
             switch (playerChar.EntityClass)
             {

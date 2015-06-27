@@ -30,6 +30,21 @@
         {
             this.shopTabCtrl = new System.Windows.Forms.TabControl();
             this.CharacterPanel = new System.Windows.Forms.TabPage();
+            this.EquippedItemsLabel = new System.Windows.Forms.Label();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.LegsGearImgBox = new System.Windows.Forms.PictureBox();
+            this.HandsGearImgBox = new System.Windows.Forms.PictureBox();
+            this.ChestGearImgBox = new System.Windows.Forms.PictureBox();
+            this.HeadGearImgBox = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.GoldValue = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.chPanelStrImg = new System.Windows.Forms.PictureBox();
             this.NameValue = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.GenderValue = new System.Windows.Forms.TextBox();
@@ -49,7 +64,8 @@
             this.StatsLabel = new System.Windows.Forms.Label();
             this.CharacterClassValue = new System.Windows.Forms.TextBox();
             this.CharacterClass = new System.Windows.Forms.Label();
-            this.StrPlayer = new System.Windows.Forms.TabPage();
+            this.CharacterPortrait = new System.Windows.Forms.PictureBox();
+            this.BattleTab = new System.Windows.Forms.TabPage();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.RoundButton = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -69,25 +85,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.BattleConsole = new System.Windows.Forms.RichTextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.GoldValue = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.chPanelStrImg = new System.Windows.Forms.PictureBox();
-            this.CharacterPortrait = new System.Windows.Forms.PictureBox();
-            this.HeadGearImgBox = new System.Windows.Forms.PictureBox();
-            this.ChestGearImgBox = new System.Windows.Forms.PictureBox();
-            this.HandsGearImgBox = new System.Windows.Forms.PictureBox();
-            this.LegsGearImgBox = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.EquippedItemsLabel = new System.Windows.Forms.Label();
             this.shopTabCtrl.SuspendLayout();
             this.CharacterPanel.SuspendLayout();
-            this.StrPlayer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LegsGearImgBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HandsGearImgBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChestGearImgBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HeadGearImgBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -96,17 +100,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chPanelStrImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CharacterPortrait)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HeadGearImgBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ChestGearImgBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HandsGearImgBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LegsGearImgBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            this.BattleTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // shopTabCtrl
             // 
             this.shopTabCtrl.Controls.Add(this.CharacterPanel);
-            this.shopTabCtrl.Controls.Add(this.StrPlayer);
+            this.shopTabCtrl.Controls.Add(this.BattleTab);
             this.shopTabCtrl.Controls.Add(this.tabPage1);
             this.shopTabCtrl.Location = new System.Drawing.Point(13, 12);
             this.shopTabCtrl.Name = "shopTabCtrl";
@@ -158,11 +158,164 @@
             this.CharacterPanel.Padding = new System.Windows.Forms.Padding(3);
             this.CharacterPanel.Size = new System.Drawing.Size(920, 467);
             this.CharacterPanel.TabIndex = 0;
-            this.CharacterPanel.Text = "CharacterPanel";
+            this.CharacterPanel.Text = "Character";
             this.CharacterPanel.UseVisualStyleBackColor = true;
+            // 
+            // EquippedItemsLabel
+            // 
+            this.EquippedItemsLabel.AutoSize = true;
+            this.EquippedItemsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EquippedItemsLabel.Location = new System.Drawing.Point(497, 334);
+            this.EquippedItemsLabel.Name = "EquippedItemsLabel";
+            this.EquippedItemsLabel.Size = new System.Drawing.Size(133, 20);
+            this.EquippedItemsLabel.TabIndex = 31;
+            this.EquippedItemsLabel.Text = "Equipped items";
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox11.Location = new System.Drawing.Point(684, 373);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(58, 50);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox11.TabIndex = 30;
+            this.pictureBox11.TabStop = false;
+            // 
+            // LegsGearImgBox
+            // 
+            this.LegsGearImgBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LegsGearImgBox.Location = new System.Drawing.Point(612, 373);
+            this.LegsGearImgBox.Name = "LegsGearImgBox";
+            this.LegsGearImgBox.Size = new System.Drawing.Size(58, 50);
+            this.LegsGearImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.LegsGearImgBox.TabIndex = 29;
+            this.LegsGearImgBox.TabStop = false;
+            // 
+            // HandsGearImgBox
+            // 
+            this.HandsGearImgBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HandsGearImgBox.Location = new System.Drawing.Point(533, 373);
+            this.HandsGearImgBox.Name = "HandsGearImgBox";
+            this.HandsGearImgBox.Size = new System.Drawing.Size(58, 50);
+            this.HandsGearImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.HandsGearImgBox.TabIndex = 28;
+            this.HandsGearImgBox.TabStop = false;
+            // 
+            // ChestGearImgBox
+            // 
+            this.ChestGearImgBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ChestGearImgBox.Location = new System.Drawing.Point(450, 373);
+            this.ChestGearImgBox.Name = "ChestGearImgBox";
+            this.ChestGearImgBox.Size = new System.Drawing.Size(58, 50);
+            this.ChestGearImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ChestGearImgBox.TabIndex = 27;
+            this.ChestGearImgBox.TabStop = false;
+            // 
+            // HeadGearImgBox
+            // 
+            this.HeadGearImgBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HeadGearImgBox.Location = new System.Drawing.Point(370, 373);
+            this.HeadGearImgBox.Name = "HeadGearImgBox";
+            this.HeadGearImgBox.Size = new System.Drawing.Size(58, 50);
+            this.HeadGearImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.HeadGearImgBox.TabIndex = 26;
+            this.HeadGearImgBox.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackgroundImage = global::Project.Properties.Resources.gold;
+            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox6.Location = new System.Drawing.Point(777, 176);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(27, 26);
+            this.pictureBox6.TabIndex = 23;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackgroundImage = global::Project.Properties.Resources.defence;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox5.Location = new System.Drawing.Point(532, 271);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(28, 26);
+            this.pictureBox5.TabIndex = 25;
+            this.pictureBox5.TabStop = false;
+            // 
+            // GoldValue
+            // 
+            this.GoldValue.BackColor = System.Drawing.SystemColors.Window;
+            this.GoldValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.GoldValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.GoldValue.Location = new System.Drawing.Point(682, 176);
+            this.GoldValue.Name = "GoldValue";
+            this.GoldValue.ReadOnly = true;
+            this.GoldValue.Size = new System.Drawing.Size(88, 26);
+            this.GoldValue.TabIndex = 22;
+            this.GoldValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.Location = new System.Drawing.Point(622, 179);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(47, 20);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "Gold:";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackgroundImage = global::Project.Properties.Resources.attack;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.Location = new System.Drawing.Point(532, 239);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(28, 26);
+            this.pictureBox4.TabIndex = 24;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::Project.Properties.Resources.life;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Location = new System.Drawing.Point(776, 144);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(28, 26);
+            this.pictureBox3.TabIndex = 23;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::Project.Properties.Resources.intelligence;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(531, 207);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(28, 26);
+            this.pictureBox2.TabIndex = 22;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Project.Properties.Resources.agility;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(531, 176);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(28, 26);
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
+            // 
+            // chPanelStrImg
+            // 
+            this.chPanelStrImg.BackgroundImage = global::Project.Properties.Resources.strength;
+            this.chPanelStrImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.chPanelStrImg.Location = new System.Drawing.Point(530, 144);
+            this.chPanelStrImg.Name = "chPanelStrImg";
+            this.chPanelStrImg.Size = new System.Drawing.Size(29, 26);
+            this.chPanelStrImg.TabIndex = 20;
+            this.chPanelStrImg.TabStop = false;
             // 
             // NameValue
             // 
+            this.NameValue.BackColor = System.Drawing.SystemColors.Window;
             this.NameValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameValue.Location = new System.Drawing.Point(370, 45);
             this.NameValue.Name = "NameValue";
@@ -182,6 +335,7 @@
             // 
             // GenderValue
             // 
+            this.GenderValue.BackColor = System.Drawing.SystemColors.Window;
             this.GenderValue.Location = new System.Drawing.Point(749, 45);
             this.GenderValue.Name = "GenderValue";
             this.GenderValue.ReadOnly = true;
@@ -339,6 +493,7 @@
             // 
             // CharacterClassValue
             // 
+            this.CharacterClassValue.BackColor = System.Drawing.SystemColors.Window;
             this.CharacterClassValue.Location = new System.Drawing.Point(564, 45);
             this.CharacterClassValue.Name = "CharacterClassValue";
             this.CharacterClassValue.ReadOnly = true;
@@ -355,33 +510,43 @@
             this.CharacterClass.TabIndex = 1;
             this.CharacterClass.Text = "Class";
             // 
-            // StrPlayer
+            // CharacterPortrait
             // 
-            this.StrPlayer.Controls.Add(this.textBox5);
-            this.StrPlayer.Controls.Add(this.RoundButton);
-            this.StrPlayer.Controls.Add(this.label7);
-            this.StrPlayer.Controls.Add(this.textBox6);
-            this.StrPlayer.Controls.Add(this.label8);
-            this.StrPlayer.Controls.Add(this.textBox7);
-            this.StrPlayer.Controls.Add(this.label9);
-            this.StrPlayer.Controls.Add(this.textBox8);
-            this.StrPlayer.Controls.Add(this.label10);
-            this.StrPlayer.Controls.Add(this.textBox3);
-            this.StrPlayer.Controls.Add(this.label5);
-            this.StrPlayer.Controls.Add(this.textBox4);
-            this.StrPlayer.Controls.Add(this.label6);
-            this.StrPlayer.Controls.Add(this.textBox2);
-            this.StrPlayer.Controls.Add(this.label4);
-            this.StrPlayer.Controls.Add(this.textBox1);
-            this.StrPlayer.Controls.Add(this.label3);
-            this.StrPlayer.Controls.Add(this.BattleConsole);
-            this.StrPlayer.Location = new System.Drawing.Point(4, 22);
-            this.StrPlayer.Name = "StrPlayer";
-            this.StrPlayer.Padding = new System.Windows.Forms.Padding(3);
-            this.StrPlayer.Size = new System.Drawing.Size(920, 467);
-            this.StrPlayer.TabIndex = 1;
-            this.StrPlayer.Text = "BattleMenu";
-            this.StrPlayer.UseVisualStyleBackColor = true;
+            this.CharacterPortrait.Image = global::Project.Properties.Resources.femaleMage;
+            this.CharacterPortrait.Location = new System.Drawing.Point(3, 3);
+            this.CharacterPortrait.Name = "CharacterPortrait";
+            this.CharacterPortrait.Size = new System.Drawing.Size(278, 431);
+            this.CharacterPortrait.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.CharacterPortrait.TabIndex = 0;
+            this.CharacterPortrait.TabStop = false;
+            // 
+            // BattleTab
+            // 
+            this.BattleTab.Controls.Add(this.textBox5);
+            this.BattleTab.Controls.Add(this.RoundButton);
+            this.BattleTab.Controls.Add(this.label7);
+            this.BattleTab.Controls.Add(this.textBox6);
+            this.BattleTab.Controls.Add(this.label8);
+            this.BattleTab.Controls.Add(this.textBox7);
+            this.BattleTab.Controls.Add(this.label9);
+            this.BattleTab.Controls.Add(this.textBox8);
+            this.BattleTab.Controls.Add(this.label10);
+            this.BattleTab.Controls.Add(this.textBox3);
+            this.BattleTab.Controls.Add(this.label5);
+            this.BattleTab.Controls.Add(this.textBox4);
+            this.BattleTab.Controls.Add(this.label6);
+            this.BattleTab.Controls.Add(this.textBox2);
+            this.BattleTab.Controls.Add(this.label4);
+            this.BattleTab.Controls.Add(this.textBox1);
+            this.BattleTab.Controls.Add(this.label3);
+            this.BattleTab.Controls.Add(this.BattleConsole);
+            this.BattleTab.Location = new System.Drawing.Point(4, 22);
+            this.BattleTab.Name = "BattleTab";
+            this.BattleTab.Padding = new System.Windows.Forms.Padding(3);
+            this.BattleTab.Size = new System.Drawing.Size(920, 467);
+            this.BattleTab.TabIndex = 1;
+            this.BattleTab.Text = "Battle Menu";
+            this.BattleTab.UseVisualStyleBackColor = true;
             // 
             // textBox5
             // 
@@ -548,163 +713,6 @@
             this.tabPage1.Text = "Shop";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // GoldValue
-            // 
-            this.GoldValue.BackColor = System.Drawing.SystemColors.Window;
-            this.GoldValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.GoldValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.GoldValue.Location = new System.Drawing.Point(682, 176);
-            this.GoldValue.Name = "GoldValue";
-            this.GoldValue.ReadOnly = true;
-            this.GoldValue.Size = new System.Drawing.Size(88, 26);
-            this.GoldValue.TabIndex = 22;
-            this.GoldValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(622, 179);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(47, 20);
-            this.label11.TabIndex = 21;
-            this.label11.Text = "Gold:";
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackgroundImage = global::Project.Properties.Resources.gold;
-            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox6.Location = new System.Drawing.Point(777, 176);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(27, 26);
-            this.pictureBox6.TabIndex = 23;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackgroundImage = global::Project.Properties.Resources.defence;
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox5.Location = new System.Drawing.Point(532, 271);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(28, 26);
-            this.pictureBox5.TabIndex = 25;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackgroundImage = global::Project.Properties.Resources.attack;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.Location = new System.Drawing.Point(532, 239);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(28, 26);
-            this.pictureBox4.TabIndex = 24;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = global::Project.Properties.Resources.life;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(776, 144);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(28, 26);
-            this.pictureBox3.TabIndex = 23;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::Project.Properties.Resources.intelligence;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(531, 207);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(28, 26);
-            this.pictureBox2.TabIndex = 22;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Project.Properties.Resources.agility;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(531, 176);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(28, 26);
-            this.pictureBox1.TabIndex = 21;
-            this.pictureBox1.TabStop = false;
-            // 
-            // chPanelStrImg
-            // 
-            this.chPanelStrImg.BackgroundImage = global::Project.Properties.Resources.strength;
-            this.chPanelStrImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.chPanelStrImg.Location = new System.Drawing.Point(530, 144);
-            this.chPanelStrImg.Name = "chPanelStrImg";
-            this.chPanelStrImg.Size = new System.Drawing.Size(29, 26);
-            this.chPanelStrImg.TabIndex = 20;
-            this.chPanelStrImg.TabStop = false;
-            // 
-            // CharacterPortrait
-            // 
-            this.CharacterPortrait.Image = global::Project.Properties.Resources.femaleMage;
-            this.CharacterPortrait.Location = new System.Drawing.Point(3, 3);
-            this.CharacterPortrait.Name = "CharacterPortrait";
-            this.CharacterPortrait.Size = new System.Drawing.Size(278, 431);
-            this.CharacterPortrait.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.CharacterPortrait.TabIndex = 0;
-            this.CharacterPortrait.TabStop = false;
-            // 
-            // HeadGearImgBox
-            // 
-            this.HeadGearImgBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.HeadGearImgBox.Location = new System.Drawing.Point(370, 384);
-            this.HeadGearImgBox.Name = "HeadGearImgBox";
-            this.HeadGearImgBox.Size = new System.Drawing.Size(58, 50);
-            this.HeadGearImgBox.TabIndex = 26;
-            this.HeadGearImgBox.TabStop = false;
-            // 
-            // ChestGearImgBox
-            // 
-            this.ChestGearImgBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ChestGearImgBox.Location = new System.Drawing.Point(450, 384);
-            this.ChestGearImgBox.Name = "ChestGearImgBox";
-            this.ChestGearImgBox.Size = new System.Drawing.Size(58, 50);
-            this.ChestGearImgBox.TabIndex = 27;
-            this.ChestGearImgBox.TabStop = false;
-            // 
-            // HandsGearImgBox
-            // 
-            this.HandsGearImgBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.HandsGearImgBox.Location = new System.Drawing.Point(533, 384);
-            this.HandsGearImgBox.Name = "HandsGearImgBox";
-            this.HandsGearImgBox.Size = new System.Drawing.Size(58, 50);
-            this.HandsGearImgBox.TabIndex = 28;
-            this.HandsGearImgBox.TabStop = false;
-            // 
-            // LegsGearImgBox
-            // 
-            this.LegsGearImgBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LegsGearImgBox.Location = new System.Drawing.Point(612, 384);
-            this.LegsGearImgBox.Name = "LegsGearImgBox";
-            this.LegsGearImgBox.Size = new System.Drawing.Size(58, 50);
-            this.LegsGearImgBox.TabIndex = 29;
-            this.LegsGearImgBox.TabStop = false;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox11.Location = new System.Drawing.Point(684, 384);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(58, 50);
-            this.pictureBox11.TabIndex = 30;
-            this.pictureBox11.TabStop = false;
-            // 
-            // EquippedItemsLabel
-            // 
-            this.EquippedItemsLabel.AutoSize = true;
-            this.EquippedItemsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.EquippedItemsLabel.Location = new System.Drawing.Point(497, 345);
-            this.EquippedItemsLabel.Name = "EquippedItemsLabel";
-            this.EquippedItemsLabel.Size = new System.Drawing.Size(133, 20);
-            this.EquippedItemsLabel.TabIndex = 31;
-            this.EquippedItemsLabel.Text = "Equipped items";
-            // 
             // GameMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -716,8 +724,11 @@
             this.shopTabCtrl.ResumeLayout(false);
             this.CharacterPanel.ResumeLayout(false);
             this.CharacterPanel.PerformLayout();
-            this.StrPlayer.ResumeLayout(false);
-            this.StrPlayer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LegsGearImgBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HandsGearImgBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChestGearImgBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HeadGearImgBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -726,11 +737,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chPanelStrImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CharacterPortrait)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HeadGearImgBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ChestGearImgBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HandsGearImgBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LegsGearImgBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            this.BattleTab.ResumeLayout(false);
+            this.BattleTab.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -759,7 +767,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox NameValue;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TabPage StrPlayer;
+        private System.Windows.Forms.TabPage BattleTab;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox BattleConsole;
