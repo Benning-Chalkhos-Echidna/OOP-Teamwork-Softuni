@@ -1,5 +1,4 @@
-﻿using Project.Engine.Interfaces;
-
+﻿
 namespace Project.Engine.Items
 {
     public abstract class Equipable : Item, Project.Engine.Interfaces.IEquippable

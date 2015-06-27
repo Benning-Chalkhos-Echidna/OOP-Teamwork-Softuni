@@ -1,5 +1,4 @@
-﻿using System;
-namespace Project.Engine.Items
+﻿namespace Project.Engine.Items
 {
     interface IConsumable
     {

@@ -1,7 +1,6 @@
-﻿using System.ComponentModel;
-using System.Linq;
-using Project.Engine.Interfaces;
+﻿using Project.Engine.Interfaces;
 using Project.Engine.Items;
+using System.ComponentModel;
 
 namespace Project.Engine.Classes
 {
@@ -140,40 +139,55 @@ namespace Project.Engine.Classes
                     oldItem = this.equippedItems.Weapon;
                     this.equippedItems.Weapon = item as Weapon;
                     this.inventory.InventoryItems.Remove(item);
-                    this.inventory.InventoryItems.Add(oldItem);
+                    if (oldItem != null)
+                    {
+                        this.inventory.InventoryItems.Add(oldItem);
+                    }                   
                 }
                 else if (item is HeadGear)
                 {
                     oldItem = this.equippedItems.HeadGear;
                     this.equippedItems.HeadGear = item as HeadGear;
                     this.inventory.InventoryItems.Remove(item);
-                    this.inventory.InventoryItems.Add(oldItem);
+                    if (oldItem != null)
+                    {
+                        this.inventory.InventoryItems.Add(oldItem);
+                    }
                 }
                 else if (item is ChestGear)
                 {
                     oldItem = this.equippedItems.ChestGear;
                     this.equippedItems.ChestGear = item as ChestGear;
                     this.inventory.InventoryItems.Remove(item);
-                    this.inventory.InventoryItems.Add(oldItem);
+                    if (oldItem != null)
+                    {
+                        this.inventory.InventoryItems.Add(oldItem);
+                    }
                 }
                 else if (item is HandsGear)
                 {
                     oldItem = this.equippedItems.HandsGear;
                     this.equippedItems.HandsGear = item as HandsGear;
                     this.inventory.InventoryItems.Remove(item);
-                    this.inventory.InventoryItems.Add(oldItem);
+                    if (oldItem != null)
+                    {
+                        this.inventory.InventoryItems.Add(oldItem);
+                    }
                 }
                 else if (item is LegsGear)
                 {
                     oldItem = this.equippedItems.LegsGear;
                     this.equippedItems.LegsGear = item as LegsGear;
                     this.inventory.InventoryItems.Remove(item);
-                    this.inventory.InventoryItems.Add(oldItem);
+                    if (oldItem != null)
+                    {
+                        this.inventory.InventoryItems.Add(oldItem);
+                    }
                 }
 
                 AddModifiersFromEquippedItems();
             }
-            else if (item is IConsumable)
+            else if (item is IConsumable)   // maybe this should not be here
             {
                 if (item is HealthPotion)
                 {

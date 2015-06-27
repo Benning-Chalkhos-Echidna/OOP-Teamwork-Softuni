@@ -1,5 +1,4 @@
 ﻿
-using Project.Engine.Classes;
 
 namespace Project.Engine.Items
 {
@@ -56,17 +55,29 @@ namespace Project.Engine.Items
         public void CalculateEquippedItemsModifiers()
         {
             this.EquippedItemsStrModifier = 
-                this.Weapon.StrModifier + this.HeadGear.StrModifier + this.ChestGear.StrModifier +
-                this.HandsGear.StrModifier + this.LegsGear.StrModifier;
+                (this.Weapon == null ? 0 : this.Weapon.StrModifier) + 
+                (this.HeadGear == null ? 0 : this.HeadGear.StrModifier) + 
+                (this.ChestGear == null ? 0 : this.ChestGear.StrModifier) +
+                (this.HandsGear == null ? 0 : this.HandsGear.StrModifier) + 
+                (this.LegsGear == null ? 0 : this.LegsGear.StrModifier);
             this.EquippedItemsAgiModifier =
-                this.Weapon.AgiModifier + this.HeadGear.AgiModifier + this.ChestGear.AgiModifier +
-                this.HandsGear.AgiModifier + this.LegsGear.AgiModifier;
+                (this.Weapon == null ? 0 : this.Weapon.AgiModifier) +
+                (this.HeadGear == null ? 0 : this.HeadGear.AgiModifier) +
+                (this.ChestGear == null ? 0 : this.ChestGear.AgiModifier) +
+                (this.HandsGear == null ? 0 : this.HandsGear.AgiModifier) +
+                (this.LegsGear == null ? 0 : this.LegsGear.AgiModifier);
             this.EquippedItemsIntModifier =
-                this.Weapon.IntModifier + this.HeadGear.IntModifier + this.ChestGear.IntModifier +
-                this.HandsGear.IntModifier + this.LegsGear.IntModifier;
+                (this.Weapon == null ? 0 : this.Weapon.IntModifier) +
+                (this.HeadGear == null ? 0 : this.HeadGear.IntModifier) +
+                (this.ChestGear == null ? 0 : this.ChestGear.IntModifier) +
+                (this.HandsGear == null ? 0 : this.HandsGear.IntModifier) +
+                (this.LegsGear == null ? 0 : this.LegsGear.IntModifier);
             this.EquippedItemsHPModifier =
-                this.Weapon.HPModifier + this.HeadGear.HPModifier + this.ChestGear.HPModifier +
-                this.HandsGear.HPModifier + this.LegsGear.HPModifier;
+                (this.Weapon == null ? 0 : this.Weapon.HPModifier) +
+                (this.HeadGear == null ? 0 : this.HeadGear.HPModifier) +
+                (this.ChestGear == null ? 0 : this.ChestGear.HPModifier) +
+                (this.HandsGear == null ? 0 : this.HandsGear.HPModifier) +
+                (this.LegsGear == null ? 0 : this.LegsGear.HPModifier);
         }
     }
 }
