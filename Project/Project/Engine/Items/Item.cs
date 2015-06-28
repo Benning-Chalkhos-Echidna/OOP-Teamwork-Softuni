@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections.Specialized;
+using System.IO;
 
 namespace Project.Engine.Items
 {
@@ -18,7 +19,7 @@ namespace Project.Engine.Items
         {
             this.id = id;
             this.subType = subType;
-            this.name = name;
+            this.Name = name;
 
             this.StrModifier = str;
             this.AgiModifier = agi;
@@ -31,6 +32,12 @@ namespace Project.Engine.Items
         }
 
         public abstract int Price { get; }
+
+        public string Name
+        {
+            get { return this.name; }
+            set { this.name = value; }
+        }
 
         public string ImgPath
         {

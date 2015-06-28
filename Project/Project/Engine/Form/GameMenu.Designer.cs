@@ -31,12 +31,14 @@
             this.components = new System.ComponentModel.Container();
             this.shopTabCtrl = new System.Windows.Forms.TabControl();
             this.CharacterPanel = new System.Windows.Forms.TabPage();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             this.EquippedItemsLabel = new System.Windows.Forms.Label();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.LegsGearImgBox = new System.Windows.Forms.PictureBox();
-            this.HandsGearImgBox = new System.Windows.Forms.PictureBox();
-            this.ChestGearImgBox = new System.Windows.Forms.PictureBox();
-            this.HeadGearImgBox = new System.Windows.Forms.PictureBox();
+            this.EquippedLegsGearImgBox = new System.Windows.Forms.PictureBox();
+            this.EquippedHandsGearImgBox = new System.Windows.Forms.PictureBox();
+            this.EquippedChestGearImgBox = new System.Windows.Forms.PictureBox();
+            this.EquippedHeadGearImgBox = new System.Windows.Forms.PictureBox();
+            this.WeaponEquippedImgBox = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.GoldValue = new System.Windows.Forms.TextBox();
@@ -89,11 +91,11 @@
             this.entityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.shopTabCtrl.SuspendLayout();
             this.CharacterPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LegsGearImgBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HandsGearImgBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ChestGearImgBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HeadGearImgBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EquippedLegsGearImgBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EquippedHandsGearImgBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EquippedChestGearImgBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EquippedHeadGearImgBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WeaponEquippedImgBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -120,12 +122,14 @@
             // CharacterPanel
             // 
             this.CharacterPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CharacterPanel.Controls.Add(this.label12);
+            this.CharacterPanel.Controls.Add(this.textBox9);
             this.CharacterPanel.Controls.Add(this.EquippedItemsLabel);
-            this.CharacterPanel.Controls.Add(this.pictureBox11);
-            this.CharacterPanel.Controls.Add(this.LegsGearImgBox);
-            this.CharacterPanel.Controls.Add(this.HandsGearImgBox);
-            this.CharacterPanel.Controls.Add(this.ChestGearImgBox);
-            this.CharacterPanel.Controls.Add(this.HeadGearImgBox);
+            this.CharacterPanel.Controls.Add(this.EquippedLegsGearImgBox);
+            this.CharacterPanel.Controls.Add(this.EquippedHandsGearImgBox);
+            this.CharacterPanel.Controls.Add(this.EquippedChestGearImgBox);
+            this.CharacterPanel.Controls.Add(this.EquippedHeadGearImgBox);
+            this.CharacterPanel.Controls.Add(this.WeaponEquippedImgBox);
             this.CharacterPanel.Controls.Add(this.pictureBox6);
             this.CharacterPanel.Controls.Add(this.pictureBox5);
             this.CharacterPanel.Controls.Add(this.GoldValue);
@@ -164,6 +168,23 @@
             this.CharacterPanel.Text = "Character";
             this.CharacterPanel.UseVisualStyleBackColor = true;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(688, 250);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(146, 20);
+            this.label12.TabIndex = 33;
+            this.label12.Text = "Weapon Name test";
+            // 
+            // textBox9
+            // 
+            this.textBox9.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.entityBindingSource, "WeaponName", true));
+            this.textBox9.Location = new System.Drawing.Point(626, 273);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(258, 26);
+            this.textBox9.TabIndex = 32;
+            // 
             // EquippedItemsLabel
             // 
             this.EquippedItemsLabel.AutoSize = true;
@@ -174,55 +195,60 @@
             this.EquippedItemsLabel.TabIndex = 31;
             this.EquippedItemsLabel.Text = "Equipped items";
             // 
-            // pictureBox11
+            // EquippedLegsGearImgBox
             // 
-            this.pictureBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox11.Location = new System.Drawing.Point(684, 373);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(58, 50);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox11.TabIndex = 30;
-            this.pictureBox11.TabStop = false;
+            this.EquippedLegsGearImgBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.EquippedLegsGearImgBox.DataBindings.Add(new System.Windows.Forms.Binding("ImageLocation", this.entityBindingSource, "LegsGearImgPath", true));
+            this.EquippedLegsGearImgBox.Location = new System.Drawing.Point(684, 373);
+            this.EquippedLegsGearImgBox.Name = "EquippedLegsGearImgBox";
+            this.EquippedLegsGearImgBox.Size = new System.Drawing.Size(58, 50);
+            this.EquippedLegsGearImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.EquippedLegsGearImgBox.TabIndex = 30;
+            this.EquippedLegsGearImgBox.TabStop = false;
             // 
-            // LegsGearImgBox
+            // EquippedHandsGearImgBox
             // 
-            this.LegsGearImgBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LegsGearImgBox.Location = new System.Drawing.Point(612, 373);
-            this.LegsGearImgBox.Name = "LegsGearImgBox";
-            this.LegsGearImgBox.Size = new System.Drawing.Size(58, 50);
-            this.LegsGearImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.LegsGearImgBox.TabIndex = 29;
-            this.LegsGearImgBox.TabStop = false;
+            this.EquippedHandsGearImgBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.EquippedHandsGearImgBox.DataBindings.Add(new System.Windows.Forms.Binding("ImageLocation", this.entityBindingSource, "HandsGearImgPath", true));
+            this.EquippedHandsGearImgBox.Location = new System.Drawing.Point(612, 373);
+            this.EquippedHandsGearImgBox.Name = "EquippedHandsGearImgBox";
+            this.EquippedHandsGearImgBox.Size = new System.Drawing.Size(58, 50);
+            this.EquippedHandsGearImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.EquippedHandsGearImgBox.TabIndex = 29;
+            this.EquippedHandsGearImgBox.TabStop = false;
             // 
-            // HandsGearImgBox
+            // EquippedChestGearImgBox
             // 
-            this.HandsGearImgBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.HandsGearImgBox.Location = new System.Drawing.Point(533, 373);
-            this.HandsGearImgBox.Name = "HandsGearImgBox";
-            this.HandsGearImgBox.Size = new System.Drawing.Size(58, 50);
-            this.HandsGearImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.HandsGearImgBox.TabIndex = 28;
-            this.HandsGearImgBox.TabStop = false;
+            this.EquippedChestGearImgBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.EquippedChestGearImgBox.DataBindings.Add(new System.Windows.Forms.Binding("ImageLocation", this.entityBindingSource, "ChestGearImgPath", true));
+            this.EquippedChestGearImgBox.Location = new System.Drawing.Point(533, 373);
+            this.EquippedChestGearImgBox.Name = "EquippedChestGearImgBox";
+            this.EquippedChestGearImgBox.Size = new System.Drawing.Size(58, 50);
+            this.EquippedChestGearImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.EquippedChestGearImgBox.TabIndex = 28;
+            this.EquippedChestGearImgBox.TabStop = false;
             // 
-            // ChestGearImgBox
+            // EquippedHeadGearImgBox
             // 
-            this.ChestGearImgBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ChestGearImgBox.Location = new System.Drawing.Point(450, 373);
-            this.ChestGearImgBox.Name = "ChestGearImgBox";
-            this.ChestGearImgBox.Size = new System.Drawing.Size(58, 50);
-            this.ChestGearImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.ChestGearImgBox.TabIndex = 27;
-            this.ChestGearImgBox.TabStop = false;
+            this.EquippedHeadGearImgBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.EquippedHeadGearImgBox.DataBindings.Add(new System.Windows.Forms.Binding("ImageLocation", this.entityBindingSource, "HeadGearImgPath", true));
+            this.EquippedHeadGearImgBox.Location = new System.Drawing.Point(450, 373);
+            this.EquippedHeadGearImgBox.Name = "EquippedHeadGearImgBox";
+            this.EquippedHeadGearImgBox.Size = new System.Drawing.Size(58, 50);
+            this.EquippedHeadGearImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.EquippedHeadGearImgBox.TabIndex = 27;
+            this.EquippedHeadGearImgBox.TabStop = false;
             // 
-            // HeadGearImgBox
+            // WeaponEquippedImgBox
             // 
-            this.HeadGearImgBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.HeadGearImgBox.Location = new System.Drawing.Point(370, 373);
-            this.HeadGearImgBox.Name = "HeadGearImgBox";
-            this.HeadGearImgBox.Size = new System.Drawing.Size(58, 50);
-            this.HeadGearImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.HeadGearImgBox.TabIndex = 26;
-            this.HeadGearImgBox.TabStop = false;
+            this.WeaponEquippedImgBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.WeaponEquippedImgBox.DataBindings.Add(new System.Windows.Forms.Binding("ImageLocation", this.entityBindingSource, "WeaponImgPath", true));
+            this.WeaponEquippedImgBox.Location = new System.Drawing.Point(370, 373);
+            this.WeaponEquippedImgBox.Name = "WeaponEquippedImgBox";
+            this.WeaponEquippedImgBox.Size = new System.Drawing.Size(58, 50);
+            this.WeaponEquippedImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.WeaponEquippedImgBox.TabIndex = 26;
+            this.WeaponEquippedImgBox.TabStop = false;
             // 
             // pictureBox6
             // 
@@ -741,11 +767,11 @@
             this.shopTabCtrl.ResumeLayout(false);
             this.CharacterPanel.ResumeLayout(false);
             this.CharacterPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LegsGearImgBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HandsGearImgBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ChestGearImgBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HeadGearImgBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EquippedLegsGearImgBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EquippedHandsGearImgBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EquippedChestGearImgBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EquippedHeadGearImgBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WeaponEquippedImgBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -814,12 +840,14 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.TextBox GoldValue;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.PictureBox LegsGearImgBox;
-        private System.Windows.Forms.PictureBox HandsGearImgBox;
-        private System.Windows.Forms.PictureBox ChestGearImgBox;
-        private System.Windows.Forms.PictureBox HeadGearImgBox;
+        private System.Windows.Forms.PictureBox EquippedLegsGearImgBox;
+        private System.Windows.Forms.PictureBox EquippedHandsGearImgBox;
+        private System.Windows.Forms.PictureBox EquippedChestGearImgBox;
+        private System.Windows.Forms.PictureBox EquippedHeadGearImgBox;
+        private System.Windows.Forms.PictureBox WeaponEquippedImgBox;
         private System.Windows.Forms.Label EquippedItemsLabel;
         private System.Windows.Forms.BindingSource entityBindingSource;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox9;
     }
 }

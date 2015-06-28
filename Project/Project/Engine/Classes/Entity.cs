@@ -23,6 +23,14 @@ namespace Project.Engine.Classes
 
         protected int _attack, _defense;
 
+        protected string weaponImgPath;
+        protected string headGearImgPath;
+        protected string handsGearImgPath;
+        protected string chestGearImgPath;
+        protected string legsGearImgPath;
+
+        protected string weaponName;
+
         protected Entity()
         {
             this.Gold = 1000;
@@ -34,6 +42,11 @@ namespace Project.Engine.Classes
             this.isAlive = true;
             this.inventory = new Inventory();
             this.equippedItems = new Equipped();
+            this.EquipItem(ItemCreate.GetRandomItem("Weapon"));
+            this.EquipItem(ItemCreate.GetRandomItem("HeadGear"));
+            this.EquipItem(ItemCreate.GetRandomItem("ChestGear"));
+            this.EquipItem(ItemCreate.GetRandomItem("HandsGear"));
+            this.EquipItem(ItemCreate.GetRandomItem("LegsGear"));
         }
 
         public string Name
@@ -142,7 +155,9 @@ namespace Project.Engine.Classes
                     if (oldItem != null)
                     {
                         this.inventory.InventoryItems.Add(oldItem);
-                    }                   
+                    }
+                    this.WeaponImgPath = item.ImgPath;
+                    this.WeaponName = item.Name;
                 }
                 else if (item is HeadGear)
                 {
@@ -153,6 +168,7 @@ namespace Project.Engine.Classes
                     {
                         this.inventory.InventoryItems.Add(oldItem);
                     }
+                    this.HeadGearImgPath = item.ImgPath;
                 }
                 else if (item is ChestGear)
                 {
@@ -163,6 +179,7 @@ namespace Project.Engine.Classes
                     {
                         this.inventory.InventoryItems.Add(oldItem);
                     }
+                    this.ChestGearImgPath = item.ImgPath;
                 }
                 else if (item is HandsGear)
                 {
@@ -173,6 +190,7 @@ namespace Project.Engine.Classes
                     {
                         this.inventory.InventoryItems.Add(oldItem);
                     }
+                    this.HandsGearImgPath = item.ImgPath;
                 }
                 else if (item is LegsGear)
                 {
@@ -183,6 +201,7 @@ namespace Project.Engine.Classes
                     {
                         this.inventory.InventoryItems.Add(oldItem);
                     }
+                    this.LegsGearImgPath = item.ImgPath;
                 }
 
                 AddModifiersFromEquippedItems();
@@ -252,6 +271,62 @@ namespace Project.Engine.Classes
             {
                 this._defense = value;
                 OnPropertyChanged("Health");
+            }
+        }
+
+        public string WeaponImgPath
+        {
+            get { return this.weaponImgPath; }
+            set
+            {
+                this.weaponImgPath = value; 
+                OnPropertyChanged("WeaponImgPath");
+            }
+        }
+        public string HeadGearImgPath
+        {
+            get { return this.headGearImgPath; }
+            set
+            {
+                this.headGearImgPath = value;
+                OnPropertyChanged("HeadGearImgPath");
+            }
+        }
+        public string HandsGearImgPath
+        {
+            get { return this.handsGearImgPath; }
+            set
+            {
+                this.handsGearImgPath = value;
+                OnPropertyChanged("HandsGearImgPath");
+            }
+        }
+        public string ChestGearImgPath
+        {
+            get { return this.chestGearImgPath; }
+            set
+            {
+                this.chestGearImgPath = value;
+                OnPropertyChanged("ChestGearImgPath");
+            }
+        }
+        public string LegsGearImgPath
+        {
+            get { return this.legsGearImgPath; }
+            set
+            {
+                this.legsGearImgPath = value;
+                OnPropertyChanged("LegsGearImgPath");
+            }
+        }
+
+        public string WeaponName
+        {
+            get { return this.weaponName; }
+            set
+            {
+                this.weaponName = value; 
+                OnPropertyChanged("WeaponName");
             }
         }
 
