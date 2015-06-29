@@ -50,7 +50,40 @@ namespace Project.Engine
 
         public static string HandleSpell(IEntity engager, IEntity target)
         {
-            return string.Empty;
+            string output = string.Empty;
+            if (target.isAlive)
+            {
+                if (engager.isAlive)
+                {
+                    if (engager is IHeal)
+                    {
+                        output = string.Format("{0} has casted {1} on {2} which has a healing effect of {3} health points!",
+                            engager.Name, engager.EntitySpell.SpellName, target.Name, engager.EntitySpell.SpellVal);
+                        target.Health += engager.EntitySpell.SpellVal;
+                    }
+                    else
+                    {
+                        output = string.Format("{0} has casted {1} on {2} which has a damaging effect of {3} health points!",
+                            engager.Name, engager.EntitySpell.SpellName, target.Name, engager.EntitySpell.SpellVal);
+                        target.Health -= engager.EntitySpell.SpellVal;
+                        if (!target.isAlive)
+                        {
+                            output += "\n" + string.Format("{0} has been slain!", target.Name);
+                        }
+                    }
+                }
+                else
+                {
+                    output = string.Format("{0} is dead!", engager.Name);
+                }
+            }
+            else
+            {
+                output = string.Format("{0} is dead!", target.Name);
+            }
+            UI.updateAllies();
+            UI.updateEnemies();
+            return output;
         }
         public static string HandleAttack(IEntity engager, IEntity target)
         {

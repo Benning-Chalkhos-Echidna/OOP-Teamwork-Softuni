@@ -99,7 +99,7 @@
     <Compile Include="Engine\UI.cs" />
     <Compile Include="Engine\Classes\Warrior.cs" />
     <Compile Include="Engine\Items\StatsPotion.cs" />
-    <Compile Include="Spell.cs" />
+    <Compile Include="Engine\Classes\Spell.cs" />
     <EmbeddedResource Include="Engine\Form\CharacterCreate.resx">
       <DependentUpon>CharacterCreate.cs</DependentUpon>
     </EmbeddedResource>

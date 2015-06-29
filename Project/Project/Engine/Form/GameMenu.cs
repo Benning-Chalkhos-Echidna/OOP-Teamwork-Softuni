@@ -62,57 +62,105 @@ namespace Project.Engine.Form
 
                 if (UI.Allies.Count == 1)
                 {
-                    this.label4.Text = UI.Allies[0].Name + " - Class: " + UI.Allies[0].EntityClass.ToString();
-                    this.textBox2.Text = string.Format("Strength: {0}   Agility: {1}   Intellect: {2}   Attack: {3}   Health {4}  ",
-                        UI.Allies[0].Strength, UI.Allies[0].Agility, UI.Allies[0].Intellect, UI.Allies[0].Attack,
-                        UI.Allies[0].Health);
-
+                    this.allyOneName.Text = UI.Allies[0].Name + " - Class: " + UI.Allies[0].EntityClass.ToString();
+                    if (UI.Allies[0].isAlive)
+                    {
+                        this.allyOneStats.Text = string.Format("Strength: {0}   Agility: {1}   Intellect: {2}   Attack: {3}   Health {4}  ",
+                            UI.Allies[0].Strength, UI.Allies[0].Agility, UI.Allies[0].Intellect, UI.Allies[0].Attack,
+                            UI.Allies[0].Health);
+                    }
+                    else
+                    {
+                        this.allyOneStats.Text = string.Format("Slain");
+                    }
                 }
                 if (UI.Allies.Count == 2)
                 {
-                    this.label5.Text = UI.Allies[1].Name + " - Class: " + UI.Allies[1].EntityClass.ToString();
-                    this.textBox3.Text = string.Format("Strength: {0}   Agility: {1}   Intellect: {2}   Attack: {3}   Health {4}  ",
-                        UI.Allies[1].Strength, UI.Allies[1].Agility, UI.Allies[1].Intellect, UI.Allies[1].Attack,
-                        UI.Allies[1].Health);
+                    this.allyTwoName.Text = UI.Allies[1].Name + " - Class: " + UI.Allies[1].EntityClass.ToString();
+                    if (UI.Allies[1].isAlive)
+                    {
+                        this.allyTwoStats.Text = string.Format("Strength: {0}   Agility: {1}   Intellect: {2}   Attack: {3}   Health {4}  ",
+                            UI.Allies[1].Strength, UI.Allies[1].Agility, UI.Allies[1].Intellect, UI.Allies[1].Attack,
+                            UI.Allies[1].Health);
+                    }
+                    else
+                    {
+                        this.allyTwoStats.Text = string.Format("Slain");
+                    }
                 }
                 if (UI.Allies.Count == 3)
                 {
-                    this.label6.Text = UI.Allies[2].Name + " - Class: " + UI.Allies[2].EntityClass.ToString();
-                    this.textBox4.Text = string.Format("Strength: {0}   Agility: {1}   Intellect: {2}   Attack: {3}   Health {4}  ",
-                        UI.Allies[2].Strength, UI.Allies[2].Agility, UI.Allies[2].Intellect, UI.Allies[2].Attack,
-                        UI.Allies[2].Health);
+                    this.allyThreeName.Text = UI.Allies[2].Name + " - Class: " + UI.Allies[2].EntityClass.ToString();
+                    if (UI.Allies[2].isAlive)
+                    {
+                        this.allyThreeStats.Text = string.Format("Strength: {0}   Agility: {1}   Intellect: {2}   Attack: {3}   Health {4}  ",
+                            UI.Allies[2].Strength, UI.Allies[2].Agility, UI.Allies[2].Intellect, UI.Allies[2].Attack,
+                            UI.Allies[2].Health);
+                    }
+                    else
+                    {
+                        this.allyThreeStats.Text = string.Format("Slain");
+                    }
                 }
             });
             UI.updateAllies.Invoke();
 
             UI.updateEnemies = new Action(delegate()
             {
-                this.label7.Text = UI.Enemies[0].Name + " - Class: " + UI.Enemies[0].EntityClass.ToString();
-                this.textBox5.Text = string.Format("Strength: {0}   Agility: {1}   Intellect: {2}   Attack: {3}   Health {4}  ",
-                     UI.Enemies[0].Strength, UI.Enemies[0].Agility, UI.Enemies[0].Intellect, UI.Enemies[0].Attack,
-                     UI.Enemies[0].Health);
+                this.enemyOneName.Text = UI.Enemies[0].Name + " - Class: " + UI.Enemies[0].EntityClass.ToString();
+                if (UI.Enemies[0].isAlive)
+                {
+                    this.enemyOneStats.Text = string.Format("Strength: {0}   Agility: {1}   Intellect: {2}   Attack: {3}   Health {4}  ",
+                         UI.Enemies[0].Strength, UI.Enemies[0].Agility, UI.Enemies[0].Intellect, UI.Enemies[0].Attack,
+                         UI.Enemies[0].Health);
+                }
+                else
+                {
+                    this.enemyOneStats.Text = string.Format("Slain");
+                }
 
                 if (UI.Enemies.Count == 2)
                 {
-                    this.label8.Text = UI.Enemies[1].Name + " - Class: " + UI.Enemies[1].EntityClass.ToString();
-                    this.textBox6.Text = string.Format("Strength: {0}   Agility: {1}   Intellect: {2}   Attack: {3}   Health {4}  ",
-                         UI.Enemies[1].Strength, UI.Enemies[1].Agility, UI.Enemies[1].Intellect, UI.Enemies[1].Attack,
-                         UI.Enemies[1].Health);
+                    this.enemyTwoName.Text = UI.Enemies[1].Name + " - Class: " + UI.Enemies[1].EntityClass.ToString();
+                    if (UI.Enemies[1].isAlive)
+                    {
+                        this.enemyTwoStats.Text = string.Format("Strength: {0}   Agility: {1}   Intellect: {2}   Attack: {3}   Health {4}  ",
+                             UI.Enemies[1].Strength, UI.Enemies[1].Agility, UI.Enemies[1].Intellect, UI.Enemies[1].Attack,
+                             UI.Enemies[1].Health);
+                    }
+                    else
+                    {
+                        this.enemyTwoStats.Text = string.Format("Slain");
+                    }
 
                 }
                 if (UI.Enemies.Count == 3)
                 {
-                    this.label9.Text = UI.Enemies[2].Name + " - Class: " + UI.Enemies[2].EntityClass.ToString();
-                    this.textBox7.Text = string.Format("Strength: {0}   Agility: {1}   Intellect: {2}   Attack: {3}   Health {4}  ",
-                         UI.Enemies[2].Strength, UI.Enemies[2].Agility, UI.Enemies[2].Intellect, UI.Enemies[2].Attack,
-                         UI.Enemies[2].Health);
+                    this.enemyThreeName.Text = UI.Enemies[2].Name + " - Class: " + UI.Enemies[3].EntityClass.ToString();
+                    if (UI.Enemies[2].isAlive)
+                    {
+                        this.enemyThreeStats.Text = string.Format("Strength: {0}   Agility: {1}   Intellect: {2}   Attack: {3}   Health {4}  ",
+                             UI.Enemies[3].Strength, UI.Enemies[0].Agility, UI.Enemies[0].Intellect, UI.Enemies[0].Attack,
+                             UI.Enemies[3].Health);
+                    }
+                    else
+                    {
+                        this.enemyThreeStats.Text = string.Format("Slain");
+                    }
                 }
                 if (UI.Enemies.Count == 4)
                 {
-                    this.label10.Text = UI.Enemies[3].Name + " - Class: " + UI.Enemies[3].EntityClass.ToString();
-                    this.textBox8.Text = string.Format("Strength: {0}   Agility: {1}   Intellect: {2}   Attack: {3}   Health {4}  ",
-                         UI.Enemies[3].Strength, UI.Enemies[0].Agility, UI.Enemies[0].Intellect, UI.Enemies[0].Attack,
-                         UI.Enemies[3].Health);
+                    this.enemyFourName.Text = UI.Enemies[3].Name + " - Class: " + UI.Enemies[2].EntityClass.ToString();
+                    if (UI.Enemies[3].isAlive)
+                    {
+                        this.enemyFourStats.Text = string.Format("Strength: {0}   Agility: {1}   Intellect: {2}   Attack: {3}   Health {4}  ",
+                             UI.Enemies[2].Strength, UI.Enemies[2].Agility, UI.Enemies[2].Intellect, UI.Enemies[2].Attack,
+                             UI.Enemies[2].Health);
+                    }
+                    else
+                    {
+                        this.enemyFourStats.Text = string.Format("Slain");
+                    }
                 }
             });
             UI.updateEnemies.Invoke();
@@ -121,6 +169,11 @@ namespace Project.Engine.Form
         private void RoundButton_Click(object sender, EventArgs e)
         {
             this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Player.Character, UI.Enemies[0]);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.BattleConsole.Text += "\n" + UI.HandleSpell(UI.Player.Character, UI.Enemies[0]);
         }
     }
 }

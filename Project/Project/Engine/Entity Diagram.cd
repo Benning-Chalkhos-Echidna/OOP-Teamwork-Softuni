@@ -44,7 +44,7 @@
     <Position X="2.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAABEAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
-      <FileName>Spell.cs</FileName>
+      <FileName>Engine\Classes\Spell.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="Project.Engine.Interfaces.IDamage">

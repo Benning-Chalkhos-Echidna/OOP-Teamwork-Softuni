@@ -10,6 +10,7 @@ namespace Project
     {
         private SpellType spellType;
         private int spellVal;
+        private string spellname;
 
         public Spell(SpellType spellType)
         {
@@ -22,7 +23,11 @@ namespace Project
             get { return this.spellType; }
             set { this.spellType = value; }
         }
-
+        public string SpellName
+        {
+            get { return this.spellname; }
+            set { this.spellname = value; }
+        }
         public int SpellVal
         {
             get { return this.spellVal; }

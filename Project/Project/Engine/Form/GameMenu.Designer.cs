@@ -69,26 +69,27 @@
             this.CharacterClass = new System.Windows.Forms.Label();
             this.CharacterPortrait = new System.Windows.Forms.PictureBox();
             this.BattleTab = new System.Windows.Forms.TabPage();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.enemyTwoStats = new System.Windows.Forms.TextBox();
             this.RoundButton = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.enemyTwoName = new System.Windows.Forms.Label();
+            this.enemyOneStats = new System.Windows.Forms.TextBox();
+            this.enemyOneName = new System.Windows.Forms.Label();
+            this.enemyFourStats = new System.Windows.Forms.TextBox();
+            this.enemyFourName = new System.Windows.Forms.Label();
+            this.enemyThreeStats = new System.Windows.Forms.TextBox();
+            this.enemyThreeName = new System.Windows.Forms.Label();
+            this.allyThreeStats = new System.Windows.Forms.TextBox();
+            this.allyThreeName = new System.Windows.Forms.Label();
+            this.allyTwoStats = new System.Windows.Forms.TextBox();
+            this.allyTwoName = new System.Windows.Forms.Label();
+            this.allyOneStats = new System.Windows.Forms.TextBox();
+            this.allyOneName = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.BattleConsole = new System.Windows.Forms.RichTextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.entityBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.shopTabCtrl.SuspendLayout();
             this.CharacterPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EquippedLegsGearImgBox)).BeginInit();
@@ -561,21 +562,22 @@
             // 
             // BattleTab
             // 
-            this.BattleTab.Controls.Add(this.textBox5);
+            this.BattleTab.Controls.Add(this.button1);
+            this.BattleTab.Controls.Add(this.enemyTwoStats);
             this.BattleTab.Controls.Add(this.RoundButton);
-            this.BattleTab.Controls.Add(this.label7);
-            this.BattleTab.Controls.Add(this.textBox6);
-            this.BattleTab.Controls.Add(this.label8);
-            this.BattleTab.Controls.Add(this.textBox7);
-            this.BattleTab.Controls.Add(this.label9);
-            this.BattleTab.Controls.Add(this.textBox8);
-            this.BattleTab.Controls.Add(this.label10);
-            this.BattleTab.Controls.Add(this.textBox3);
-            this.BattleTab.Controls.Add(this.label5);
-            this.BattleTab.Controls.Add(this.textBox4);
-            this.BattleTab.Controls.Add(this.label6);
-            this.BattleTab.Controls.Add(this.textBox2);
-            this.BattleTab.Controls.Add(this.label4);
+            this.BattleTab.Controls.Add(this.enemyTwoName);
+            this.BattleTab.Controls.Add(this.enemyOneStats);
+            this.BattleTab.Controls.Add(this.enemyOneName);
+            this.BattleTab.Controls.Add(this.enemyFourStats);
+            this.BattleTab.Controls.Add(this.enemyFourName);
+            this.BattleTab.Controls.Add(this.enemyThreeStats);
+            this.BattleTab.Controls.Add(this.enemyThreeName);
+            this.BattleTab.Controls.Add(this.allyThreeStats);
+            this.BattleTab.Controls.Add(this.allyThreeName);
+            this.BattleTab.Controls.Add(this.allyTwoStats);
+            this.BattleTab.Controls.Add(this.allyTwoName);
+            this.BattleTab.Controls.Add(this.allyOneStats);
+            this.BattleTab.Controls.Add(this.allyOneName);
             this.BattleTab.Controls.Add(this.textBox1);
             this.BattleTab.Controls.Add(this.label3);
             this.BattleTab.Controls.Add(this.BattleConsole);
@@ -587,135 +589,135 @@
             this.BattleTab.Text = "Battle Menu";
             this.BattleTab.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // enemyTwoStats
             // 
-            this.textBox5.Location = new System.Drawing.Point(625, 156);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(277, 46);
-            this.textBox5.TabIndex = 18;
+            this.enemyTwoStats.Location = new System.Drawing.Point(625, 156);
+            this.enemyTwoStats.Multiline = true;
+            this.enemyTwoStats.Name = "enemyTwoStats";
+            this.enemyTwoStats.ReadOnly = true;
+            this.enemyTwoStats.Size = new System.Drawing.Size(277, 46);
+            this.enemyTwoStats.TabIndex = 18;
             // 
             // RoundButton
             // 
-            this.RoundButton.Location = new System.Drawing.Point(423, 441);
+            this.RoundButton.Location = new System.Drawing.Point(306, 441);
             this.RoundButton.Name = "RoundButton";
             this.RoundButton.Size = new System.Drawing.Size(75, 23);
             this.RoundButton.TabIndex = 1;
-            this.RoundButton.Text = "Fight";
+            this.RoundButton.Text = "Attack";
+            this.RoundButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.RoundButton.UseVisualStyleBackColor = true;
             this.RoundButton.Click += new System.EventHandler(this.RoundButton_Click);
             // 
-            // label7
+            // enemyTwoName
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(622, 140);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 13);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "LAbel 7";
+            this.enemyTwoName.AutoSize = true;
+            this.enemyTwoName.Location = new System.Drawing.Point(622, 140);
+            this.enemyTwoName.Name = "enemyTwoName";
+            this.enemyTwoName.Size = new System.Drawing.Size(0, 13);
+            this.enemyTwoName.TabIndex = 17;
             // 
-            // textBox6
+            // enemyOneStats
             // 
-            this.textBox6.Location = new System.Drawing.Point(625, 48);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(277, 46);
-            this.textBox6.TabIndex = 16;
+            this.enemyOneStats.Location = new System.Drawing.Point(625, 48);
+            this.enemyOneStats.Multiline = true;
+            this.enemyOneStats.Name = "enemyOneStats";
+            this.enemyOneStats.ReadOnly = true;
+            this.enemyOneStats.Size = new System.Drawing.Size(277, 46);
+            this.enemyOneStats.TabIndex = 16;
             // 
-            // label8
+            // enemyOneName
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(622, 32);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(0, 13);
-            this.label8.TabIndex = 15;
+            this.enemyOneName.AutoSize = true;
+            this.enemyOneName.Location = new System.Drawing.Point(622, 32);
+            this.enemyOneName.Name = "enemyOneName";
+            this.enemyOneName.Size = new System.Drawing.Size(0, 13);
+            this.enemyOneName.TabIndex = 15;
             // 
-            // textBox7
+            // enemyFourStats
             // 
-            this.textBox7.Location = new System.Drawing.Point(625, 378);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(277, 46);
-            this.textBox7.TabIndex = 14;
+            this.enemyFourStats.Location = new System.Drawing.Point(625, 378);
+            this.enemyFourStats.Multiline = true;
+            this.enemyFourStats.Name = "enemyFourStats";
+            this.enemyFourStats.ReadOnly = true;
+            this.enemyFourStats.Size = new System.Drawing.Size(277, 46);
+            this.enemyFourStats.TabIndex = 14;
             // 
-            // label9
+            // enemyFourName
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(622, 362);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(0, 13);
-            this.label9.TabIndex = 13;
+            this.enemyFourName.AutoSize = true;
+            this.enemyFourName.Location = new System.Drawing.Point(622, 362);
+            this.enemyFourName.Name = "enemyFourName";
+            this.enemyFourName.Size = new System.Drawing.Size(0, 13);
+            this.enemyFourName.TabIndex = 13;
             // 
-            // textBox8
+            // enemyThreeStats
             // 
-            this.textBox8.Location = new System.Drawing.Point(625, 265);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(277, 46);
-            this.textBox8.TabIndex = 12;
+            this.enemyThreeStats.Location = new System.Drawing.Point(625, 265);
+            this.enemyThreeStats.Multiline = true;
+            this.enemyThreeStats.Name = "enemyThreeStats";
+            this.enemyThreeStats.ReadOnly = true;
+            this.enemyThreeStats.Size = new System.Drawing.Size(277, 46);
+            this.enemyThreeStats.TabIndex = 12;
             // 
-            // label10
+            // enemyThreeName
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(622, 249);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(0, 13);
-            this.label10.TabIndex = 11;
+            this.enemyThreeName.AutoSize = true;
+            this.enemyThreeName.Location = new System.Drawing.Point(622, 249);
+            this.enemyThreeName.Name = "enemyThreeName";
+            this.enemyThreeName.Size = new System.Drawing.Size(0, 13);
+            this.enemyThreeName.TabIndex = 11;
             // 
-            // textBox3
+            // allyThreeStats
             // 
-            this.textBox3.Location = new System.Drawing.Point(6, 378);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(277, 46);
-            this.textBox3.TabIndex = 10;
+            this.allyThreeStats.Location = new System.Drawing.Point(6, 378);
+            this.allyThreeStats.Multiline = true;
+            this.allyThreeStats.Name = "allyThreeStats";
+            this.allyThreeStats.ReadOnly = true;
+            this.allyThreeStats.Size = new System.Drawing.Size(277, 46);
+            this.allyThreeStats.TabIndex = 10;
             // 
-            // label5
+            // allyThreeName
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 362);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 13);
-            this.label5.TabIndex = 9;
+            this.allyThreeName.AutoSize = true;
+            this.allyThreeName.Location = new System.Drawing.Point(3, 362);
+            this.allyThreeName.Name = "allyThreeName";
+            this.allyThreeName.Size = new System.Drawing.Size(0, 13);
+            this.allyThreeName.TabIndex = 9;
             // 
-            // textBox4
+            // allyTwoStats
             // 
-            this.textBox4.Location = new System.Drawing.Point(6, 270);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(277, 46);
-            this.textBox4.TabIndex = 8;
+            this.allyTwoStats.Location = new System.Drawing.Point(6, 270);
+            this.allyTwoStats.Multiline = true;
+            this.allyTwoStats.Name = "allyTwoStats";
+            this.allyTwoStats.ReadOnly = true;
+            this.allyTwoStats.Size = new System.Drawing.Size(277, 46);
+            this.allyTwoStats.TabIndex = 8;
             // 
-            // label6
+            // allyTwoName
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 254);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 13);
-            this.label6.TabIndex = 7;
+            this.allyTwoName.AutoSize = true;
+            this.allyTwoName.Location = new System.Drawing.Point(3, 254);
+            this.allyTwoName.Name = "allyTwoName";
+            this.allyTwoName.Size = new System.Drawing.Size(0, 13);
+            this.allyTwoName.TabIndex = 7;
             // 
-            // textBox2
+            // allyOneStats
             // 
-            this.textBox2.Location = new System.Drawing.Point(6, 161);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(277, 46);
-            this.textBox2.TabIndex = 6;
+            this.allyOneStats.Location = new System.Drawing.Point(6, 161);
+            this.allyOneStats.Multiline = true;
+            this.allyOneStats.Name = "allyOneStats";
+            this.allyOneStats.ReadOnly = true;
+            this.allyOneStats.Size = new System.Drawing.Size(277, 46);
+            this.allyOneStats.TabIndex = 6;
             // 
-            // label4
+            // allyOneName
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 145);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 13);
-            this.label4.TabIndex = 5;
+            this.allyOneName.AutoSize = true;
+            this.allyOneName.Location = new System.Drawing.Point(3, 145);
+            this.allyOneName.Name = "allyOneName";
+            this.allyOneName.Size = new System.Drawing.Size(0, 13);
+            this.allyOneName.TabIndex = 5;
             // 
             // textBox1
             // 
@@ -755,6 +757,17 @@
             // entityBindingSource
             // 
             this.entityBindingSource.DataSource = typeof(Project.Engine.Classes.Entity);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(535, 441);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Spell";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // GameMenu
             // 
@@ -816,20 +829,20 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox BattleConsole;
         private System.Windows.Forms.Button RoundButton;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox allyThreeStats;
+        private System.Windows.Forms.Label allyThreeName;
+        private System.Windows.Forms.TextBox allyTwoStats;
+        private System.Windows.Forms.Label allyTwoName;
+        private System.Windows.Forms.TextBox allyOneStats;
+        private System.Windows.Forms.Label allyOneName;
+        private System.Windows.Forms.TextBox enemyTwoStats;
+        private System.Windows.Forms.Label enemyTwoName;
+        private System.Windows.Forms.TextBox enemyOneStats;
+        private System.Windows.Forms.Label enemyOneName;
+        private System.Windows.Forms.TextBox enemyFourStats;
+        private System.Windows.Forms.Label enemyFourName;
+        private System.Windows.Forms.TextBox enemyThreeStats;
+        private System.Windows.Forms.Label enemyThreeName;
         private System.Windows.Forms.PictureBox chPanelStrImg;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -849,5 +862,6 @@
         private System.Windows.Forms.BindingSource entityBindingSource;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Button button1;
     }
 }
