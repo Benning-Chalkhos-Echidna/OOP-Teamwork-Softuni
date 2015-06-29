@@ -713,7 +713,7 @@
             // 
             this.EquippedLegsGearImgBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.EquippedLegsGearImgBox.DataBindings.Add(new System.Windows.Forms.Binding("ImageLocation", this.entityBindingSource, "LegsGearImgPath", true));
-            this.EquippedLegsGearImgBox.Location = new System.Drawing.Point(77, 355);
+            this.EquippedLegsGearImgBox.Location = new System.Drawing.Point(26, 303);
             this.EquippedLegsGearImgBox.Name = "EquippedLegsGearImgBox";
             this.EquippedLegsGearImgBox.Size = new System.Drawing.Size(58, 50);
             this.EquippedLegsGearImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -724,7 +724,7 @@
             // 
             this.EquippedHandsGearImgBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.EquippedHandsGearImgBox.DataBindings.Add(new System.Windows.Forms.Binding("ImageLocation", this.entityBindingSource, "HandsGearImgPath", true));
-            this.EquippedHandsGearImgBox.Location = new System.Drawing.Point(77, 287);
+            this.EquippedHandsGearImgBox.Location = new System.Drawing.Point(26, 247);
             this.EquippedHandsGearImgBox.Name = "EquippedHandsGearImgBox";
             this.EquippedHandsGearImgBox.Size = new System.Drawing.Size(58, 50);
             this.EquippedHandsGearImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -735,7 +735,7 @@
             // 
             this.EquippedChestGearImgBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.EquippedChestGearImgBox.DataBindings.Add(new System.Windows.Forms.Binding("ImageLocation", this.entityBindingSource, "ChestGearImgPath", true));
-            this.EquippedChestGearImgBox.Location = new System.Drawing.Point(77, 216);
+            this.EquippedChestGearImgBox.Location = new System.Drawing.Point(26, 191);
             this.EquippedChestGearImgBox.Name = "EquippedChestGearImgBox";
             this.EquippedChestGearImgBox.Size = new System.Drawing.Size(58, 50);
             this.EquippedChestGearImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -746,7 +746,7 @@
             // 
             this.EquippedHeadGearImgBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.EquippedHeadGearImgBox.DataBindings.Add(new System.Windows.Forms.Binding("ImageLocation", this.entityBindingSource, "HeadGearImgPath", true));
-            this.EquippedHeadGearImgBox.Location = new System.Drawing.Point(77, 146);
+            this.EquippedHeadGearImgBox.Location = new System.Drawing.Point(26, 135);
             this.EquippedHeadGearImgBox.Name = "EquippedHeadGearImgBox";
             this.EquippedHeadGearImgBox.Size = new System.Drawing.Size(58, 50);
             this.EquippedHeadGearImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -757,7 +757,7 @@
             // 
             this.WeaponEquippedImgBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.WeaponEquippedImgBox.DataBindings.Add(new System.Windows.Forms.Binding("ImageLocation", this.entityBindingSource, "WeaponImgPath", true));
-            this.WeaponEquippedImgBox.Location = new System.Drawing.Point(77, 75);
+            this.WeaponEquippedImgBox.Location = new System.Drawing.Point(26, 79);
             this.WeaponEquippedImgBox.Name = "WeaponEquippedImgBox";
             this.WeaponEquippedImgBox.Size = new System.Drawing.Size(58, 50);
             this.WeaponEquippedImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -767,91 +767,91 @@
             // WeaponNameBox
             // 
             this.WeaponNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.WeaponNameBox.Location = new System.Drawing.Point(156, 89);
+            this.WeaponNameBox.Location = new System.Drawing.Point(105, 89);
             this.WeaponNameBox.Name = "WeaponNameBox";
             this.WeaponNameBox.ReadOnly = true;
-            this.WeaponNameBox.Size = new System.Drawing.Size(214, 26);
+            this.WeaponNameBox.Size = new System.Drawing.Size(341, 26);
             this.WeaponNameBox.TabIndex = 38;
             // 
             // WeaponStatsTxtBox
             // 
             this.WeaponStatsTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.WeaponStatsTxtBox.Location = new System.Drawing.Point(376, 89);
+            this.WeaponStatsTxtBox.Location = new System.Drawing.Point(452, 89);
             this.WeaponStatsTxtBox.Name = "WeaponStatsTxtBox";
             this.WeaponStatsTxtBox.ReadOnly = true;
-            this.WeaponStatsTxtBox.Size = new System.Drawing.Size(465, 26);
+            this.WeaponStatsTxtBox.Size = new System.Drawing.Size(425, 26);
             this.WeaponStatsTxtBox.TabIndex = 39;
             // 
             // HeadGearStatsTxtBox
             // 
             this.HeadGearStatsTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.HeadGearStatsTxtBox.Location = new System.Drawing.Point(376, 159);
+            this.HeadGearStatsTxtBox.Location = new System.Drawing.Point(452, 149);
             this.HeadGearStatsTxtBox.Name = "HeadGearStatsTxtBox";
             this.HeadGearStatsTxtBox.ReadOnly = true;
-            this.HeadGearStatsTxtBox.Size = new System.Drawing.Size(465, 26);
+            this.HeadGearStatsTxtBox.Size = new System.Drawing.Size(425, 26);
             this.HeadGearStatsTxtBox.TabIndex = 41;
             // 
             // HeadGearNameBox
             // 
             this.HeadGearNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.HeadGearNameBox.Location = new System.Drawing.Point(156, 159);
+            this.HeadGearNameBox.Location = new System.Drawing.Point(105, 149);
             this.HeadGearNameBox.Name = "HeadGearNameBox";
             this.HeadGearNameBox.ReadOnly = true;
-            this.HeadGearNameBox.Size = new System.Drawing.Size(214, 26);
+            this.HeadGearNameBox.Size = new System.Drawing.Size(341, 26);
             this.HeadGearNameBox.TabIndex = 40;
             // 
             // ChestGearStatsTxtBox
             // 
             this.ChestGearStatsTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ChestGearStatsTxtBox.Location = new System.Drawing.Point(376, 232);
+            this.ChestGearStatsTxtBox.Location = new System.Drawing.Point(452, 204);
             this.ChestGearStatsTxtBox.Name = "ChestGearStatsTxtBox";
             this.ChestGearStatsTxtBox.ReadOnly = true;
-            this.ChestGearStatsTxtBox.Size = new System.Drawing.Size(465, 26);
+            this.ChestGearStatsTxtBox.Size = new System.Drawing.Size(425, 26);
             this.ChestGearStatsTxtBox.TabIndex = 43;
             // 
             // ChestGearNameBox
             // 
             this.ChestGearNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ChestGearNameBox.Location = new System.Drawing.Point(156, 232);
+            this.ChestGearNameBox.Location = new System.Drawing.Point(105, 204);
             this.ChestGearNameBox.Name = "ChestGearNameBox";
             this.ChestGearNameBox.ReadOnly = true;
-            this.ChestGearNameBox.Size = new System.Drawing.Size(214, 26);
+            this.ChestGearNameBox.Size = new System.Drawing.Size(341, 26);
             this.ChestGearNameBox.TabIndex = 42;
             // 
             // HandsGearStatsTxtBox
             // 
             this.HandsGearStatsTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.HandsGearStatsTxtBox.Location = new System.Drawing.Point(376, 302);
+            this.HandsGearStatsTxtBox.Location = new System.Drawing.Point(452, 259);
             this.HandsGearStatsTxtBox.Name = "HandsGearStatsTxtBox";
             this.HandsGearStatsTxtBox.ReadOnly = true;
-            this.HandsGearStatsTxtBox.Size = new System.Drawing.Size(465, 26);
+            this.HandsGearStatsTxtBox.Size = new System.Drawing.Size(425, 26);
             this.HandsGearStatsTxtBox.TabIndex = 45;
             // 
             // HandsGearNameBox
             // 
             this.HandsGearNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.HandsGearNameBox.Location = new System.Drawing.Point(156, 302);
+            this.HandsGearNameBox.Location = new System.Drawing.Point(105, 259);
             this.HandsGearNameBox.Name = "HandsGearNameBox";
             this.HandsGearNameBox.ReadOnly = true;
-            this.HandsGearNameBox.Size = new System.Drawing.Size(214, 26);
+            this.HandsGearNameBox.Size = new System.Drawing.Size(341, 26);
             this.HandsGearNameBox.TabIndex = 44;
             // 
             // LegsGearStatsTxtBox
             // 
             this.LegsGearStatsTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LegsGearStatsTxtBox.Location = new System.Drawing.Point(376, 369);
+            this.LegsGearStatsTxtBox.Location = new System.Drawing.Point(452, 314);
             this.LegsGearStatsTxtBox.Name = "LegsGearStatsTxtBox";
             this.LegsGearStatsTxtBox.ReadOnly = true;
-            this.LegsGearStatsTxtBox.Size = new System.Drawing.Size(465, 26);
+            this.LegsGearStatsTxtBox.Size = new System.Drawing.Size(425, 26);
             this.LegsGearStatsTxtBox.TabIndex = 47;
             // 
             // LegsGearNameBox
             // 
             this.LegsGearNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LegsGearNameBox.Location = new System.Drawing.Point(156, 369);
+            this.LegsGearNameBox.Location = new System.Drawing.Point(105, 314);
             this.LegsGearNameBox.Name = "LegsGearNameBox";
             this.LegsGearNameBox.ReadOnly = true;
-            this.LegsGearNameBox.Size = new System.Drawing.Size(214, 26);
+            this.LegsGearNameBox.Size = new System.Drawing.Size(341, 26);
             this.LegsGearNameBox.TabIndex = 46;
             // 
             // entityBindingSource

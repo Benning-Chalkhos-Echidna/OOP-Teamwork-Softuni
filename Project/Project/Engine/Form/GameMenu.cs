@@ -16,7 +16,6 @@ namespace Project.Engine.Form
             this.entityBindingSource.DataSource = playerChar;
             
             
-            
             this.WeaponNameBox.Text = playerChar.equippedItems.Weapon.Name;
             this.WeaponStatsTxtBox.Text = string.Format("Strength +{0}, Agility +{1}, Intellect +{2}, HP +{3}",
                 playerChar.equippedItems.Weapon.StrModifier, playerChar.equippedItems.Weapon.AgiModifier,
