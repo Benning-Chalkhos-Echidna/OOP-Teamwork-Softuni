@@ -91,5 +91,25 @@ namespace Project.Engine.Form
             MessageBox.Show("Character Successfully Created!\n" + UI.Player.Character.ToString());
             Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UI.gameType = GameType.OneVsOne;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            UI.gameType = GameType.ThreeVsThree;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            UI.gameType = GameType.TwoVsTwo;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            UI.gameType = GameType.FourVsFour;
+        }
     }
 }

@@ -29,7 +29,6 @@ namespace Project.Engine
             UI.Player = new Player(name);
             UI.Player.Character = entity;
             allEntities.Add(entity);
-            gameType = GameType.TwoVsTwo;
             GenerateEnemiesAndAllies();
         }
         public static Entity CreateEntity(Player.PlayerClass playerClass, EntityGender entityGender, string name)
@@ -177,7 +176,7 @@ namespace Project.Engine
                         break;
                     //Paladin
                     case 4:
-                        newEnemyEntity = new Paladin(EntityGender.Female, "PaladinLady", EntityTeam.Enemy);
+                        newEnemyEntity = new Paladin(EntityGender.Female, "Paladin Lady", EntityTeam.Enemy);
                         Enemies.Add(newEnemyEntity);
                         allEntities.Add(newEnemyEntity);
                         break;
