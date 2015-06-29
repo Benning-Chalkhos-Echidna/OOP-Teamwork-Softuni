@@ -2,7 +2,7 @@
 
 namespace Project.Engine.Interfaces
 {
-    interface IEntity
+    public interface IEntity
     {
         int Agility { get; set; }
         int Attack { get; set; }

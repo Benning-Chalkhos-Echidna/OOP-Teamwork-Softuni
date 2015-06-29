@@ -1,4 +1,5 @@
 ﻿using Project.Engine.Classes;
+using Project.Engine.Form;
 using Project.Engine.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,6 @@ namespace Project.Engine
         //We also need to implement a way to save files.
         public static Player Player;
         public static int RoundCount = 0;
-        public static Entity enemyTest = new Warrior(EntityGender.Male, "Enemy", EntityTeam.Enemy);
         public static Random rnd = new Random();
 
         public static List<Entity> allEntities = new List<Entity>();
@@ -48,109 +48,52 @@ namespace Project.Engine
                     return new Mage(entityGender, name, EntityTeam.Player);
             }
         }
-        public static void Round(Entity engager, Entity target)
-        {
-            RoundCount++;
-            if (engager is IHeal) target.Health += engager.Attack;
-            else if (engager is IDamage) target.Health -= engager.Attack;
-            if (target.Health < 0) target.isAlive = false;
-            UI.updateAllies.Invoke();
-            UI.updateEnemies.Invoke();
 
+        public static string HandleSpell(IEntity engager, IEntity target)
+        {
+            return string.Empty;
         }
-        public static string RoundOutcome(Entity engager, Entity target)
+        public static string HandleAttack(IEntity engager, IEntity target)
         {
             string output = string.Empty;
-            if (target.isAlive == true)
-            {
-                if (engager.isAlive == true)
-                {
-                    if (engager.Team == EntityTeam.Player)
-                    {
-                        if (engager is IHeal)
-                            output += string.Format("Player {0} heals Ally {1} for {2} points.", engager.Name, target.Name, engager.Attack);
-                        else if (engager is IDamage)
-                            output += string.Format("Player {0} attacks Enemy {1} for {2} points.", engager.Name, target.Name, engager.Attack);
-                    }
-                    else if (engager.Team == EntityTeam.Ally)
-                    {
-                        if (engager is IHeal)
-                            output += string.Format("Your allied healer {0} heals {1} for {2} health points.",
-                                engager.Name, target.Name, engager.Attack);
-                        else if (engager is IDamage)
-                            output += string.Format("Your allied damage dealer {0} attacks {1} for {2} health points.",
-                                engager.Name, target.Name, engager.Attack);
-                    }
-                    else if (engager.Team == EntityTeam.Enemy)
-                    {
-                        if (engager is IHeal)
-                            output += string.Format("Enemy healer {0} heals his ally {1} for {2} health points.",
-                                engager.Name, target.Name, engager.Attack);
-                        else if (engager is IDamage)
-                            output += string.Format("Enemy damage dealer {0} attacks {1} for {2} health points.",
-                                engager.Name, target.Name, engager.Attack);
-                    }
-                    if (target.isAlive == true)
-                    {
-                        output += string.Format("\n{0} is left with {1} health points.", target.Name, target.Health);
-                        return output;
-                    }
-                    else
-                    {
-                        output += string.Format("\n{0} has been slain!", target.Name);
-                        
-                    }
-                }
-            }
-            return output;
-        }
 
-        /*public static void PassEngagerAndTarget()
-        { 
-         * re-implemented with GenerateEnemiesAndAllies();
-            int indexOne = rnd.Next(0, allEntities.Count);
-            int indexTwo = rnd.Next(0, allEntities.Count);
-
-            if (allEntities[indexOne].Team == allEntities[indexTwo].Team)
+            if (engager.Attack > 0)
             {
-                if (allEntities[indexOne].isAlive == true)
+                if (engager.isAlive)
                 {
-                    if (allEntities[indexOne] is IHeal)
+                    if (target.isAlive)
                     {
-                        if (allEntities[indexTwo].isAlive == true)
+                        int attVal = engager.Attack - target.Defense + UI.rnd.Next(1, 10);
+                        target.Health -= attVal;
+                        if (target.Health <= 0)
                         {
-                            Round(allEntities[indexOne], allEntities[indexTwo]);
+                            target.isAlive = false;
+                            output += string.Format("{0} has been slain by {1}!", target.Name, engager.Name);
                         }
                         else
-                            PassEngagerAndTarget();
+                        {
+                            output += string.Format("{0} attacked {1} for {2} damage! {1} is left with {3} health points!",
+                                engager.Name, target.Name, attVal, target.Health);
+                        }
                     }
                     else
-                        PassEngagerAndTarget();
+                    {
+                        output += string.Format("{0} is dead.", target.Name);
+                    }
                 }
                 else
-                    PassEngagerAndTarget();
+                {
+                    output += string.Format("{0} is dead.", engager.Name);
+                }
             }
             else
             {
-                if (allEntities[indexOne].isAlive == true)
-                {
-                    if (allEntities[indexOne] is IDamage)
-                    {
-                        if (allEntities[indexTwo].isAlive == true)
-                        {
-                            Round(allEntities[indexOne], allEntities[indexTwo]);
-                        }
-                        else
-                            PassEngagerAndTarget();
-                    }
-                    else
-                        PassEngagerAndTarget();
-                }
-                else
-                    PassEngagerAndTarget();
+                output += string.Format("{0} cannot attack!", engager.Name);
             }
+            UI.updateAllies();
+            UI.updateEnemies();
+            return output;
         }
-         */
         private static void GenerateEnemiesAndAllies()
         {
             int allyCount = 0;

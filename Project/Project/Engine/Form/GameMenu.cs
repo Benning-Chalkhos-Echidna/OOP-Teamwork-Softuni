@@ -15,20 +15,6 @@ namespace Project.Engine.Form
             Entity playerChar = UI.Player.Character;
             this.entityBindingSource.DataSource = playerChar;
 
-            //this.CharacterClassValue.Text = playerChar.EntityClass.ToString();
-            //this.StrValue.Text = playerChar.Strength.ToString();
-            //this.AgiValue.Text = playerChar.Agility.ToString();
-            //this.IntValue.Text = playerChar.Intellect.ToString();
-
-            //this.HpValue.Text = playerChar.Health.ToString();
-            //this.AttValue.Text = playerChar.Attack.ToString();
-            //this.DefValue.Text = playerChar.Defense.ToString();
-
-            //this.GoldValue.Text = playerChar.Gold.ToString();
-
-            //this.HeadGearImgBox.Image = Image.FromFile(playerChar.equippedItems.HeadGear.ImgPath);
-            //this.ChestGearImgBox.Image = Image.FromFile(playerChar.equippedItems.ChestGear.ImgPath);
-
             switch (playerChar.EntityClass)
             {
                 case Player.PlayerClass.Druid:
@@ -134,58 +120,7 @@ namespace Project.Engine.Form
 
         private void RoundButton_Click(object sender, EventArgs e)
         {
-            //UI.PassEngagerAndTarget();
-            this.BattleConsole.Text += string.Format("\nROUND {0}", UI.roundCounter);
-            UI.roundCounter++;
-            int nextNum = UI.rnd.Next(0, UI.Enemies.Count);
-            while (UI.Enemies[nextNum].isAlive == false)
-            { nextNum = UI.rnd.Next(1, UI.Enemies.Count); }
-            if (UI.Player.Character.isAlive == true)
-            {
-                if (UI.Player.Character is IDamage)
-                {
-                    UI.Round(UI.Player.Character, UI.Enemies[nextNum]);
-                    this.BattleConsole.Text += "\n" + UI.RoundOutcome(UI.Player.Character, UI.Enemies[nextNum]);
-
-                    if (UI.Enemies[nextNum] is IDamage)
-                    {
-                        UI.Round(UI.Enemies[nextNum], UI.Player.Character);
-                        this.BattleConsole.Text += "\n" + UI.RoundOutcome(UI.Enemies[nextNum], UI.Player.Character);
-                    }
-                    else if (UI.Enemies[nextNum] is IHeal)
-                    {
-                        int nextOne = UI.rnd.Next(0, UI.Enemies.Count);
-                        UI.Round(UI.Enemies[nextNum], UI.Enemies[nextOne]);
-                        this.BattleConsole.Text += "\n" + UI.RoundOutcome(UI.Enemies[nextNum],
-                            UI.Enemies[nextOne]);
-                    }
-
-                }
-                else if (UI.Player.Character is IHeal)
-                {
-                    nextNum = UI.rnd.Next(0, UI.Allies.Count);
-
-                    UI.Round(UI.Player.Character, UI.Allies[nextNum]);
-                    this.BattleConsole.Text += "\n" + UI.RoundOutcome(UI.Player.Character, UI.Allies[nextNum]);
-                    if (UI.Allies[nextNum] is IDamage)
-                    {
-                        int nextOne = UI.rnd.Next(0, UI.Enemies.Count);
-                        UI.Round(UI.Allies[nextNum], UI.Enemies[nextOne]);
-                        this.BattleConsole.Text += "\n" + UI.RoundOutcome(UI.Allies[nextNum], UI.Enemies[nextOne]);
-                    }
-                    else if (UI.Allies[nextNum] is IHeal)
-                    {
-                        int nextOne = UI.rnd.Next(0, UI.Allies.Count);
-                        UI.Round(UI.Allies[nextNum], UI.Allies[nextOne]);
-                        this.BattleConsole.Text += "\n" + UI.RoundOutcome(UI.Allies[nextNum],
-                            UI.Allies[nextOne]);
-                    }
-                }
-            }
-            else
-            {
-                //Game Over
-            }
+            this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Player.Character, UI.Enemies[0]);
         }
     }
 }

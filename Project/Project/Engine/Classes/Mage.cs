@@ -4,13 +4,7 @@ namespace Project.Engine.Classes
 {
     public class Mage : Entity, IEntity, IDamage
     {
-        #region Constructors
-        public Mage()
-            : base()
-        {
 
-        }
-        #endregion
         public Mage(EntityGender entityGender, string name, EntityTeam team)
         {
             base.EntityGender = entityGender;
@@ -22,12 +16,10 @@ namespace Project.Engine.Classes
             base.EntityClass = Engine.Player.PlayerClass.Mage;
 
             base.Attack = base.Intellect;
-            base.Defense = base.Strength;
-
+            base.Defense = 5;
+            base.EntitySpell = new Spell(SpellType.DamageSpell);
+            base.EntitySpell.SpellVal = (this.Intellect * 2) - UI.rnd.Next(1, 6);
             base.Team = team;
         }
-        #region Methods
-
-        #endregion
     }
 }

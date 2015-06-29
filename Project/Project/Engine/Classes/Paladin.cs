@@ -4,13 +4,6 @@ namespace Project.Engine.Classes
 {
     class Paladin : Entity, IEntity, IHeal
     {
-        #region Constructors
-        public Paladin()
-            : base()
-        {
-
-        }
-        #endregion
         public Paladin(EntityGender entityGender, string name, EntityTeam team)
         {
             base.EntityGender = entityGender;
@@ -22,12 +15,10 @@ namespace Project.Engine.Classes
             base.EntityClass = Engine.Player.PlayerClass.Paladin;
 
             base.Attack = base.Intellect;
-            base.Defense = base.Strength;
-
+            base.Defense = 5;
+            base.EntitySpell = new Spell(SpellType.HealSpell);
+            base.EntitySpell.SpellVal = this.Intellect + this.Strength - UI.rnd.Next(1, 6);
             base.Team = team;
         }
-        #region Methods
-
-        #endregion
     }
 }

@@ -4,13 +4,6 @@ namespace Project.Engine.Classes
 {
     public class Warrior : Entity, IEntity, IDamage
     {
-        #region Constructors
-        public Warrior()
-            : base()
-        {
-
-        }
-        #endregion
         public Warrior(EntityGender entityGender, string name, EntityTeam team)
         {
             base.EntityGender = entityGender;
@@ -22,12 +15,10 @@ namespace Project.Engine.Classes
             base.EntityClass = Engine.Player.PlayerClass.Warrior;
 
             base.Attack = base.Strength;
-            base.Defense = base.Strength;
-
+            base.Defense = 5;
+            base.EntitySpell = new Spell(SpellType.DamageSpell);
+            base.EntitySpell.SpellVal = (this.Strength * 2) - UI.rnd.Next(1, 6);
             base.Team = team;
         }
-        #region Methods
-
-        #endregion
     }
 }

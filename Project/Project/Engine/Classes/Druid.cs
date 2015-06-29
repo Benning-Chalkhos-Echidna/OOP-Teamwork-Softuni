@@ -4,13 +4,6 @@ namespace Project.Engine.Classes
 {
     public class Druid : Entity, IEntity, IHeal
     {
-        #region Constructors
-        public Druid()
-            : base()
-        {
-
-        }
-        #endregion
         public Druid(EntityGender entityGender, string name, EntityTeam team)
         {
             base.EntityGender = entityGender;
@@ -22,8 +15,9 @@ namespace Project.Engine.Classes
             base.EntityClass = Engine.Player.PlayerClass.Druid;
 
             base.Attack = base.Agility;
-            base.Defense = base.Strength;
-
+            base.Defense = 5;
+            base.EntitySpell = new Spell(SpellType.HealSpell);
+            base.EntitySpell.SpellVal = this.Agility + this.Strength - UI.rnd.Next(1, 6);
             base.Team = team;
         }
     }

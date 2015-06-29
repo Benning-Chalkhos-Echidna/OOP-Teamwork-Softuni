@@ -11,7 +11,7 @@
   <Class Name="Project.Engine.Classes.Entity">
     <Position X="4.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BBAAKAUABAEIAAAFAEAAAAQACAhAAAASICAAAIAAAEA=</HashCode>
+      <HashCode>BJAAKSUCBAkIAAAFIEAAwAQAqIhAACASMCAAgoWAAEE=</HashCode>
       <FileName>Engine\Classes\Entity.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -40,6 +40,13 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
+  <Class Name="Project.Spell">
+    <Position X="2.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABEAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Spell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="Project.Engine.Interfaces.IDamage">
     <Position X="6.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
@@ -50,7 +57,7 @@
   <Interface Name="Project.Engine.Interfaces.IEntity">
     <Position X="7" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAACAEAAAAAAAABAAAAAAQAAAhAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAACAEAAAAAAAABAAAAAAQAAIhAAAAAAAAAAgEAAAA=</HashCode>
       <FileName>Engine\Interfaces\IEntity.cs</FileName>
     </TypeIdentifier>
   </Interface>

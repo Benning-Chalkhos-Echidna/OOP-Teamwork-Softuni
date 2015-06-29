@@ -15,6 +15,7 @@ namespace Project.Engine.Classes
         protected Player.PlayerClass _entityClass;
         protected Inventory inventory;
         protected Equipped equippedItems;
+        protected Spell entitySpell;
 
         protected int _strength,
             _agility,
@@ -49,6 +50,11 @@ namespace Project.Engine.Classes
             this.EquipItem(ItemCreate.GetRandomItem("LegsGear"));
         }
 
+        public Spell EntitySpell
+        {
+            get { return this.entitySpell; }
+            set { this.entitySpell = value; }
+        }
         public string Name
         {
             get { return this._name; }
@@ -235,10 +241,10 @@ namespace Project.Engine.Classes
         public void AddModifiersFromEquippedItems()
         {
             this.equippedItems.CalculateEquippedItemsModifiers();
-            this.Strength = this.equippedItems.EquippedItemsStrModifier;
-            this.Agility = this.equippedItems.EquippedItemsAgiModifier;
-            this.Intellect = this.equippedItems.EquippedItemsIntModifier;
-            this.Health = this.equippedItems.EquippedItemsHPModifier;
+            this.Strength += this.equippedItems.EquippedItemsStrModifier;
+            this.Agility += this.equippedItems.EquippedItemsAgiModifier;
+            this.Intellect += this.equippedItems.EquippedItemsIntModifier;
+            this.Health += this.equippedItems.EquippedItemsHPModifier;
         }
 
         public override string ToString()
