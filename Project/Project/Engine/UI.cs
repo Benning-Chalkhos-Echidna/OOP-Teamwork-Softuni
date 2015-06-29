@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace Project.Engine
 {
-    public enum GameType { FourVsFour, ThreeVsThree, TwoVsTwo, OneVsOne }
+    public enum GameType { TwoVsTwo, OneVsOne }
     public static class UI
     {
         public static int roundCounter = 1;
@@ -110,12 +110,12 @@ namespace Project.Engine
                     }
                     else
                     {
-                        output += string.Format("{0} is dead.", target.Name);
+                        output += string.Format("{0} is dead!", target.Name);
                     }
                 }
                 else
                 {
-                    output += string.Format("{0} is dead.", engager.Name);
+                    output += string.Format("{0} is dead!", engager.Name);
                 }
             }
             else
@@ -132,14 +132,6 @@ namespace Project.Engine
             int enemyCount = 0;
             switch (UI.gameType)
             {
-                case GameType.FourVsFour:
-                    allyCount = 3;
-                    enemyCount = 4;
-                    break;
-                case GameType.ThreeVsThree:
-                    allyCount = 2;
-                    enemyCount = 3;
-                    break;
                 case GameType.TwoVsTwo:
                     allyCount = 1;
                     enemyCount = 2;

@@ -97,19 +97,9 @@ namespace Project.Engine.Form
             UI.gameType = GameType.OneVsOne;
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            UI.gameType = GameType.ThreeVsThree;
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             UI.gameType = GameType.TwoVsTwo;
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            UI.gameType = GameType.FourVsFour;
         }
     }
 }
