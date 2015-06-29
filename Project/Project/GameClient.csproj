@@ -116,7 +116,6 @@
     </EmbeddedResource>
     <None Include="Engine\Engine Diagram.cd" />
     <None Include="Engine\Entity Diagram.cd" />
-    <None Include="packages.config" />
     <None Include="Properties\DataSources\Project.Engine.Classes.Entity.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
