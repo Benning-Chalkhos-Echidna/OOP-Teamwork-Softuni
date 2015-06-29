@@ -14,7 +14,32 @@ namespace Project.Engine.Form
             characterCreate.ShowDialog();
             Entity playerChar = UI.Player.Character;
             this.entityBindingSource.DataSource = playerChar;
-
+            
+            
+            
+            this.WeaponNameBox.Text = playerChar.equippedItems.Weapon.Name;
+            this.WeaponStatsTxtBox.Text = string.Format("Strength +{0}, Agility +{1}, Intellect +{2}, HP +{3}",
+                playerChar.equippedItems.Weapon.StrModifier, playerChar.equippedItems.Weapon.AgiModifier,
+                playerChar.equippedItems.Weapon.IntModifier, playerChar.equippedItems.Weapon.HPModifier);
+            this.HeadGearNameBox.Text = playerChar.equippedItems.HeadGear.Name;
+            this.HeadGearStatsTxtBox.Text = string.Format("Strength +{0}, Agility +{1}, Intellect +{2}, HP +{3}",
+                playerChar.equippedItems.HeadGear.StrModifier, playerChar.equippedItems.HeadGear.AgiModifier,
+                playerChar.equippedItems.HeadGear.IntModifier, playerChar.equippedItems.HeadGear.HPModifier);
+            this.ChestGearNameBox.Text = playerChar.equippedItems.ChestGear.Name;
+            this.ChestGearStatsTxtBox.Text = string.Format("Strength +{0}, Agility +{1}, Intellect +{2}, HP +{3}",
+                playerChar.equippedItems.ChestGear.StrModifier, playerChar.equippedItems.ChestGear.AgiModifier,
+                playerChar.equippedItems.ChestGear.IntModifier, playerChar.equippedItems.ChestGear.HPModifier);
+            this.HandsGearNameBox.Text = playerChar.equippedItems.HandsGear.Name;
+            this.HandsGearStatsTxtBox.Text = string.Format("Strength +{0}, Agility +{1}, Intellect +{2}, HP +{3}",
+                playerChar.equippedItems.HandsGear.StrModifier, playerChar.equippedItems.HandsGear.AgiModifier,
+                playerChar.equippedItems.HandsGear.IntModifier, playerChar.equippedItems.HandsGear.HPModifier);
+            this.LegsGearNameBox.Text = playerChar.equippedItems.LegsGear.Name;
+            this.LegsGearStatsTxtBox.Text = string.Format("Strength +{0}, Agility +{1}, Intellect +{2}, HP +{3}",
+                playerChar.equippedItems.LegsGear.StrModifier, playerChar.equippedItems.LegsGear.AgiModifier,
+                playerChar.equippedItems.LegsGear.IntModifier, playerChar.equippedItems.LegsGear.HPModifier);
+            
+            
+            
             switch (playerChar.EntityClass)
             {
                 case Player.PlayerClass.Druid:

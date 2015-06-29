@@ -14,7 +14,7 @@ namespace Project.Engine.Classes
         protected EntityGender _entityGender;
         protected Player.PlayerClass _entityClass;
         protected Inventory inventory;
-        protected Equipped equippedItems;
+        public Equipped equippedItems;
         protected Spell entitySpell;
 
         protected int _strength,
@@ -30,7 +30,11 @@ namespace Project.Engine.Classes
         protected string chestGearImgPath;
         protected string legsGearImgPath;
 
-        protected string weaponName;
+        //protected string weaponName;
+        //protected string chestGearName;
+        //protected string handsGearName;
+        //protected string headGearName;
+        //protected string legsGearName;
 
         protected Entity()
         {
@@ -163,7 +167,7 @@ namespace Project.Engine.Classes
                         this.inventory.InventoryItems.Add(oldItem);
                     }
                     this.WeaponImgPath = item.ImgPath;
-                    this.WeaponName = item.Name;
+                    //this.WeaponName = item.Name;
                 }
                 else if (item is HeadGear)
                 {
@@ -323,16 +327,6 @@ namespace Project.Engine.Classes
             {
                 this.legsGearImgPath = value;
                 OnPropertyChanged("LegsGearImgPath");
-            }
-        }
-
-        public string WeaponName
-        {
-            get { return this.weaponName; }
-            set
-            {
-                this.weaponName = value; 
-                OnPropertyChanged("WeaponName");
             }
         }
 
