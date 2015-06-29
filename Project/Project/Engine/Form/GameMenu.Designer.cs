@@ -90,6 +90,10 @@
             this.EquippedChestGearImgBox = new System.Windows.Forms.PictureBox();
             this.EquippedHeadGearImgBox = new System.Windows.Forms.PictureBox();
             this.WeaponEquippedImgBox = new System.Windows.Forms.PictureBox();
+            this.equippedStrModLabel = new System.Windows.Forms.Label();
+            this.equippedAgiModLabel = new System.Windows.Forms.Label();
+            this.equippedIntModLabel = new System.Windows.Forms.Label();
+            this.equippedHPModLabel = new System.Windows.Forms.Label();
             this.entityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.shopTabCtrl.SuspendLayout();
             this.CharacterPanel.SuspendLayout();
@@ -126,6 +130,10 @@
             // CharacterPanel
             // 
             this.CharacterPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CharacterPanel.Controls.Add(this.equippedHPModLabel);
+            this.CharacterPanel.Controls.Add(this.equippedIntModLabel);
+            this.CharacterPanel.Controls.Add(this.equippedAgiModLabel);
+            this.CharacterPanel.Controls.Add(this.equippedStrModLabel);
             this.CharacterPanel.Controls.Add(this.pictureBox6);
             this.CharacterPanel.Controls.Add(this.pictureBox5);
             this.CharacterPanel.Controls.Add(this.GoldValue);
@@ -168,7 +176,7 @@
             // 
             this.pictureBox6.BackgroundImage = global::Project.Properties.Resources.gold;
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox6.Location = new System.Drawing.Point(777, 176);
+            this.pictureBox6.Location = new System.Drawing.Point(811, 179);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(27, 26);
             this.pictureBox6.TabIndex = 23;
@@ -178,7 +186,7 @@
             // 
             this.pictureBox5.BackgroundImage = global::Project.Properties.Resources.defence;
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox5.Location = new System.Drawing.Point(532, 271);
+            this.pictureBox5.Location = new System.Drawing.Point(510, 272);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(28, 26);
             this.pictureBox5.TabIndex = 25;
@@ -190,7 +198,7 @@
             this.GoldValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.GoldValue.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.entityBindingSource, "Gold", true));
             this.GoldValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.GoldValue.Location = new System.Drawing.Point(682, 176);
+            this.GoldValue.Location = new System.Drawing.Point(716, 179);
             this.GoldValue.Name = "GoldValue";
             this.GoldValue.ReadOnly = true;
             this.GoldValue.Size = new System.Drawing.Size(88, 26);
@@ -201,7 +209,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(622, 179);
+            this.label11.Location = new System.Drawing.Point(656, 182);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(47, 20);
             this.label11.TabIndex = 21;
@@ -211,7 +219,7 @@
             // 
             this.pictureBox4.BackgroundImage = global::Project.Properties.Resources.attack;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.Location = new System.Drawing.Point(532, 239);
+            this.pictureBox4.Location = new System.Drawing.Point(510, 240);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(28, 26);
             this.pictureBox4.TabIndex = 24;
@@ -221,7 +229,7 @@
             // 
             this.pictureBox3.BackgroundImage = global::Project.Properties.Resources.life;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(776, 144);
+            this.pictureBox3.Location = new System.Drawing.Point(810, 147);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(28, 26);
             this.pictureBox3.TabIndex = 23;
@@ -231,7 +239,7 @@
             // 
             this.pictureBox2.BackgroundImage = global::Project.Properties.Resources.intelligence;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(531, 207);
+            this.pictureBox2.Location = new System.Drawing.Point(509, 208);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(28, 26);
             this.pictureBox2.TabIndex = 22;
@@ -241,7 +249,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::Project.Properties.Resources.agility;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(531, 176);
+            this.pictureBox1.Location = new System.Drawing.Point(509, 177);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(28, 26);
             this.pictureBox1.TabIndex = 21;
@@ -251,7 +259,7 @@
             // 
             this.chPanelStrImg.BackgroundImage = global::Project.Properties.Resources.strength;
             this.chPanelStrImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.chPanelStrImg.Location = new System.Drawing.Point(530, 144);
+            this.chPanelStrImg.Location = new System.Drawing.Point(508, 145);
             this.chPanelStrImg.Name = "chPanelStrImg";
             this.chPanelStrImg.Size = new System.Drawing.Size(29, 26);
             this.chPanelStrImg.TabIndex = 20;
@@ -304,7 +312,7 @@
             this.DefValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.DefValue.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.entityBindingSource, "Defense", true));
             this.DefValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DefValue.Location = new System.Drawing.Point(448, 271);
+            this.DefValue.Location = new System.Drawing.Point(426, 272);
             this.DefValue.Name = "DefValue";
             this.DefValue.ReadOnly = true;
             this.DefValue.Size = new System.Drawing.Size(76, 26);
@@ -317,7 +325,7 @@
             this.AttValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.AttValue.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.entityBindingSource, "Attack", true));
             this.AttValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AttValue.Location = new System.Drawing.Point(448, 239);
+            this.AttValue.Location = new System.Drawing.Point(426, 240);
             this.AttValue.Name = "AttValue";
             this.AttValue.ReadOnly = true;
             this.AttValue.Size = new System.Drawing.Size(76, 26);
@@ -330,7 +338,7 @@
             this.HpValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.HpValue.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.entityBindingSource, "Health", true));
             this.HpValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.HpValue.Location = new System.Drawing.Point(682, 144);
+            this.HpValue.Location = new System.Drawing.Point(716, 147);
             this.HpValue.Name = "HpValue";
             this.HpValue.ReadOnly = true;
             this.HpValue.Size = new System.Drawing.Size(88, 26);
@@ -343,7 +351,7 @@
             this.IntValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IntValue.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.entityBindingSource, "Intellect", true));
             this.IntValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.IntValue.Location = new System.Drawing.Point(448, 207);
+            this.IntValue.Location = new System.Drawing.Point(426, 208);
             this.IntValue.Name = "IntValue";
             this.IntValue.ReadOnly = true;
             this.IntValue.Size = new System.Drawing.Size(76, 26);
@@ -356,7 +364,7 @@
             this.AgiValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.AgiValue.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.entityBindingSource, "Agility", true));
             this.AgiValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AgiValue.Location = new System.Drawing.Point(448, 176);
+            this.AgiValue.Location = new System.Drawing.Point(426, 177);
             this.AgiValue.Name = "AgiValue";
             this.AgiValue.ReadOnly = true;
             this.AgiValue.Size = new System.Drawing.Size(76, 26);
@@ -369,7 +377,7 @@
             this.StrValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.StrValue.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.entityBindingSource, "Strength", true));
             this.StrValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.StrValue.Location = new System.Drawing.Point(448, 144);
+            this.StrValue.Location = new System.Drawing.Point(426, 145);
             this.StrValue.Name = "StrValue";
             this.StrValue.ReadOnly = true;
             this.StrValue.Size = new System.Drawing.Size(76, 26);
@@ -379,7 +387,7 @@
             // DefenseLabel
             // 
             this.DefenseLabel.AutoSize = true;
-            this.DefenseLabel.Location = new System.Drawing.Point(367, 273);
+            this.DefenseLabel.Location = new System.Drawing.Point(345, 274);
             this.DefenseLabel.Name = "DefenseLabel";
             this.DefenseLabel.Size = new System.Drawing.Size(74, 20);
             this.DefenseLabel.TabIndex = 9;
@@ -388,7 +396,7 @@
             // HealthLabel
             // 
             this.HealthLabel.AutoSize = true;
-            this.HealthLabel.Location = new System.Drawing.Point(613, 147);
+            this.HealthLabel.Location = new System.Drawing.Point(647, 150);
             this.HealthLabel.Name = "HealthLabel";
             this.HealthLabel.Size = new System.Drawing.Size(64, 20);
             this.HealthLabel.TabIndex = 8;
@@ -397,7 +405,7 @@
             // AttackLabel
             // 
             this.AttackLabel.AutoSize = true;
-            this.AttackLabel.Location = new System.Drawing.Point(381, 241);
+            this.AttackLabel.Location = new System.Drawing.Point(359, 242);
             this.AttackLabel.Name = "AttackLabel";
             this.AttackLabel.Size = new System.Drawing.Size(59, 20);
             this.AttackLabel.TabIndex = 7;
@@ -407,7 +415,7 @@
             // 
             this.IntLabel.AutoSize = true;
             this.IntLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.IntLabel.Location = new System.Drawing.Point(369, 209);
+            this.IntLabel.Location = new System.Drawing.Point(347, 210);
             this.IntLabel.Name = "IntLabel";
             this.IntLabel.Size = new System.Drawing.Size(73, 20);
             this.IntLabel.TabIndex = 6;
@@ -417,7 +425,7 @@
             // 
             this.AgiLabel.AutoSize = true;
             this.AgiLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AgiLabel.Location = new System.Drawing.Point(381, 179);
+            this.AgiLabel.Location = new System.Drawing.Point(359, 180);
             this.AgiLabel.Name = "AgiLabel";
             this.AgiLabel.Size = new System.Drawing.Size(58, 20);
             this.AgiLabel.TabIndex = 5;
@@ -427,7 +435,7 @@
             // 
             this.StrLabel.AutoSize = true;
             this.StrLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.StrLabel.Location = new System.Drawing.Point(364, 147);
+            this.StrLabel.Location = new System.Drawing.Point(342, 148);
             this.StrLabel.Name = "StrLabel";
             this.StrLabel.Size = new System.Drawing.Size(75, 20);
             this.StrLabel.TabIndex = 4;
@@ -630,8 +638,10 @@
             // 
             // LegsGearStatsTxtBox
             // 
+            this.LegsGearStatsTxtBox.BackColor = System.Drawing.SystemColors.Window;
             this.LegsGearStatsTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LegsGearStatsTxtBox.Location = new System.Drawing.Point(452, 314);
+            this.LegsGearStatsTxtBox.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.LegsGearStatsTxtBox.Location = new System.Drawing.Point(276, 372);
             this.LegsGearStatsTxtBox.Name = "LegsGearStatsTxtBox";
             this.LegsGearStatsTxtBox.ReadOnly = true;
             this.LegsGearStatsTxtBox.Size = new System.Drawing.Size(425, 26);
@@ -639,17 +649,21 @@
             // 
             // LegsGearNameBox
             // 
+            this.LegsGearNameBox.BackColor = System.Drawing.SystemColors.Window;
             this.LegsGearNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LegsGearNameBox.Location = new System.Drawing.Point(105, 314);
+            this.LegsGearNameBox.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.LegsGearNameBox.Location = new System.Drawing.Point(276, 348);
             this.LegsGearNameBox.Name = "LegsGearNameBox";
             this.LegsGearNameBox.ReadOnly = true;
-            this.LegsGearNameBox.Size = new System.Drawing.Size(341, 26);
+            this.LegsGearNameBox.Size = new System.Drawing.Size(425, 26);
             this.LegsGearNameBox.TabIndex = 46;
             // 
             // HandsGearStatsTxtBox
             // 
+            this.HandsGearStatsTxtBox.BackColor = System.Drawing.SystemColors.Window;
             this.HandsGearStatsTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.HandsGearStatsTxtBox.Location = new System.Drawing.Point(452, 259);
+            this.HandsGearStatsTxtBox.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.HandsGearStatsTxtBox.Location = new System.Drawing.Point(276, 303);
             this.HandsGearStatsTxtBox.Name = "HandsGearStatsTxtBox";
             this.HandsGearStatsTxtBox.ReadOnly = true;
             this.HandsGearStatsTxtBox.Size = new System.Drawing.Size(425, 26);
@@ -657,17 +671,21 @@
             // 
             // HandsGearNameBox
             // 
+            this.HandsGearNameBox.BackColor = System.Drawing.SystemColors.Window;
             this.HandsGearNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.HandsGearNameBox.Location = new System.Drawing.Point(105, 259);
+            this.HandsGearNameBox.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.HandsGearNameBox.Location = new System.Drawing.Point(276, 279);
             this.HandsGearNameBox.Name = "HandsGearNameBox";
             this.HandsGearNameBox.ReadOnly = true;
-            this.HandsGearNameBox.Size = new System.Drawing.Size(341, 26);
+            this.HandsGearNameBox.Size = new System.Drawing.Size(425, 26);
             this.HandsGearNameBox.TabIndex = 44;
             // 
             // ChestGearStatsTxtBox
             // 
+            this.ChestGearStatsTxtBox.BackColor = System.Drawing.SystemColors.Window;
             this.ChestGearStatsTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ChestGearStatsTxtBox.Location = new System.Drawing.Point(452, 204);
+            this.ChestGearStatsTxtBox.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.ChestGearStatsTxtBox.Location = new System.Drawing.Point(276, 234);
             this.ChestGearStatsTxtBox.Name = "ChestGearStatsTxtBox";
             this.ChestGearStatsTxtBox.ReadOnly = true;
             this.ChestGearStatsTxtBox.Size = new System.Drawing.Size(425, 26);
@@ -675,17 +693,21 @@
             // 
             // ChestGearNameBox
             // 
+            this.ChestGearNameBox.BackColor = System.Drawing.SystemColors.Window;
             this.ChestGearNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ChestGearNameBox.Location = new System.Drawing.Point(105, 204);
+            this.ChestGearNameBox.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.ChestGearNameBox.Location = new System.Drawing.Point(276, 210);
             this.ChestGearNameBox.Name = "ChestGearNameBox";
             this.ChestGearNameBox.ReadOnly = true;
-            this.ChestGearNameBox.Size = new System.Drawing.Size(341, 26);
+            this.ChestGearNameBox.Size = new System.Drawing.Size(425, 26);
             this.ChestGearNameBox.TabIndex = 42;
             // 
             // HeadGearStatsTxtBox
             // 
+            this.HeadGearStatsTxtBox.BackColor = System.Drawing.SystemColors.Window;
             this.HeadGearStatsTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.HeadGearStatsTxtBox.Location = new System.Drawing.Point(452, 149);
+            this.HeadGearStatsTxtBox.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.HeadGearStatsTxtBox.Location = new System.Drawing.Point(276, 163);
             this.HeadGearStatsTxtBox.Name = "HeadGearStatsTxtBox";
             this.HeadGearStatsTxtBox.ReadOnly = true;
             this.HeadGearStatsTxtBox.Size = new System.Drawing.Size(425, 26);
@@ -693,17 +715,21 @@
             // 
             // HeadGearNameBox
             // 
+            this.HeadGearNameBox.BackColor = System.Drawing.SystemColors.Window;
             this.HeadGearNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.HeadGearNameBox.Location = new System.Drawing.Point(105, 149);
+            this.HeadGearNameBox.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.HeadGearNameBox.Location = new System.Drawing.Point(276, 139);
             this.HeadGearNameBox.Name = "HeadGearNameBox";
             this.HeadGearNameBox.ReadOnly = true;
-            this.HeadGearNameBox.Size = new System.Drawing.Size(341, 26);
+            this.HeadGearNameBox.Size = new System.Drawing.Size(425, 26);
             this.HeadGearNameBox.TabIndex = 40;
             // 
             // WeaponStatsTxtBox
             // 
+            this.WeaponStatsTxtBox.BackColor = System.Drawing.SystemColors.Window;
             this.WeaponStatsTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.WeaponStatsTxtBox.Location = new System.Drawing.Point(452, 89);
+            this.WeaponStatsTxtBox.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.WeaponStatsTxtBox.Location = new System.Drawing.Point(276, 89);
             this.WeaponStatsTxtBox.Name = "WeaponStatsTxtBox";
             this.WeaponStatsTxtBox.ReadOnly = true;
             this.WeaponStatsTxtBox.Size = new System.Drawing.Size(425, 26);
@@ -711,11 +737,13 @@
             // 
             // WeaponNameBox
             // 
+            this.WeaponNameBox.BackColor = System.Drawing.SystemColors.Window;
             this.WeaponNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.WeaponNameBox.Location = new System.Drawing.Point(105, 89);
+            this.WeaponNameBox.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.WeaponNameBox.Location = new System.Drawing.Point(276, 65);
             this.WeaponNameBox.Name = "WeaponNameBox";
             this.WeaponNameBox.ReadOnly = true;
-            this.WeaponNameBox.Size = new System.Drawing.Size(341, 26);
+            this.WeaponNameBox.Size = new System.Drawing.Size(425, 26);
             this.WeaponNameBox.TabIndex = 38;
             // 
             // EquippedItemsLabel
@@ -732,7 +760,7 @@
             // 
             this.EquippedLegsGearImgBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.EquippedLegsGearImgBox.DataBindings.Add(new System.Windows.Forms.Binding("ImageLocation", this.entityBindingSource, "LegsGearImgPath", true));
-            this.EquippedLegsGearImgBox.Location = new System.Drawing.Point(26, 303);
+            this.EquippedLegsGearImgBox.Location = new System.Drawing.Point(212, 348);
             this.EquippedLegsGearImgBox.Name = "EquippedLegsGearImgBox";
             this.EquippedLegsGearImgBox.Size = new System.Drawing.Size(58, 50);
             this.EquippedLegsGearImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -743,7 +771,7 @@
             // 
             this.EquippedHandsGearImgBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.EquippedHandsGearImgBox.DataBindings.Add(new System.Windows.Forms.Binding("ImageLocation", this.entityBindingSource, "HandsGearImgPath", true));
-            this.EquippedHandsGearImgBox.Location = new System.Drawing.Point(26, 247);
+            this.EquippedHandsGearImgBox.Location = new System.Drawing.Point(212, 279);
             this.EquippedHandsGearImgBox.Name = "EquippedHandsGearImgBox";
             this.EquippedHandsGearImgBox.Size = new System.Drawing.Size(58, 50);
             this.EquippedHandsGearImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -754,7 +782,7 @@
             // 
             this.EquippedChestGearImgBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.EquippedChestGearImgBox.DataBindings.Add(new System.Windows.Forms.Binding("ImageLocation", this.entityBindingSource, "ChestGearImgPath", true));
-            this.EquippedChestGearImgBox.Location = new System.Drawing.Point(26, 191);
+            this.EquippedChestGearImgBox.Location = new System.Drawing.Point(212, 210);
             this.EquippedChestGearImgBox.Name = "EquippedChestGearImgBox";
             this.EquippedChestGearImgBox.Size = new System.Drawing.Size(58, 50);
             this.EquippedChestGearImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -765,7 +793,7 @@
             // 
             this.EquippedHeadGearImgBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.EquippedHeadGearImgBox.DataBindings.Add(new System.Windows.Forms.Binding("ImageLocation", this.entityBindingSource, "HeadGearImgPath", true));
-            this.EquippedHeadGearImgBox.Location = new System.Drawing.Point(26, 135);
+            this.EquippedHeadGearImgBox.Location = new System.Drawing.Point(212, 139);
             this.EquippedHeadGearImgBox.Name = "EquippedHeadGearImgBox";
             this.EquippedHeadGearImgBox.Size = new System.Drawing.Size(58, 50);
             this.EquippedHeadGearImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -776,12 +804,48 @@
             // 
             this.WeaponEquippedImgBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.WeaponEquippedImgBox.DataBindings.Add(new System.Windows.Forms.Binding("ImageLocation", this.entityBindingSource, "WeaponImgPath", true));
-            this.WeaponEquippedImgBox.Location = new System.Drawing.Point(26, 79);
+            this.WeaponEquippedImgBox.Location = new System.Drawing.Point(212, 65);
             this.WeaponEquippedImgBox.Name = "WeaponEquippedImgBox";
             this.WeaponEquippedImgBox.Size = new System.Drawing.Size(58, 50);
             this.WeaponEquippedImgBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.WeaponEquippedImgBox.TabIndex = 32;
             this.WeaponEquippedImgBox.TabStop = false;
+            // 
+            // equippedStrModLabel
+            // 
+            this.equippedStrModLabel.AutoSize = true;
+            this.equippedStrModLabel.Location = new System.Drawing.Point(543, 148);
+            this.equippedStrModLabel.Name = "equippedStrModLabel";
+            this.equippedStrModLabel.Size = new System.Drawing.Size(51, 20);
+            this.equippedStrModLabel.TabIndex = 26;
+            this.equippedStrModLabel.Text = "label4";
+            // 
+            // equippedAgiModLabel
+            // 
+            this.equippedAgiModLabel.AutoSize = true;
+            this.equippedAgiModLabel.Location = new System.Drawing.Point(543, 179);
+            this.equippedAgiModLabel.Name = "equippedAgiModLabel";
+            this.equippedAgiModLabel.Size = new System.Drawing.Size(51, 20);
+            this.equippedAgiModLabel.TabIndex = 27;
+            this.equippedAgiModLabel.Text = "label5";
+            // 
+            // equippedIntModLabel
+            // 
+            this.equippedIntModLabel.AutoSize = true;
+            this.equippedIntModLabel.Location = new System.Drawing.Point(543, 210);
+            this.equippedIntModLabel.Name = "equippedIntModLabel";
+            this.equippedIntModLabel.Size = new System.Drawing.Size(51, 20);
+            this.equippedIntModLabel.TabIndex = 28;
+            this.equippedIntModLabel.Text = "label6";
+            // 
+            // equippedHPModLabel
+            // 
+            this.equippedHPModLabel.AutoSize = true;
+            this.equippedHPModLabel.Location = new System.Drawing.Point(844, 149);
+            this.equippedHPModLabel.Name = "equippedHPModLabel";
+            this.equippedHPModLabel.Size = new System.Drawing.Size(51, 20);
+            this.equippedHPModLabel.TabIndex = 29;
+            this.equippedHPModLabel.Text = "label7";
             // 
             // entityBindingSource
             // 
@@ -884,5 +948,9 @@
         private System.Windows.Forms.TextBox HeadGearStatsTxtBox;
         private System.Windows.Forms.TextBox HeadGearNameBox;
         private System.Windows.Forms.TextBox WeaponStatsTxtBox;
+        private System.Windows.Forms.Label equippedHPModLabel;
+        private System.Windows.Forms.Label equippedIntModLabel;
+        private System.Windows.Forms.Label equippedAgiModLabel;
+        private System.Windows.Forms.Label equippedStrModLabel;
     }
 }
