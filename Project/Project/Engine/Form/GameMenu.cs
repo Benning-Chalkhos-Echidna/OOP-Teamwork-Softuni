@@ -133,15 +133,154 @@ namespace Project.Engine.Form
             });
             UI.updateEnemies.Invoke();
         }
-
+        //Attack Button
         private void RoundButton_Click(object sender, EventArgs e)
         {
-            this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Player.Character, UI.Enemies[0]);
-        }
+            if (UI.hasAttacked)
+            {
+                this.BattleConsole.Text += "\n You cannot attack or use a spell twice in the same turn!";
+            }
+            else
+            {
+                this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Player.Character, UI.Enemies[0]);
+                UI.hasAttacked = true;
+            }
 
+        }
+        //Spell Button
         private void button1_Click(object sender, EventArgs e)
         {
-            this.BattleConsole.Text += "\n" + UI.HandleSpell(UI.Player.Character, UI.Enemies[0]);
+            if (UI.hasAttacked)
+            {
+                this.BattleConsole.Text += "\n You cannot attack or use a spell twice in the same turn!";
+            }
+            else
+            {
+                this.BattleConsole.Text += "\n" + UI.HandleSpell(UI.Player.Character, UI.Enemies[0]);
+                UI.hasAttacked = true;
+            }
+        }
+        //Turn End Button 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (UI.Player.Character.isAlive)
+            {
+                if (UI.Enemies.TrueForAll(entity => !entity.isAlive))
+                {
+                    //Game Won.
+                }
+            }
+            else
+            {
+                //Game Lost.
+            }
+            UI.hasAttacked = false;
+            EnemyOneMove();
+            if (UI.gameType == GameType.TwoVsTwo)
+            {
+                AllyOneMove();
+                EnemyTwoMove();
+            }
+            this.BattleConsole.Text += "\n\nEnd of round " + UI.RoundCount + "\n";
+            UI.RoundCount++;
+        }
+
+        //Methods for the A.I.
+        private void AllyOneMove()
+        {
+            if (UI.Allies[0].isAlive != true)
+            {
+                return;
+            }
+            else
+            {
+                if (UI.Enemies[0].isAlive)
+                {
+                    if (UI.Enemies[1].isAlive)
+                    {
+                        if (UI.Enemies[0].Health < UI.Enemies[1].Health)
+                        {
+                            this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Allies[0], UI.Enemies[0]);
+                        }
+                        else
+                        {
+                            this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Allies[0], UI.Enemies[1]);
+                        }
+                    }
+                    else
+                    {
+                        this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Allies[0], UI.Enemies[0]);
+                    }
+                }
+                else
+                {
+                    this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Allies[0], UI.Enemies[1]);
+                }
+            }
+        }
+        private void EnemyOneMove()
+        {
+            if (UI.Enemies[0].isAlive != true)
+            {
+                return;
+            }
+            else
+            {
+                if (UI.gameType == GameType.TwoVsTwo)
+                {
+                    if (UI.Allies[0].isAlive)
+                    {
+                        if (UI.Allies[0].Health < UI.Player.Character.Health)
+                        {
+                            this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[0], UI.Allies[0]);
+                        }
+                        else
+                        {
+                            this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[0], UI.Player.Character);
+                        }
+                    }
+                    else
+                    {
+                        this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[0], UI.Player.Character);
+                    }
+                }
+                else
+                {
+                    this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[0], UI.Player.Character);
+                }
+            }
+        }
+        private void EnemyTwoMove()
+        {
+            if (UI.Enemies[1].isAlive != true)
+            {
+                return;
+            }
+            else
+            {
+                if (UI.gameType == GameType.TwoVsTwo)
+                {
+                    if (UI.Allies[0].isAlive)
+                    {
+                        if (UI.Allies[0].Health < UI.Player.Character.Health)
+                        {
+                            this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[1], UI.Allies[0]);
+                        }
+                        else
+                        {
+                            this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[1], UI.Player.Character);
+                        }
+                    }
+                    else
+                    {
+                        this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[1], UI.Player.Character);
+                    }
+                }
+                else
+                {
+                    this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[1], UI.Player.Character);
+                }
+            }
         }
     }
 }

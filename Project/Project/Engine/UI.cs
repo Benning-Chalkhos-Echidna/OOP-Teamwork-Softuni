@@ -9,13 +9,14 @@ namespace Project.Engine
     public enum GameType { TwoVsTwo, OneVsOne }
     public static class UI
     {
-        public static int roundCounter = 1;
         public static GameType gameType; //TODO: Set value;
         //Implement rest of the UI and Menus.
         //We also need to implement a way to save files.
         public static Player Player;
-        public static int RoundCount = 0;
+        public static int RoundCount = 1;
         public static Random rnd = new Random();
+
+        public static bool hasAttacked = false;
 
         public static List<Entity> allEntities = new List<Entity>();
         public static List<Entity> Allies = new List<Entity>();

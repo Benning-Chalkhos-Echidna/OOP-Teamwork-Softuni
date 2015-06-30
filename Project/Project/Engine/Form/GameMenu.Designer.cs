@@ -34,6 +34,7 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.GoldValue = new System.Windows.Forms.TextBox();
+            this.entityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -90,11 +91,12 @@
             this.EquippedChestGearImgBox = new System.Windows.Forms.PictureBox();
             this.EquippedHeadGearImgBox = new System.Windows.Forms.PictureBox();
             this.WeaponEquippedImgBox = new System.Windows.Forms.PictureBox();
-            this.entityBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button2 = new System.Windows.Forms.Button();
             this.shopTabCtrl.SuspendLayout();
             this.CharacterPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.entityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -108,7 +110,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.EquippedChestGearImgBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EquippedHeadGearImgBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WeaponEquippedImgBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.entityBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // shopTabCtrl
@@ -196,6 +197,10 @@
             this.GoldValue.Size = new System.Drawing.Size(88, 26);
             this.GoldValue.TabIndex = 22;
             this.GoldValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // entityBindingSource
+            // 
+            this.entityBindingSource.DataSource = typeof(Project.Engine.Classes.Entity);
             // 
             // label11
             // 
@@ -475,6 +480,7 @@
             // 
             // BattleTab
             // 
+            this.BattleTab.Controls.Add(this.button2);
             this.BattleTab.Controls.Add(this.button1);
             this.BattleTab.Controls.Add(this.enemyTwoStats);
             this.BattleTab.Controls.Add(this.RoundButton);
@@ -507,7 +513,7 @@
             // 
             // enemyTwoStats
             // 
-            this.enemyTwoStats.Location = new System.Drawing.Point(637, 265);
+            this.enemyTwoStats.Location = new System.Drawing.Point(625, 265);
             this.enemyTwoStats.Multiline = true;
             this.enemyTwoStats.Name = "enemyTwoStats";
             this.enemyTwoStats.ReadOnly = true;
@@ -552,7 +558,7 @@
             // 
             // allyOneStats
             // 
-            this.allyOneStats.Location = new System.Drawing.Point(3, 265);
+            this.allyOneStats.Location = new System.Drawing.Point(6, 265);
             this.allyOneStats.Multiline = true;
             this.allyOneStats.Name = "allyOneStats";
             this.allyOneStats.ReadOnly = true;
@@ -783,9 +789,15 @@
             this.WeaponEquippedImgBox.TabIndex = 32;
             this.WeaponEquippedImgBox.TabStop = false;
             // 
-            // entityBindingSource
+            // button2
             // 
-            this.entityBindingSource.DataSource = typeof(Project.Engine.Classes.Entity);
+            this.button2.Location = new System.Drawing.Point(422, 441);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 20;
+            this.button2.Text = "End Turn";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // GameMenu
             // 
@@ -800,6 +812,7 @@
             this.CharacterPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.entityBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -815,7 +828,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.EquippedChestGearImgBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EquippedHeadGearImgBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WeaponEquippedImgBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.entityBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -884,5 +896,6 @@
         private System.Windows.Forms.TextBox HeadGearStatsTxtBox;
         private System.Windows.Forms.TextBox HeadGearNameBox;
         private System.Windows.Forms.TextBox WeaponStatsTxtBox;
+        private System.Windows.Forms.Button button2;
     }
 }
