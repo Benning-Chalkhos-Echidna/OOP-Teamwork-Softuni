@@ -16,6 +16,7 @@ namespace Project.Engine.Classes
         protected Inventory inventory;
         public Equipped equippedItems;
         protected Spell entitySpell;
+        protected int mana = 100;
 
         protected int _strength,
             _agility,
@@ -63,6 +64,12 @@ namespace Project.Engine.Classes
         {
             get { return this._name; }
             set { this._name = value; }
+        }
+
+        public int Mana
+        {
+            get { return this.mana; }
+            set { this.mana = value; }
         }
 
         public int Gold

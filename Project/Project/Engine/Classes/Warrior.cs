@@ -19,6 +19,7 @@ namespace Project.Engine.Classes
             base.EntitySpell = new Spell(SpellType.DamageSpell);
             base.EntitySpell.SpellVal = (this.Strength * 2) - UI.rnd.Next(1, 6);
             base.EntitySpell.SpellName = "Powerful Shout";
+            base.EntitySpell.SpellCost = 55;
             base.Team = team;
         }
     }

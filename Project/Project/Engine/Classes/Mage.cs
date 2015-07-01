@@ -20,6 +20,7 @@ namespace Project.Engine.Classes
             base.EntitySpell = new Spell(SpellType.DamageSpell);
             base.EntitySpell.SpellVal = (this.Intellect * 2) - UI.rnd.Next(1, 6);
             base.EntitySpell.SpellName = "Fire Blast";
+            base.EntitySpell.SpellCost = 35;
             base.Team = team;
         }
     }

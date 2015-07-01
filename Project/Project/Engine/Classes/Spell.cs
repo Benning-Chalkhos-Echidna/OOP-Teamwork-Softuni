@@ -11,11 +11,18 @@ namespace Project
         private SpellType spellType;
         private int spellVal;
         private string spellname;
+        private int spellCost;
 
         public Spell(SpellType spellType)
         {
             this.TypeOfSpell = spellType;
             this.SpellVal = 0;
+        }
+
+        public int SpellCost
+        {
+            get { return this.spellCost; }
+            set { this.spellCost = value; }
         }
 
         public SpellType TypeOfSpell

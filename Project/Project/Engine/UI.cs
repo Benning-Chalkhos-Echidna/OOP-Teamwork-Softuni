@@ -52,24 +52,48 @@ namespace Project.Engine
         public static string HandleSpell(IEntity engager, IEntity target)
         {
             string output = string.Empty;
-            if (target.isAlive)
+            if (engager.Agility == target.Agility && engager.Strength == target.Strength && engager.Intellect == target.Intellect)
+            {
+                if (engager is IHeal)
+                {
+                    if (engager.EntityGender == EntityGender.Male)
+                    {
+                        output = string.Format("{0} has casted {1} for {2} mana on himself which has a healing effect of {4} health points!",
+                            engager.Name, engager.EntitySpell.SpellName, engager.EntitySpell.SpellCost, engager.EntitySpell.SpellVal);
+                        target.Health += engager.EntitySpell.SpellVal;
+                    }
+                    else
+                    {
+                        output = string.Format("{0} has casted {1} for {2} mana on herself which has a healing effect of {4} health points!",
+                            engager.Name, engager.EntitySpell.SpellName, engager.EntitySpell.SpellCost, engager.EntitySpell.SpellVal);
+                        target.Health += engager.EntitySpell.SpellVal;
+                    }
+                }
+                else
+                {
+                    return "Cannot target self with damaging spell!";
+                }
+            }
+            else if (target.isAlive)
             {
                 if (engager.isAlive)
                 {
                     if (engager is IHeal)
                     {
-                        output = string.Format("{0} has casted {1} on {2} which has a healing effect of {3} health points!",
-                            engager.Name, engager.EntitySpell.SpellName, target.Name, engager.EntitySpell.SpellVal);
+                        output = string.Format("{0} has casted {1} for {2} mana on {3} which has a healing effect of {4} health points!",
+                            engager.Name, engager.EntitySpell.SpellName, engager.EntitySpell.SpellCost, target.Name,
+                            engager.EntitySpell.SpellVal);
                         target.Health += engager.EntitySpell.SpellVal;
                     }
                     else
                     {
-                        output = string.Format("{0} has casted {1} on {2} which has a damaging effect of {3} health points!",
-                            engager.Name, engager.EntitySpell.SpellName, target.Name, engager.EntitySpell.SpellVal);
+                        output = string.Format("{0} has casted {1} for {2} mana on {3} which has a damaging effect of {4} health points!",
+                            engager.Name, engager.EntitySpell.SpellName, engager.EntitySpell.SpellCost, target.Name,
+                            engager.EntitySpell.SpellVal);
                         target.Health -= engager.EntitySpell.SpellVal;
-                        if (!target.isAlive)
+                        if (target.Health <= 0)
                         {
-                            output += "\n" + string.Format("{0} has been slain!", target.Name);
+                            target.isAlive = false;
                         }
                     }
                 }

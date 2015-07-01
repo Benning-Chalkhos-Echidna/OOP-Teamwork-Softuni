@@ -19,6 +19,7 @@ namespace Project.Engine.Classes
             base.EntitySpell = new Spell(SpellType.HealSpell);
             base.EntitySpell.SpellVal = this.Intellect + this.Strength - UI.rnd.Next(1, 6);
             base.EntitySpell.SpellName = "Holy Light";
+            base.EntitySpell.SpellCost = 40;
             base.Team = team;
         }
     }

@@ -137,7 +137,7 @@
             // 
             // Create
             // 
-            this.Create.Location = new System.Drawing.Point(4, 546);
+            this.Create.Location = new System.Drawing.Point(8, 546);
             this.Create.Name = "Create";
             this.Create.Size = new System.Drawing.Size(157, 56);
             this.Create.TabIndex = 9;

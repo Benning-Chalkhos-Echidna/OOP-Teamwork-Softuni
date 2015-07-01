@@ -15,7 +15,7 @@ namespace Project.Engine.Form
             characterCreate.ShowDialog();
             Entity playerChar = UI.Player.Character;
             this.entityBindingSource.DataSource = playerChar;
-            
+
 
             switch (playerChar.EntityClass)
             {
@@ -61,18 +61,18 @@ namespace Project.Engine.Form
             {
                 this.NameValue.Text = playerChar.Name;
                 this.label3.Text = UI.Player.Character.Name.ToString() + " - Class: " + UI.Player.Character.EntityClass.ToString();
-                this.textBox1.Text = string.Format("Strength: {0}   Agility: {1}   Intellect: {2}   Attack: {3}   Health {4}  ",
+                this.textBox1.Text = string.Format("Strength: {0}   Agility: {1}   Intellect: {2}   Attack: {3}   Health {4},   Mana: {5}  ",
                     UI.Player.Character.Strength, UI.Player.Character.Agility, UI.Player.Character.Intellect, UI.Player.Character.Attack,
-                    UI.Player.Character.Health);
+                    UI.Player.Character.Health, UI.Player.Character.Mana);
 
                 if (UI.Allies.Count == 1)
                 {
                     this.allyOneName.Text = UI.Allies[0].Name + " - Class: " + UI.Allies[0].EntityClass.ToString();
                     if (UI.Allies[0].isAlive)
                     {
-                        this.allyOneStats.Text = string.Format("Strength: {0}   Agility: {1}   Intellect: {2}   Attack: {3}   Health {4}  ",
+                        this.allyOneStats.Text = string.Format("Strength: {0}   Agility: {1}   Intellect: {2}   Attack: {3}   Health {4},   Mana: {5}  ",
                             UI.Allies[0].Strength, UI.Allies[0].Agility, UI.Allies[0].Intellect, UI.Allies[0].Attack,
-                            UI.Allies[0].Health);
+                            UI.Allies[0].Health, UI.Allies[0].Mana);
                     }
                     else
                     {
@@ -87,9 +87,9 @@ namespace Project.Engine.Form
                 this.enemyOneName.Text = UI.Enemies[0].Name + " - Class: " + UI.Enemies[0].EntityClass.ToString();
                 if (UI.Enemies[0].isAlive)
                 {
-                    this.enemyOneStats.Text = string.Format("Strength: {0}   Agility: {1}   Intellect: {2}   Attack: {3}   Health {4}  ",
+                    this.enemyOneStats.Text = string.Format("Strength: {0}   Agility: {1}   Intellect: {2}   Attack: {3},   Health: {4},   Mana: {5}  ",
                          UI.Enemies[0].Strength, UI.Enemies[0].Agility, UI.Enemies[0].Intellect, UI.Enemies[0].Attack,
-                         UI.Enemies[0].Health);
+                         UI.Enemies[0].Health, UI.Enemies[0].Mana);
                 }
                 else
                 {
@@ -101,9 +101,9 @@ namespace Project.Engine.Form
                     this.enemyTwoName.Text = UI.Enemies[1].Name + " - Class: " + UI.Enemies[1].EntityClass.ToString();
                     if (UI.Enemies[1].isAlive)
                     {
-                        this.enemyTwoStats.Text = string.Format("Strength: {0}   Agility: {1}   Intellect: {2}   Attack: {3}   Health {4}  ",
+                        this.enemyTwoStats.Text = string.Format("Strength: {0}   Agility: {1}   Intellect: {2}   Attack: {3}   Health: {4},   Mana: {5}  ",
                              UI.Enemies[1].Strength, UI.Enemies[1].Agility, UI.Enemies[1].Intellect, UI.Enemies[1].Attack,
-                             UI.Enemies[1].Health);
+                             UI.Enemies[1].Health, UI.Enemies[1].Mana);
                     }
                     else
                     {
@@ -114,7 +114,6 @@ namespace Project.Engine.Form
             });
             UI.updateEnemies.Invoke();
         }
-        //Attack Button
 
         private void PopulateInformation(Entity playerChar)
         {
@@ -190,6 +189,7 @@ namespace Project.Engine.Form
             }
         }
 
+        //Attack Button
         private void RoundButton_Click(object sender, EventArgs e)
         {
             if (UI.hasAttacked)
@@ -210,6 +210,10 @@ namespace Project.Engine.Form
             {
                 this.BattleConsole.Text += "\n You cannot attack or use a spell twice in the same turn!";
             }
+            else if (UI.Player.Character.Mana < UI.Player.Character.EntitySpell.SpellCost)
+            {
+                this.BattleConsole.Text += "\n Not enough mana!";
+            }
             else
             {
                 this.BattleConsole.Text += "\n" + UI.HandleSpell(UI.Player.Character, UI.Enemies[0]);
@@ -219,6 +223,14 @@ namespace Project.Engine.Form
         //Turn End Button 
         private void button2_Click(object sender, EventArgs e)
         {
+            UI.allEntities.ForEach(entity =>
+            {
+                if (entity.isAlive)
+                {
+                    entity.Health += entity.Strength;
+                    entity.Mana += entity.Intellect;
+                }
+            });
             if (UI.Player.Character.isAlive)
             {
                 if (UI.Enemies.TrueForAll(entity => !entity.isAlive))
@@ -239,6 +251,8 @@ namespace Project.Engine.Form
             }
             this.BattleConsole.Text += "\n\nEnd of round " + UI.RoundCount + "\n";
             UI.RoundCount++;
+            UI.updateAllies();
+            UI.updateEnemies();
         }
 
         //Methods for the A.I.
@@ -254,7 +268,15 @@ namespace Project.Engine.Form
                 {
                     if (UI.Enemies[1].isAlive)
                     {
-                        if (UI.Enemies[0].Health < UI.Enemies[1].Health)
+                        if (UI.Enemies[0] is IHeal)
+                        {
+                            this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Allies[0], UI.Enemies[0]);
+                        }
+                        else if (UI.Enemies[1] is IHeal)
+                        {
+                            this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Allies[0], UI.Enemies[1]);
+                        }
+                        else if (UI.Enemies[0].Health < UI.Enemies[1].Health)
                         {
                             this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Allies[0], UI.Enemies[0]);
                         }
@@ -284,20 +306,71 @@ namespace Project.Engine.Form
             {
                 if (UI.gameType == GameType.TwoVsTwo)
                 {
-                    if (UI.Allies[0].isAlive)
+                    if (UI.Enemies[0] is IHeal)
                     {
-                        if (UI.Allies[0].Health < UI.Player.Character.Health)
+                        if (UI.Enemies[1].isAlive)
                         {
-                            this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[0], UI.Allies[0]);
+                            this.BattleConsole.Text += "\n" + UI.HandleSpell(UI.Enemies[0], UI.Enemies[1]);
+                        }
+                        else
+                        {
+                            if (UI.Enemies[0].Health < 70)
+                            {
+                                this.BattleConsole.Text += "\n" + UI.HandleSpell(UI.Enemies[0], UI.Enemies[0]);
+                            }
+                            else
+                            {
+                                if (UI.Allies[0].isAlive)
+                                {
+                                    if (UI.Allies is IHeal)
+                                    {
+                                        this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[0], UI.Allies[0]);
+                                    }
+                                    else if (UI.Player.Character is IHeal)
+                                    {
+                                        this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[0], UI.Player.Character);
+                                    }
+                                    else if (UI.Allies[0].Health < UI.Player.Character.Health)
+                                    {
+                                        this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[0], UI.Allies[0]);
+                                    }
+                                    else
+                                    {
+                                        this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[0], UI.Player.Character);
+                                    }
+                                }
+                                else
+                                {
+                                    this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[0], UI.Player.Character);
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (UI.Allies[0].isAlive)
+                        {
+                            if (UI.Allies is IHeal)
+                            {
+                                this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[0], UI.Allies[0]);
+                            }
+                            else if (UI.Player.Character is IHeal)
+                            {
+                                this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[0], UI.Player.Character);
+                            }
+                            else if (UI.Allies[0].Health < UI.Player.Character.Health)
+                            {
+                                this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[0], UI.Allies[0]);
+                            }
+                            else
+                            {
+                                this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[0], UI.Player.Character);
+                            }
                         }
                         else
                         {
                             this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[0], UI.Player.Character);
                         }
-                    }
-                    else
-                    {
-                        this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[0], UI.Player.Character);
                     }
                 }
                 else
@@ -316,20 +389,71 @@ namespace Project.Engine.Form
             {
                 if (UI.gameType == GameType.TwoVsTwo)
                 {
-                    if (UI.Allies[0].isAlive)
+                    if (UI.Enemies[1] is IHeal)
                     {
-                        if (UI.Allies[0].Health < UI.Player.Character.Health)
+                        if (UI.Enemies[0].isAlive)
                         {
-                            this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[1], UI.Allies[0]);
+                            this.BattleConsole.Text += "\n" + UI.HandleSpell(UI.Enemies[1], UI.Enemies[0]);
+                        }
+                        else
+                        {
+                            if (UI.Enemies[1].Health < 70)
+                            {
+                                this.BattleConsole.Text += "\n" + UI.HandleSpell(UI.Enemies[1], UI.Enemies[1]);
+                            }
+                            else
+                            {
+                                if (UI.Allies[0].isAlive)
+                                {
+                                    if (UI.Allies is IHeal)
+                                    {
+                                        this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[1], UI.Allies[0]);
+                                    }
+                                    else if (UI.Player.Character is IHeal)
+                                    {
+                                        this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[1], UI.Player.Character);
+                                    }
+                                    else if (UI.Allies[0].Health < UI.Player.Character.Health)
+                                    {
+                                        this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[1], UI.Allies[0]);
+                                    }
+                                    else
+                                    {
+                                        this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[1], UI.Player.Character);
+                                    }
+                                }
+                                else
+                                {
+                                    this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[1], UI.Player.Character);
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (UI.Allies[0].isAlive)
+                        {
+                            if (UI.Allies is IHeal)
+                            {
+                                this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[1], UI.Allies[0]);
+                            }
+                            else if (UI.Player.Character is IHeal)
+                            {
+                                this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[1], UI.Player.Character);
+                            }
+                            else if (UI.Allies[0].Health < UI.Player.Character.Health)
+                            {
+                                this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[1], UI.Allies[0]);
+                            }
+                            else
+                            {
+                                this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[1], UI.Player.Character);
+                            }
                         }
                         else
                         {
                             this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[1], UI.Player.Character);
                         }
-                    }
-                    else
-                    {
-                        this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Enemies[1], UI.Player.Character);
                     }
                 }
                 else

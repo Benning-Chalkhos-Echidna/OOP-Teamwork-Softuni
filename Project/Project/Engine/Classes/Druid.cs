@@ -19,6 +19,7 @@ namespace Project.Engine.Classes
             base.EntitySpell = new Spell(SpellType.HealSpell);
             base.EntitySpell.SpellVal = this.Agility + this.Strength - UI.rnd.Next(1, 6);
             base.EntitySpell.SpellName = "Nature's Restoration";
+            base.EntitySpell.SpellCost = 50;
             base.Team = team;
         }
     }
