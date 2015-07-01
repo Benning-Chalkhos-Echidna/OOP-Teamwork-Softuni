@@ -77,7 +77,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.BattleConsole = new System.Windows.Forms.RichTextBox();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.gearTab = new System.Windows.Forms.TabPage();
             this.LegsGearStatsTxtBox = new System.Windows.Forms.TextBox();
             this.LegsGearNameBox = new System.Windows.Forms.TextBox();
@@ -164,9 +163,8 @@
             // shopTabCtrl
             // 
             this.shopTabCtrl.Controls.Add(this.CharacterPanel);
-            this.shopTabCtrl.Controls.Add(this.BattleTab);
-            this.shopTabCtrl.Controls.Add(this.tabPage1);
             this.shopTabCtrl.Controls.Add(this.gearTab);
+            this.shopTabCtrl.Controls.Add(this.BattleTab);
             this.shopTabCtrl.Location = new System.Drawing.Point(13, 12);
             this.shopTabCtrl.Name = "shopTabCtrl";
             this.shopTabCtrl.SelectedIndex = 0;
@@ -723,16 +721,6 @@
             this.BattleConsole.TabIndex = 2;
             this.BattleConsole.Text = "";
             // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(920, 467);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "Shop";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
             // gearTab
             // 
             this.gearTab.Controls.Add(this.LegsGearStatsTxtBox);
@@ -1235,7 +1223,7 @@
             this.ClientSize = new System.Drawing.Size(955, 532);
             this.Controls.Add(this.shopTabCtrl);
             this.Name = "GameMenu";
-            this.Text = "GameMenu";
+            this.Text = "Benning-Chalkhos-Echidna RPG Team Project @ SoftUni";
             this.shopTabCtrl.ResumeLayout(false);
             this.CharacterPanel.ResumeLayout(false);
             this.CharacterPanel.PerformLayout();
@@ -1317,7 +1305,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.TextBox GoldValue;
         private System.Windows.Forms.Label label11;
