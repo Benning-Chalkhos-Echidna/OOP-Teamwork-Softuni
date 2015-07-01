@@ -1,6 +1,7 @@
 ﻿using Project.Engine.Classes;
 using Project.Engine.Interfaces;
 using System;
+using System.Windows.Forms;
 
 namespace Project.Engine.Form
 {
@@ -14,7 +15,7 @@ namespace Project.Engine.Form
             characterCreate.ShowDialog();
             Entity playerChar = UI.Player.Character;
             this.entityBindingSource.DataSource = playerChar;
-            PopulateInformation(playerChar);
+            
 
             switch (playerChar.EntityClass)
             {
@@ -52,6 +53,9 @@ namespace Project.Engine.Form
                     this.GenderValue.Text = EntityGender.Female.ToString();
                     break;
             }
+
+            PopulateInformation(playerChar);
+            PopulateAiInfo();
 
             UI.updateAllies = new Action(delegate()
             {
@@ -110,9 +114,7 @@ namespace Project.Engine.Form
             });
             UI.updateEnemies.Invoke();
         }
-<<<<<<< HEAD
         //Attack Button
-=======
 
         private void PopulateInformation(Entity playerChar)
         {
@@ -142,8 +144,52 @@ namespace Project.Engine.Form
             this.equippedIntModLabel.Text = "+" + playerChar.equippedItems.EquippedItemsIntModifier.ToString();
             this.equippedHPModLabel.Text = "+" + playerChar.equippedItems.EquippedItemsHPModifier.ToString();
         }
+        public void PopulateAiInfo()
+        {
+            DrawEnemyItems();
+            if (UI.Allies.Count == 1)
+            {
+                this.allyWeaponBox.ImageLocation = UI.Allies[0].WeaponImgPath;
+                this.allyWeaponTxtBox.Text = UI.Allies[0].equippedItems.Weapon.Name;
+                this.allyChestBox.ImageLocation = UI.Allies[0].ChestGearImgPath;
+                this.allyChestTxtBox.Text = UI.Allies[0].equippedItems.ChestGear.Name;
+                this.allyHeadBox.ImageLocation = UI.Allies[0].HeadGearImgPath;
+                this.allyHeadTxtBox.Text = UI.Allies[0].equippedItems.HeadGear.Name;
+                this.allyHandsBox.ImageLocation = UI.Allies[0].HandsGearImgPath;
+                this.allyHandsTxtBox.Text = UI.Allies[0].equippedItems.HandsGear.Name;
+                this.allyLegsBox.ImageLocation = UI.Allies[0].LegsGearImgPath;
+                this.allyLegsTxtBox.Text = UI.Allies[0].equippedItems.LegsGear.Name;
+            }
+        }
 
->>>>>>> f55773d16a0455326b41114676e1b0d712e52644
+        public void DrawEnemyItems()
+        {
+            this.enemyOneWeaponBox.ImageLocation = UI.Enemies[0].WeaponImgPath;
+            this.enemyOneWeaponTxtBox.Text = string.Format("{0}", UI.Enemies[0].equippedItems.Weapon.Name);
+            this.enemyOneChestBox.ImageLocation = UI.Enemies[0].ChestGearImgPath;
+            this.enemyOneChestTxtBox.Text = string.Format("{0}", UI.Enemies[0].equippedItems.ChestGear.Name);
+            this.enemyOneHeadBox.ImageLocation = UI.Enemies[0].HeadGearImgPath;
+            this.enemyOneHeadTxtBox.Text = string.Format("{0}", UI.Enemies[0].equippedItems.HeadGear.Name);
+            this.enemyOneHandsBox.ImageLocation = UI.Enemies[0].HandsGearImgPath;
+            this.enemyOneHandsTxtBox.Text = string.Format("{0}", UI.Enemies[0].equippedItems.HandsGear.Name);
+            this.enemyOneLegsBox.ImageLocation = UI.Enemies[0].LegsGearImgPath;
+            this.enemyOneLegsTxtBox.Text = string.Format("{0}", UI.Enemies[0].equippedItems.LegsGear.Name);
+
+            if (UI.Enemies.Count == 2)
+            {
+                this.enemyTwoWeaponBox.ImageLocation = UI.Enemies[1].WeaponImgPath;
+                this.enemyTwoWeaponTxtBox.Text = string.Format("{0}", UI.Enemies[1].equippedItems.Weapon.Name);
+                this.enemyTwoChestBox.ImageLocation = UI.Enemies[1].ChestGearImgPath;
+                this.enemyTwoChestTxtBox.Text = string.Format("{0}", UI.Enemies[1].equippedItems.ChestGear.Name);
+                this.enemyTwoHeadBox.ImageLocation = UI.Enemies[1].HeadGearImgPath;
+                this.enemyTwoHeadTxtBox.Text = string.Format("{0}", UI.Enemies[1].equippedItems.HeadGear.Name);
+                this.enemyTwoHandsBox.ImageLocation = UI.Enemies[1].HandsGearImgPath;
+                this.enemyTwoHandsTxtBox.Text = string.Format("{0}", UI.Enemies[1].equippedItems.HandsGear.Name);
+                this.enemyTwoLegsBox.ImageLocation = UI.Enemies[1].LegsGearImgPath;
+                this.enemyTwoLegsTxtBox.Text = string.Format("{0}", UI.Enemies[1].equippedItems.LegsGear.Name);
+            }
+        }
+
         private void RoundButton_Click(object sender, EventArgs e)
         {
             if (UI.hasAttacked)

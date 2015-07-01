@@ -31,10 +31,13 @@
             this.components = new System.ComponentModel.Container();
             this.shopTabCtrl = new System.Windows.Forms.TabControl();
             this.CharacterPanel = new System.Windows.Forms.TabPage();
+            this.equippedHPModLabel = new System.Windows.Forms.Label();
+            this.equippedIntModLabel = new System.Windows.Forms.Label();
+            this.equippedAgiModLabel = new System.Windows.Forms.Label();
+            this.equippedStrModLabel = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.GoldValue = new System.Windows.Forms.TextBox();
-            this.entityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -62,6 +65,7 @@
             this.CharacterClass = new System.Windows.Forms.Label();
             this.CharacterPortrait = new System.Windows.Forms.PictureBox();
             this.BattleTab = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.enemyTwoStats = new System.Windows.Forms.TextBox();
             this.RoundButton = new System.Windows.Forms.Button();
@@ -91,20 +95,41 @@
             this.EquippedChestGearImgBox = new System.Windows.Forms.PictureBox();
             this.EquippedHeadGearImgBox = new System.Windows.Forms.PictureBox();
             this.WeaponEquippedImgBox = new System.Windows.Forms.PictureBox();
-<<<<<<< HEAD
-            this.button2 = new System.Windows.Forms.Button();
-=======
-            this.equippedStrModLabel = new System.Windows.Forms.Label();
-            this.equippedAgiModLabel = new System.Windows.Forms.Label();
-            this.equippedIntModLabel = new System.Windows.Forms.Label();
-            this.equippedHPModLabel = new System.Windows.Forms.Label();
+            this.enemyOneWeaponTxtBox = new System.Windows.Forms.TextBox();
+            this.enemyOneChestTxtBox = new System.Windows.Forms.TextBox();
+            this.enemyOneHeadTxtBox = new System.Windows.Forms.TextBox();
+            this.enemyOneHandsTxtBox = new System.Windows.Forms.TextBox();
+            this.enemyOneLegsTxtBox = new System.Windows.Forms.TextBox();
+            this.enemyOneWeaponBox = new System.Windows.Forms.PictureBox();
+            this.enemyOneChestBox = new System.Windows.Forms.PictureBox();
+            this.enemyOneHeadBox = new System.Windows.Forms.PictureBox();
+            this.enemyOneHandsBox = new System.Windows.Forms.PictureBox();
+            this.enemyOneLegsBox = new System.Windows.Forms.PictureBox();
+            this.enemyTwoLegsBox = new System.Windows.Forms.PictureBox();
+            this.enemyTwoHandsBox = new System.Windows.Forms.PictureBox();
+            this.enemyTwoHeadBox = new System.Windows.Forms.PictureBox();
+            this.enemyTwoChestBox = new System.Windows.Forms.PictureBox();
+            this.enemyTwoWeaponBox = new System.Windows.Forms.PictureBox();
+            this.enemyTwoLegsTxtBox = new System.Windows.Forms.TextBox();
+            this.enemyTwoHandsTxtBox = new System.Windows.Forms.TextBox();
+            this.enemyTwoHeadTxtBox = new System.Windows.Forms.TextBox();
+            this.enemyTwoChestTxtBox = new System.Windows.Forms.TextBox();
+            this.enemyTwoWeaponTxtBox = new System.Windows.Forms.TextBox();
+            this.allyLegsBox = new System.Windows.Forms.PictureBox();
+            this.allyHandsBox = new System.Windows.Forms.PictureBox();
+            this.allyHeadBox = new System.Windows.Forms.PictureBox();
+            this.allyChestBox = new System.Windows.Forms.PictureBox();
+            this.allyWeaponBox = new System.Windows.Forms.PictureBox();
+            this.allyLegsTxtBox = new System.Windows.Forms.TextBox();
+            this.allyHandsTxtBox = new System.Windows.Forms.TextBox();
+            this.allyHeadTxtBox = new System.Windows.Forms.TextBox();
+            this.allyChestTxtBox = new System.Windows.Forms.TextBox();
+            this.allyWeaponTxtBox = new System.Windows.Forms.TextBox();
             this.entityBindingSource = new System.Windows.Forms.BindingSource(this.components);
->>>>>>> f55773d16a0455326b41114676e1b0d712e52644
             this.shopTabCtrl.SuspendLayout();
             this.CharacterPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.entityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -118,6 +143,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.EquippedChestGearImgBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EquippedHeadGearImgBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WeaponEquippedImgBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemyOneWeaponBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemyOneChestBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemyOneHeadBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemyOneHandsBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemyOneLegsBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemyTwoLegsBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemyTwoHandsBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemyTwoHeadBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemyTwoChestBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemyTwoWeaponBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.allyLegsBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.allyHandsBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.allyHeadBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.allyChestBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.allyWeaponBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.entityBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // shopTabCtrl
@@ -177,6 +218,42 @@
             this.CharacterPanel.Text = "Character";
             this.CharacterPanel.UseVisualStyleBackColor = true;
             // 
+            // equippedHPModLabel
+            // 
+            this.equippedHPModLabel.AutoSize = true;
+            this.equippedHPModLabel.Location = new System.Drawing.Point(844, 149);
+            this.equippedHPModLabel.Name = "equippedHPModLabel";
+            this.equippedHPModLabel.Size = new System.Drawing.Size(51, 20);
+            this.equippedHPModLabel.TabIndex = 29;
+            this.equippedHPModLabel.Text = "label7";
+            // 
+            // equippedIntModLabel
+            // 
+            this.equippedIntModLabel.AutoSize = true;
+            this.equippedIntModLabel.Location = new System.Drawing.Point(543, 210);
+            this.equippedIntModLabel.Name = "equippedIntModLabel";
+            this.equippedIntModLabel.Size = new System.Drawing.Size(51, 20);
+            this.equippedIntModLabel.TabIndex = 28;
+            this.equippedIntModLabel.Text = "label6";
+            // 
+            // equippedAgiModLabel
+            // 
+            this.equippedAgiModLabel.AutoSize = true;
+            this.equippedAgiModLabel.Location = new System.Drawing.Point(543, 179);
+            this.equippedAgiModLabel.Name = "equippedAgiModLabel";
+            this.equippedAgiModLabel.Size = new System.Drawing.Size(51, 20);
+            this.equippedAgiModLabel.TabIndex = 27;
+            this.equippedAgiModLabel.Text = "label5";
+            // 
+            // equippedStrModLabel
+            // 
+            this.equippedStrModLabel.AutoSize = true;
+            this.equippedStrModLabel.Location = new System.Drawing.Point(543, 148);
+            this.equippedStrModLabel.Name = "equippedStrModLabel";
+            this.equippedStrModLabel.Size = new System.Drawing.Size(51, 20);
+            this.equippedStrModLabel.TabIndex = 26;
+            this.equippedStrModLabel.Text = "label4";
+            // 
             // pictureBox6
             // 
             this.pictureBox6.BackgroundImage = global::Project.Properties.Resources.gold;
@@ -209,10 +286,6 @@
             this.GoldValue.Size = new System.Drawing.Size(88, 26);
             this.GoldValue.TabIndex = 22;
             this.GoldValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // entityBindingSource
-            // 
-            this.entityBindingSource.DataSource = typeof(Project.Engine.Classes.Entity);
             // 
             // label11
             // 
@@ -492,6 +565,36 @@
             // 
             // BattleTab
             // 
+            this.BattleTab.Controls.Add(this.allyLegsBox);
+            this.BattleTab.Controls.Add(this.allyHandsBox);
+            this.BattleTab.Controls.Add(this.allyHeadBox);
+            this.BattleTab.Controls.Add(this.allyChestBox);
+            this.BattleTab.Controls.Add(this.allyWeaponBox);
+            this.BattleTab.Controls.Add(this.allyLegsTxtBox);
+            this.BattleTab.Controls.Add(this.allyHandsTxtBox);
+            this.BattleTab.Controls.Add(this.allyHeadTxtBox);
+            this.BattleTab.Controls.Add(this.allyChestTxtBox);
+            this.BattleTab.Controls.Add(this.allyWeaponTxtBox);
+            this.BattleTab.Controls.Add(this.enemyTwoLegsBox);
+            this.BattleTab.Controls.Add(this.enemyTwoHandsBox);
+            this.BattleTab.Controls.Add(this.enemyTwoHeadBox);
+            this.BattleTab.Controls.Add(this.enemyTwoChestBox);
+            this.BattleTab.Controls.Add(this.enemyTwoWeaponBox);
+            this.BattleTab.Controls.Add(this.enemyTwoLegsTxtBox);
+            this.BattleTab.Controls.Add(this.enemyTwoHandsTxtBox);
+            this.BattleTab.Controls.Add(this.enemyTwoHeadTxtBox);
+            this.BattleTab.Controls.Add(this.enemyTwoChestTxtBox);
+            this.BattleTab.Controls.Add(this.enemyTwoWeaponTxtBox);
+            this.BattleTab.Controls.Add(this.enemyOneLegsBox);
+            this.BattleTab.Controls.Add(this.enemyOneHandsBox);
+            this.BattleTab.Controls.Add(this.enemyOneHeadBox);
+            this.BattleTab.Controls.Add(this.enemyOneChestBox);
+            this.BattleTab.Controls.Add(this.enemyOneWeaponBox);
+            this.BattleTab.Controls.Add(this.enemyOneLegsTxtBox);
+            this.BattleTab.Controls.Add(this.enemyOneHandsTxtBox);
+            this.BattleTab.Controls.Add(this.enemyOneHeadTxtBox);
+            this.BattleTab.Controls.Add(this.enemyOneChestTxtBox);
+            this.BattleTab.Controls.Add(this.enemyOneWeaponTxtBox);
             this.BattleTab.Controls.Add(this.button2);
             this.BattleTab.Controls.Add(this.button1);
             this.BattleTab.Controls.Add(this.enemyTwoStats);
@@ -511,6 +614,16 @@
             this.BattleTab.TabIndex = 1;
             this.BattleTab.Text = "Battle Menu";
             this.BattleTab.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(422, 441);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 20;
+            this.button2.Text = "End Turn";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -821,55 +934,299 @@
             this.WeaponEquippedImgBox.TabIndex = 32;
             this.WeaponEquippedImgBox.TabStop = false;
             // 
-<<<<<<< HEAD
-            // button2
-=======
-            // equippedStrModLabel
+            // enemyOneWeaponTxtBox
             // 
-            this.equippedStrModLabel.AutoSize = true;
-            this.equippedStrModLabel.Location = new System.Drawing.Point(543, 148);
-            this.equippedStrModLabel.Name = "equippedStrModLabel";
-            this.equippedStrModLabel.Size = new System.Drawing.Size(51, 20);
-            this.equippedStrModLabel.TabIndex = 26;
-            this.equippedStrModLabel.Text = "label4";
+            this.enemyOneWeaponTxtBox.BackColor = System.Drawing.SystemColors.Window;
+            this.enemyOneWeaponTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.enemyOneWeaponTxtBox.Location = new System.Drawing.Point(657, 101);
+            this.enemyOneWeaponTxtBox.Name = "enemyOneWeaponTxtBox";
+            this.enemyOneWeaponTxtBox.ReadOnly = true;
+            this.enemyOneWeaponTxtBox.Size = new System.Drawing.Size(245, 13);
+            this.enemyOneWeaponTxtBox.TabIndex = 21;
             // 
-            // equippedAgiModLabel
+            // enemyOneChestTxtBox
             // 
-            this.equippedAgiModLabel.AutoSize = true;
-            this.equippedAgiModLabel.Location = new System.Drawing.Point(543, 179);
-            this.equippedAgiModLabel.Name = "equippedAgiModLabel";
-            this.equippedAgiModLabel.Size = new System.Drawing.Size(51, 20);
-            this.equippedAgiModLabel.TabIndex = 27;
-            this.equippedAgiModLabel.Text = "label5";
+            this.enemyOneChestTxtBox.BackColor = System.Drawing.SystemColors.Window;
+            this.enemyOneChestTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.enemyOneChestTxtBox.Location = new System.Drawing.Point(657, 127);
+            this.enemyOneChestTxtBox.Name = "enemyOneChestTxtBox";
+            this.enemyOneChestTxtBox.ReadOnly = true;
+            this.enemyOneChestTxtBox.Size = new System.Drawing.Size(245, 13);
+            this.enemyOneChestTxtBox.TabIndex = 22;
             // 
-            // equippedIntModLabel
+            // enemyOneHeadTxtBox
             // 
-            this.equippedIntModLabel.AutoSize = true;
-            this.equippedIntModLabel.Location = new System.Drawing.Point(543, 210);
-            this.equippedIntModLabel.Name = "equippedIntModLabel";
-            this.equippedIntModLabel.Size = new System.Drawing.Size(51, 20);
-            this.equippedIntModLabel.TabIndex = 28;
-            this.equippedIntModLabel.Text = "label6";
+            this.enemyOneHeadTxtBox.BackColor = System.Drawing.SystemColors.Window;
+            this.enemyOneHeadTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.enemyOneHeadTxtBox.Location = new System.Drawing.Point(657, 153);
+            this.enemyOneHeadTxtBox.Name = "enemyOneHeadTxtBox";
+            this.enemyOneHeadTxtBox.ReadOnly = true;
+            this.enemyOneHeadTxtBox.Size = new System.Drawing.Size(245, 13);
+            this.enemyOneHeadTxtBox.TabIndex = 23;
             // 
-            // equippedHPModLabel
+            // enemyOneHandsTxtBox
             // 
-            this.equippedHPModLabel.AutoSize = true;
-            this.equippedHPModLabel.Location = new System.Drawing.Point(844, 149);
-            this.equippedHPModLabel.Name = "equippedHPModLabel";
-            this.equippedHPModLabel.Size = new System.Drawing.Size(51, 20);
-            this.equippedHPModLabel.TabIndex = 29;
-            this.equippedHPModLabel.Text = "label7";
+            this.enemyOneHandsTxtBox.BackColor = System.Drawing.SystemColors.Window;
+            this.enemyOneHandsTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.enemyOneHandsTxtBox.Location = new System.Drawing.Point(657, 179);
+            this.enemyOneHandsTxtBox.Name = "enemyOneHandsTxtBox";
+            this.enemyOneHandsTxtBox.ReadOnly = true;
+            this.enemyOneHandsTxtBox.Size = new System.Drawing.Size(245, 13);
+            this.enemyOneHandsTxtBox.TabIndex = 24;
+            // 
+            // enemyOneLegsTxtBox
+            // 
+            this.enemyOneLegsTxtBox.BackColor = System.Drawing.SystemColors.Window;
+            this.enemyOneLegsTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.enemyOneLegsTxtBox.Location = new System.Drawing.Point(657, 205);
+            this.enemyOneLegsTxtBox.Name = "enemyOneLegsTxtBox";
+            this.enemyOneLegsTxtBox.ReadOnly = true;
+            this.enemyOneLegsTxtBox.Size = new System.Drawing.Size(245, 13);
+            this.enemyOneLegsTxtBox.TabIndex = 25;
+            // 
+            // enemyOneWeaponBox
+            // 
+            this.enemyOneWeaponBox.Location = new System.Drawing.Point(625, 101);
+            this.enemyOneWeaponBox.Name = "enemyOneWeaponBox";
+            this.enemyOneWeaponBox.Size = new System.Drawing.Size(26, 20);
+            this.enemyOneWeaponBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.enemyOneWeaponBox.TabIndex = 26;
+            this.enemyOneWeaponBox.TabStop = false;
+            // 
+            // enemyOneChestBox
+            // 
+            this.enemyOneChestBox.Location = new System.Drawing.Point(625, 127);
+            this.enemyOneChestBox.Name = "enemyOneChestBox";
+            this.enemyOneChestBox.Size = new System.Drawing.Size(26, 20);
+            this.enemyOneChestBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.enemyOneChestBox.TabIndex = 27;
+            this.enemyOneChestBox.TabStop = false;
+            // 
+            // enemyOneHeadBox
+            // 
+            this.enemyOneHeadBox.Location = new System.Drawing.Point(625, 153);
+            this.enemyOneHeadBox.Name = "enemyOneHeadBox";
+            this.enemyOneHeadBox.Size = new System.Drawing.Size(26, 20);
+            this.enemyOneHeadBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.enemyOneHeadBox.TabIndex = 28;
+            this.enemyOneHeadBox.TabStop = false;
+            // 
+            // enemyOneHandsBox
+            // 
+            this.enemyOneHandsBox.Location = new System.Drawing.Point(625, 179);
+            this.enemyOneHandsBox.Name = "enemyOneHandsBox";
+            this.enemyOneHandsBox.Size = new System.Drawing.Size(26, 20);
+            this.enemyOneHandsBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.enemyOneHandsBox.TabIndex = 29;
+            this.enemyOneHandsBox.TabStop = false;
+            // 
+            // enemyOneLegsBox
+            // 
+            this.enemyOneLegsBox.Location = new System.Drawing.Point(625, 205);
+            this.enemyOneLegsBox.Name = "enemyOneLegsBox";
+            this.enemyOneLegsBox.Size = new System.Drawing.Size(26, 20);
+            this.enemyOneLegsBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.enemyOneLegsBox.TabIndex = 30;
+            this.enemyOneLegsBox.TabStop = false;
+            // 
+            // enemyTwoLegsBox
+            // 
+            this.enemyTwoLegsBox.BackColor = System.Drawing.SystemColors.Window;
+            this.enemyTwoLegsBox.Location = new System.Drawing.Point(625, 423);
+            this.enemyTwoLegsBox.Name = "enemyTwoLegsBox";
+            this.enemyTwoLegsBox.Size = new System.Drawing.Size(26, 20);
+            this.enemyTwoLegsBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.enemyTwoLegsBox.TabIndex = 40;
+            this.enemyTwoLegsBox.TabStop = false;
+            // 
+            // enemyTwoHandsBox
+            // 
+            this.enemyTwoHandsBox.BackColor = System.Drawing.SystemColors.Window;
+            this.enemyTwoHandsBox.Location = new System.Drawing.Point(625, 397);
+            this.enemyTwoHandsBox.Name = "enemyTwoHandsBox";
+            this.enemyTwoHandsBox.Size = new System.Drawing.Size(26, 20);
+            this.enemyTwoHandsBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.enemyTwoHandsBox.TabIndex = 39;
+            this.enemyTwoHandsBox.TabStop = false;
+            // 
+            // enemyTwoHeadBox
+            // 
+            this.enemyTwoHeadBox.BackColor = System.Drawing.SystemColors.Window;
+            this.enemyTwoHeadBox.Location = new System.Drawing.Point(625, 371);
+            this.enemyTwoHeadBox.Name = "enemyTwoHeadBox";
+            this.enemyTwoHeadBox.Size = new System.Drawing.Size(26, 20);
+            this.enemyTwoHeadBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.enemyTwoHeadBox.TabIndex = 38;
+            this.enemyTwoHeadBox.TabStop = false;
+            // 
+            // enemyTwoChestBox
+            // 
+            this.enemyTwoChestBox.BackColor = System.Drawing.SystemColors.Window;
+            this.enemyTwoChestBox.Location = new System.Drawing.Point(625, 345);
+            this.enemyTwoChestBox.Name = "enemyTwoChestBox";
+            this.enemyTwoChestBox.Size = new System.Drawing.Size(26, 20);
+            this.enemyTwoChestBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.enemyTwoChestBox.TabIndex = 37;
+            this.enemyTwoChestBox.TabStop = false;
+            // 
+            // enemyTwoWeaponBox
+            // 
+            this.enemyTwoWeaponBox.BackColor = System.Drawing.SystemColors.Window;
+            this.enemyTwoWeaponBox.Location = new System.Drawing.Point(625, 319);
+            this.enemyTwoWeaponBox.Name = "enemyTwoWeaponBox";
+            this.enemyTwoWeaponBox.Size = new System.Drawing.Size(26, 20);
+            this.enemyTwoWeaponBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.enemyTwoWeaponBox.TabIndex = 36;
+            this.enemyTwoWeaponBox.TabStop = false;
+            // 
+            // enemyTwoLegsTxtBox
+            // 
+            this.enemyTwoLegsTxtBox.BackColor = System.Drawing.SystemColors.Window;
+            this.enemyTwoLegsTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.enemyTwoLegsTxtBox.Location = new System.Drawing.Point(657, 426);
+            this.enemyTwoLegsTxtBox.Name = "enemyTwoLegsTxtBox";
+            this.enemyTwoLegsTxtBox.ReadOnly = true;
+            this.enemyTwoLegsTxtBox.Size = new System.Drawing.Size(245, 13);
+            this.enemyTwoLegsTxtBox.TabIndex = 35;
+            // 
+            // enemyTwoHandsTxtBox
+            // 
+            this.enemyTwoHandsTxtBox.BackColor = System.Drawing.SystemColors.Window;
+            this.enemyTwoHandsTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.enemyTwoHandsTxtBox.Location = new System.Drawing.Point(657, 400);
+            this.enemyTwoHandsTxtBox.Name = "enemyTwoHandsTxtBox";
+            this.enemyTwoHandsTxtBox.ReadOnly = true;
+            this.enemyTwoHandsTxtBox.Size = new System.Drawing.Size(245, 13);
+            this.enemyTwoHandsTxtBox.TabIndex = 34;
+            // 
+            // enemyTwoHeadTxtBox
+            // 
+            this.enemyTwoHeadTxtBox.BackColor = System.Drawing.SystemColors.Window;
+            this.enemyTwoHeadTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.enemyTwoHeadTxtBox.Location = new System.Drawing.Point(657, 374);
+            this.enemyTwoHeadTxtBox.Name = "enemyTwoHeadTxtBox";
+            this.enemyTwoHeadTxtBox.ReadOnly = true;
+            this.enemyTwoHeadTxtBox.Size = new System.Drawing.Size(245, 13);
+            this.enemyTwoHeadTxtBox.TabIndex = 33;
+            // 
+            // enemyTwoChestTxtBox
+            // 
+            this.enemyTwoChestTxtBox.BackColor = System.Drawing.SystemColors.Window;
+            this.enemyTwoChestTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.enemyTwoChestTxtBox.Location = new System.Drawing.Point(657, 348);
+            this.enemyTwoChestTxtBox.Name = "enemyTwoChestTxtBox";
+            this.enemyTwoChestTxtBox.ReadOnly = true;
+            this.enemyTwoChestTxtBox.Size = new System.Drawing.Size(245, 13);
+            this.enemyTwoChestTxtBox.TabIndex = 32;
+            // 
+            // enemyTwoWeaponTxtBox
+            // 
+            this.enemyTwoWeaponTxtBox.BackColor = System.Drawing.SystemColors.Window;
+            this.enemyTwoWeaponTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.enemyTwoWeaponTxtBox.Location = new System.Drawing.Point(657, 322);
+            this.enemyTwoWeaponTxtBox.Name = "enemyTwoWeaponTxtBox";
+            this.enemyTwoWeaponTxtBox.ReadOnly = true;
+            this.enemyTwoWeaponTxtBox.Size = new System.Drawing.Size(245, 13);
+            this.enemyTwoWeaponTxtBox.TabIndex = 31;
+            // 
+            // allyLegsBox
+            // 
+            this.allyLegsBox.Location = new System.Drawing.Point(6, 423);
+            this.allyLegsBox.Name = "allyLegsBox";
+            this.allyLegsBox.Size = new System.Drawing.Size(26, 20);
+            this.allyLegsBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.allyLegsBox.TabIndex = 50;
+            this.allyLegsBox.TabStop = false;
+            // 
+            // allyHandsBox
+            // 
+            this.allyHandsBox.Location = new System.Drawing.Point(6, 397);
+            this.allyHandsBox.Name = "allyHandsBox";
+            this.allyHandsBox.Size = new System.Drawing.Size(26, 20);
+            this.allyHandsBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.allyHandsBox.TabIndex = 49;
+            this.allyHandsBox.TabStop = false;
+            // 
+            // allyHeadBox
+            // 
+            this.allyHeadBox.Location = new System.Drawing.Point(6, 371);
+            this.allyHeadBox.Name = "allyHeadBox";
+            this.allyHeadBox.Size = new System.Drawing.Size(26, 20);
+            this.allyHeadBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.allyHeadBox.TabIndex = 48;
+            this.allyHeadBox.TabStop = false;
+            // 
+            // allyChestBox
+            // 
+            this.allyChestBox.Location = new System.Drawing.Point(6, 345);
+            this.allyChestBox.Name = "allyChestBox";
+            this.allyChestBox.Size = new System.Drawing.Size(26, 20);
+            this.allyChestBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.allyChestBox.TabIndex = 47;
+            this.allyChestBox.TabStop = false;
+            // 
+            // allyWeaponBox
+            // 
+            this.allyWeaponBox.Location = new System.Drawing.Point(6, 319);
+            this.allyWeaponBox.Name = "allyWeaponBox";
+            this.allyWeaponBox.Size = new System.Drawing.Size(26, 20);
+            this.allyWeaponBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.allyWeaponBox.TabIndex = 46;
+            this.allyWeaponBox.TabStop = false;
+            // 
+            // allyLegsTxtBox
+            // 
+            this.allyLegsTxtBox.BackColor = System.Drawing.SystemColors.Window;
+            this.allyLegsTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.allyLegsTxtBox.Location = new System.Drawing.Point(38, 426);
+            this.allyLegsTxtBox.Name = "allyLegsTxtBox";
+            this.allyLegsTxtBox.ReadOnly = true;
+            this.allyLegsTxtBox.Size = new System.Drawing.Size(245, 13);
+            this.allyLegsTxtBox.TabIndex = 45;
+            // 
+            // allyHandsTxtBox
+            // 
+            this.allyHandsTxtBox.BackColor = System.Drawing.SystemColors.Window;
+            this.allyHandsTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.allyHandsTxtBox.Location = new System.Drawing.Point(38, 400);
+            this.allyHandsTxtBox.Name = "allyHandsTxtBox";
+            this.allyHandsTxtBox.ReadOnly = true;
+            this.allyHandsTxtBox.Size = new System.Drawing.Size(245, 13);
+            this.allyHandsTxtBox.TabIndex = 44;
+            // 
+            // allyHeadTxtBox
+            // 
+            this.allyHeadTxtBox.BackColor = System.Drawing.SystemColors.Window;
+            this.allyHeadTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.allyHeadTxtBox.Location = new System.Drawing.Point(38, 374);
+            this.allyHeadTxtBox.Name = "allyHeadTxtBox";
+            this.allyHeadTxtBox.ReadOnly = true;
+            this.allyHeadTxtBox.Size = new System.Drawing.Size(245, 13);
+            this.allyHeadTxtBox.TabIndex = 43;
+            // 
+            // allyChestTxtBox
+            // 
+            this.allyChestTxtBox.BackColor = System.Drawing.SystemColors.Window;
+            this.allyChestTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.allyChestTxtBox.Location = new System.Drawing.Point(38, 348);
+            this.allyChestTxtBox.Name = "allyChestTxtBox";
+            this.allyChestTxtBox.ReadOnly = true;
+            this.allyChestTxtBox.Size = new System.Drawing.Size(245, 13);
+            this.allyChestTxtBox.TabIndex = 42;
+            // 
+            // allyWeaponTxtBox
+            // 
+            this.allyWeaponTxtBox.BackColor = System.Drawing.SystemColors.Window;
+            this.allyWeaponTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.allyWeaponTxtBox.Location = new System.Drawing.Point(38, 322);
+            this.allyWeaponTxtBox.Name = "allyWeaponTxtBox";
+            this.allyWeaponTxtBox.ReadOnly = true;
+            this.allyWeaponTxtBox.Size = new System.Drawing.Size(245, 13);
+            this.allyWeaponTxtBox.TabIndex = 41;
             // 
             // entityBindingSource
->>>>>>> f55773d16a0455326b41114676e1b0d712e52644
             // 
-            this.button2.Location = new System.Drawing.Point(422, 441);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "End Turn";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.entityBindingSource.DataSource = typeof(Project.Engine.Classes.Entity);
             // 
             // GameMenu
             // 
@@ -884,7 +1241,6 @@
             this.CharacterPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.entityBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -900,6 +1256,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.EquippedChestGearImgBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EquippedHeadGearImgBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WeaponEquippedImgBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemyOneWeaponBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemyOneChestBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemyOneHeadBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemyOneHandsBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemyOneLegsBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemyTwoLegsBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemyTwoHandsBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemyTwoHeadBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemyTwoChestBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemyTwoWeaponBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.allyLegsBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.allyHandsBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.allyHeadBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.allyChestBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.allyWeaponBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.entityBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -968,13 +1340,40 @@
         private System.Windows.Forms.TextBox HeadGearStatsTxtBox;
         private System.Windows.Forms.TextBox HeadGearNameBox;
         private System.Windows.Forms.TextBox WeaponStatsTxtBox;
-<<<<<<< HEAD
         private System.Windows.Forms.Button button2;
-=======
         private System.Windows.Forms.Label equippedHPModLabel;
         private System.Windows.Forms.Label equippedIntModLabel;
         private System.Windows.Forms.Label equippedAgiModLabel;
         private System.Windows.Forms.Label equippedStrModLabel;
->>>>>>> f55773d16a0455326b41114676e1b0d712e52644
+        private System.Windows.Forms.PictureBox enemyOneLegsBox;
+        private System.Windows.Forms.PictureBox enemyOneHandsBox;
+        private System.Windows.Forms.PictureBox enemyOneHeadBox;
+        private System.Windows.Forms.PictureBox enemyOneChestBox;
+        private System.Windows.Forms.PictureBox enemyOneWeaponBox;
+        private System.Windows.Forms.TextBox enemyOneLegsTxtBox;
+        private System.Windows.Forms.TextBox enemyOneHandsTxtBox;
+        private System.Windows.Forms.TextBox enemyOneHeadTxtBox;
+        private System.Windows.Forms.TextBox enemyOneChestTxtBox;
+        private System.Windows.Forms.TextBox enemyOneWeaponTxtBox;
+        private System.Windows.Forms.PictureBox enemyTwoLegsBox;
+        private System.Windows.Forms.PictureBox enemyTwoHandsBox;
+        private System.Windows.Forms.PictureBox enemyTwoHeadBox;
+        private System.Windows.Forms.PictureBox enemyTwoChestBox;
+        private System.Windows.Forms.PictureBox enemyTwoWeaponBox;
+        private System.Windows.Forms.TextBox enemyTwoLegsTxtBox;
+        private System.Windows.Forms.TextBox enemyTwoHandsTxtBox;
+        private System.Windows.Forms.TextBox enemyTwoHeadTxtBox;
+        private System.Windows.Forms.TextBox enemyTwoChestTxtBox;
+        private System.Windows.Forms.TextBox enemyTwoWeaponTxtBox;
+        private System.Windows.Forms.PictureBox allyLegsBox;
+        private System.Windows.Forms.PictureBox allyHandsBox;
+        private System.Windows.Forms.PictureBox allyHeadBox;
+        private System.Windows.Forms.PictureBox allyChestBox;
+        private System.Windows.Forms.PictureBox allyWeaponBox;
+        private System.Windows.Forms.TextBox allyLegsTxtBox;
+        private System.Windows.Forms.TextBox allyHandsTxtBox;
+        private System.Windows.Forms.TextBox allyHeadTxtBox;
+        private System.Windows.Forms.TextBox allyChestTxtBox;
+        private System.Windows.Forms.TextBox allyWeaponTxtBox;
     }
 }
