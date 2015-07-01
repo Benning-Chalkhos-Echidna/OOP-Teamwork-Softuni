@@ -112,7 +112,14 @@ namespace Project.Engine.Classes
             get { return this._health; }
             set
             {
-                this._health = value;
+                if (value < 0)
+                {
+                    this._health = 0;
+                }
+                else
+                {
+                    this._health = value;
+                }
                 OnPropertyChanged("Health");
             }
         }
