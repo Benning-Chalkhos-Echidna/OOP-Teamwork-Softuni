@@ -1127,6 +1127,7 @@
             // 
             // enemyTwoStats
             // 
+            this.enemyTwoStats.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.enemyTwoStats.Location = new System.Drawing.Point(625, 265);
             this.enemyTwoStats.Multiline = true;
             this.enemyTwoStats.Name = "enemyTwoStats";
@@ -1148,13 +1149,15 @@
             // enemyTwoName
             // 
             this.enemyTwoName.AutoSize = true;
-            this.enemyTwoName.Location = new System.Drawing.Point(634, 249);
+            this.enemyTwoName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.enemyTwoName.Location = new System.Drawing.Point(622, 244);
             this.enemyTwoName.Name = "enemyTwoName";
-            this.enemyTwoName.Size = new System.Drawing.Size(0, 13);
+            this.enemyTwoName.Size = new System.Drawing.Size(0, 18);
             this.enemyTwoName.TabIndex = 17;
             // 
             // enemyOneStats
             // 
+            this.enemyOneStats.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.enemyOneStats.Location = new System.Drawing.Point(625, 48);
             this.enemyOneStats.Multiline = true;
             this.enemyOneStats.Name = "enemyOneStats";
@@ -1165,13 +1168,15 @@
             // enemyOneName
             // 
             this.enemyOneName.AutoSize = true;
-            this.enemyOneName.Location = new System.Drawing.Point(622, 32);
+            this.enemyOneName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.enemyOneName.Location = new System.Drawing.Point(622, 30);
             this.enemyOneName.Name = "enemyOneName";
-            this.enemyOneName.Size = new System.Drawing.Size(0, 13);
+            this.enemyOneName.Size = new System.Drawing.Size(0, 18);
             this.enemyOneName.TabIndex = 15;
             // 
             // allyOneStats
             // 
+            this.allyOneStats.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.allyOneStats.Location = new System.Drawing.Point(6, 265);
             this.allyOneStats.Multiline = true;
             this.allyOneStats.Name = "allyOneStats";
@@ -1182,13 +1187,15 @@
             // allyOneName
             // 
             this.allyOneName.AutoSize = true;
-            this.allyOneName.Location = new System.Drawing.Point(0, 249);
+            this.allyOneName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.allyOneName.Location = new System.Drawing.Point(0, 247);
             this.allyOneName.Name = "allyOneName";
-            this.allyOneName.Size = new System.Drawing.Size(0, 13);
+            this.allyOneName.Size = new System.Drawing.Size(0, 18);
             this.allyOneName.TabIndex = 5;
             // 
             // textBox1
             // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.Location = new System.Drawing.Point(6, 48);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -1199,13 +1206,15 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 32);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(3, 30);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 13);
+            this.label3.Size = new System.Drawing.Size(0, 18);
             this.label3.TabIndex = 3;
             // 
             // BattleConsole
             // 
+            this.BattleConsole.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.BattleConsole.Location = new System.Drawing.Point(306, 6);
             this.BattleConsole.Name = "BattleConsole";
             this.BattleConsole.Size = new System.Drawing.Size(304, 418);
