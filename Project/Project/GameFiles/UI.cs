@@ -9,19 +9,15 @@ namespace Project.Engine
     public enum GameType { TwoVsTwo, OneVsOne }
     public static class UI
     {
-        public static GameType gameType; //TODO: Set value;
-        //Implement rest of the UI and Menus.
-        //We also need to implement a way to save files.
+        public static int AllyMaxHP, PlayerMaxHP, EnemyOneMaxHP, EnemyTwoMaxHP = 0;
+        public static GameType gameType;
         public static Player Player;
         public static int RoundCount = 1;
         public static Random rnd = new Random();
-
         public static bool hasAttacked = false;
-
         public static List<Entity> allEntities = new List<Entity>();
         public static List<Entity> Allies = new List<Entity>();
         public static List<Entity> Enemies = new List<Entity>();
-
         public static Action updateAllies;
         public static Action updateEnemies;
 
@@ -31,6 +27,15 @@ namespace Project.Engine
             UI.Player.Character = entity;
             allEntities.Add(entity);
             GenerateEnemiesAndAllies();
+
+            UI.PlayerMaxHP = UI.Player.Character.Health;
+            UI.EnemyOneMaxHP = UI.Enemies[0].Health;
+
+            if (UI.gameType == GameType.TwoVsTwo)
+            {
+                UI.AllyMaxHP = UI.Allies[0].Health;
+                UI.EnemyTwoMaxHP = UI.Enemies[1].Health;
+            }
         }
         public static Entity CreateEntity(Player.PlayerClass playerClass, EntityGender entityGender, string name)
         {

@@ -3,8 +3,8 @@
   <Class Name="Project.Engine.UI">
     <Position X="4.25" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACMAAEgAAAAAQCAAQAAABAhAAEAAYAAAAAAAQAAAAE=</HashCode>
-      <FileName>Engine\UI.cs</FileName>
+      <HashCode>AACEACEgAABAAACgEwAABBAhAAEAAYAAAAAAAQAAAAA=</HashCode>
+      <FileName>GameFiles\UI.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Project.Engine.Player">
@@ -12,34 +12,34 @@
     <NestedTypes>
       <Enum Name="Project.Engine.Player.PlayerClass" Collapsed="true">
         <TypeIdentifier>
-          <NewMemberFileName>Engine\Player.cs</NewMemberFileName>
+          <NewMemberFileName>GameFiles\Player.cs</NewMemberFileName>
         </TypeIdentifier>
       </Enum>
     </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAAEAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAAAACAA=</HashCode>
-      <FileName>Engine\Player.cs</FileName>
+      <FileName>GameFiles\Player.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Project.Engine.Program">
     <Position X="0.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAAAAA=</HashCode>
-      <FileName>Engine\Program.cs</FileName>
+      <FileName>GameFiles\Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Project.Engine.Items.ChestGear">
     <Position X="15.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
-      <FileName>Engine\Items\ChestGear.cs</FileName>
+      <FileName>GameFiles\Items\ChestGear.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Project.Engine.Items.Consumable">
     <Position X="7.75" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAAAAAIAQAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
-      <FileName>Engine\Items\Consumable.cs</FileName>
+      <FileName>GameFiles\Items\Consumable.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -47,7 +47,7 @@
     <Position X="11.25" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
-      <FileName>Engine\Items\Equipable.cs</FileName>
+      <FileName>GameFiles\Items\Equipable.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -55,77 +55,77 @@
     <Position X="0.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIEAAAAgAAAAgQAAAAAAAgAACAAAAQgAAAEAFAAAABQ=</HashCode>
-      <FileName>Engine\Items\Equipped.cs</FileName>
+      <FileName>GameFiles\Items\Equipped.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Project.Engine.Items.HandsGear">
     <Position X="12.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
-      <FileName>Engine\Items\HandsGear.cs</FileName>
+      <FileName>GameFiles\Items\HandsGear.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Project.Engine.Items.HeadGear">
     <Position X="16.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
-      <FileName>Engine\Items\HeadGear.cs</FileName>
+      <FileName>GameFiles\Items\HeadGear.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Project.Engine.Items.HealthPotion">
     <Position X="6.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Engine\Items\HealthPotion.cs</FileName>
+      <FileName>GameFiles\Items\HealthPotion.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Project.Engine.Items.Inventory" Collapsed="true">
     <Position X="2.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAEAAAAAAA=</HashCode>
-      <FileName>Engine\Items\Inventory.cs</FileName>
+      <FileName>GameFiles\Items\Inventory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Project.Engine.Items.Item" Collapsed="true">
     <Position X="9.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CEAAAAQAAQAEAAAAAAAEAAYABAAEAIAAAACAAAgQAgA=</HashCode>
-      <FileName>Engine\Items\Item.cs</FileName>
+      <FileName>GameFiles\Items\Item.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Project.Engine.Items.LegsGear">
     <Position X="11" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
-      <FileName>Engine\Items\LegsGear.cs</FileName>
+      <FileName>GameFiles\Items\LegsGear.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Project.Engine.Items.StatsPotion">
     <Position X="8.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Engine\Items\StatsPotion.cs</FileName>
+      <FileName>GameFiles\Items\StatsPotion.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Project.Engine.Items.Weapon">
     <Position X="14.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
-      <FileName>Engine\Items\Weapon.cs</FileName>
+      <FileName>GameFiles\Items\Weapon.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="Project.Engine.Interfaces.IEquippable">
     <Position X="13" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
-      <FileName>Engine\Interfaces\IEquippable.cs</FileName>
+      <FileName>GameFiles\Interfaces\IEquippable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Project.Engine.Items.IConsumable">
     <Position X="6" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
-      <FileName>Engine\Interfaces\IConsumable.cs</FileName>
+      <FileName>GameFiles\Interfaces\IConsumable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

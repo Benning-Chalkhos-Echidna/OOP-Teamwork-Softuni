@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.shopTabCtrl = new System.Windows.Forms.TabControl();
             this.CharacterPanel = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
             this.equippedHPModLabel = new System.Windows.Forms.Label();
             this.equippedIntModLabel = new System.Windows.Forms.Label();
             this.equippedAgiModLabel = new System.Windows.Forms.Label();
@@ -82,8 +83,11 @@
             this.EquippedHeadGearImgBox = new System.Windows.Forms.PictureBox();
             this.WeaponEquippedImgBox = new System.Windows.Forms.PictureBox();
             this.BattleTab = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
             this.allyLegsBox = new System.Windows.Forms.PictureBox();
             this.allyHandsBox = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.RoundButton = new System.Windows.Forms.Button();
             this.allyHeadBox = new System.Windows.Forms.PictureBox();
             this.allyChestBox = new System.Windows.Forms.PictureBox();
             this.allyWeaponBox = new System.Windows.Forms.PictureBox();
@@ -113,9 +117,7 @@
             this.enemyOneChestTxtBox = new System.Windows.Forms.TextBox();
             this.enemyOneWeaponTxtBox = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.enemyTwoStats = new System.Windows.Forms.TextBox();
-            this.RoundButton = new System.Windows.Forms.Button();
             this.enemyTwoName = new System.Windows.Forms.Label();
             this.enemyOneStats = new System.Windows.Forms.TextBox();
             this.enemyOneName = new System.Windows.Forms.Label();
@@ -168,7 +170,7 @@
             this.shopTabCtrl.Location = new System.Drawing.Point(13, 12);
             this.shopTabCtrl.Name = "shopTabCtrl";
             this.shopTabCtrl.SelectedIndex = 0;
-            this.shopTabCtrl.Size = new System.Drawing.Size(928, 493);
+            this.shopTabCtrl.Size = new System.Drawing.Size(1019, 508);
             this.shopTabCtrl.TabIndex = 0;
             // 
             // CharacterPanel
@@ -211,10 +213,19 @@
             this.CharacterPanel.Location = new System.Drawing.Point(4, 22);
             this.CharacterPanel.Name = "CharacterPanel";
             this.CharacterPanel.Padding = new System.Windows.Forms.Padding(3);
-            this.CharacterPanel.Size = new System.Drawing.Size(920, 467);
+            this.CharacterPanel.Size = new System.Drawing.Size(1011, 482);
             this.CharacterPanel.TabIndex = 0;
             this.CharacterPanel.Text = "Character";
             this.CharacterPanel.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 532);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(138, 13);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Created by: Sve and Shano";
             // 
             // equippedHPModLabel
             // 
@@ -582,7 +593,7 @@
             this.gearTab.Location = new System.Drawing.Point(4, 22);
             this.gearTab.Name = "gearTab";
             this.gearTab.Padding = new System.Windows.Forms.Padding(3);
-            this.gearTab.Size = new System.Drawing.Size(920, 467);
+            this.gearTab.Size = new System.Drawing.Size(1011, 482);
             this.gearTab.TabIndex = 3;
             this.gearTab.Text = "Gear";
             this.gearTab.UseVisualStyleBackColor = true;
@@ -764,8 +775,11 @@
             // 
             // BattleTab
             // 
+            this.BattleTab.Controls.Add(this.button3);
             this.BattleTab.Controls.Add(this.allyLegsBox);
             this.BattleTab.Controls.Add(this.allyHandsBox);
+            this.BattleTab.Controls.Add(this.button1);
+            this.BattleTab.Controls.Add(this.RoundButton);
             this.BattleTab.Controls.Add(this.allyHeadBox);
             this.BattleTab.Controls.Add(this.allyChestBox);
             this.BattleTab.Controls.Add(this.allyWeaponBox);
@@ -795,9 +809,7 @@
             this.BattleTab.Controls.Add(this.enemyOneChestTxtBox);
             this.BattleTab.Controls.Add(this.enemyOneWeaponTxtBox);
             this.BattleTab.Controls.Add(this.button2);
-            this.BattleTab.Controls.Add(this.button1);
             this.BattleTab.Controls.Add(this.enemyTwoStats);
-            this.BattleTab.Controls.Add(this.RoundButton);
             this.BattleTab.Controls.Add(this.enemyTwoName);
             this.BattleTab.Controls.Add(this.enemyOneStats);
             this.BattleTab.Controls.Add(this.enemyOneName);
@@ -809,10 +821,21 @@
             this.BattleTab.Location = new System.Drawing.Point(4, 22);
             this.BattleTab.Name = "BattleTab";
             this.BattleTab.Padding = new System.Windows.Forms.Padding(3);
-            this.BattleTab.Size = new System.Drawing.Size(920, 467);
+            this.BattleTab.Size = new System.Drawing.Size(1011, 482);
             this.BattleTab.TabIndex = 1;
             this.BattleTab.Text = "Battle Menu";
             this.BattleTab.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(904, 265);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 20;
+            this.button3.Text = "Attack";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // allyLegsBox
             // 
@@ -831,6 +854,28 @@
             this.allyHandsBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.allyHandsBox.TabIndex = 49;
             this.allyHandsBox.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(306, 440);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Spell";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // RoundButton
+            // 
+            this.RoundButton.Location = new System.Drawing.Point(904, 48);
+            this.RoundButton.Name = "RoundButton";
+            this.RoundButton.Size = new System.Drawing.Size(75, 23);
+            this.RoundButton.TabIndex = 1;
+            this.RoundButton.Text = "Attack";
+            this.RoundButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.RoundButton.UseVisualStyleBackColor = true;
+            this.RoundButton.Click += new System.EventHandler(this.RoundButton_Click);
             // 
             // allyHeadBox
             // 
@@ -1106,24 +1151,13 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(422, 441);
+            this.button2.Location = new System.Drawing.Point(535, 440);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 20;
             this.button2.Text = "End Turn";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(535, 441);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Spell";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // enemyTwoStats
             // 
@@ -1133,17 +1167,6 @@
             this.enemyTwoStats.ReadOnly = true;
             this.enemyTwoStats.Size = new System.Drawing.Size(277, 46);
             this.enemyTwoStats.TabIndex = 18;
-            // 
-            // RoundButton
-            // 
-            this.RoundButton.Location = new System.Drawing.Point(306, 441);
-            this.RoundButton.Name = "RoundButton";
-            this.RoundButton.Size = new System.Drawing.Size(75, 23);
-            this.RoundButton.TabIndex = 1;
-            this.RoundButton.Text = "Attack";
-            this.RoundButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.RoundButton.UseVisualStyleBackColor = true;
-            this.RoundButton.Click += new System.EventHandler(this.RoundButton_Click);
             // 
             // enemyTwoName
             // 
@@ -1220,10 +1243,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(955, 532);
+            this.ClientSize = new System.Drawing.Size(1049, 561);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.shopTabCtrl);
             this.Name = "GameMenu";
-            this.Text = "Benning-Chalkhos-Echidna RPG Team Project @ SoftUni";
+            this.Text = "Benning-Chalkhos-Echidna Team Project @ SoftUni";
             this.shopTabCtrl.ResumeLayout(false);
             this.CharacterPanel.ResumeLayout(false);
             this.CharacterPanel.PerformLayout();
@@ -1261,6 +1285,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.enemyOneWeaponBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.entityBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1362,5 +1387,7 @@
         private System.Windows.Forms.TextBox allyHeadTxtBox;
         private System.Windows.Forms.TextBox allyChestTxtBox;
         private System.Windows.Forms.TextBox allyWeaponTxtBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button3;
     }
 }

@@ -189,7 +189,7 @@ namespace Project.Engine.Form
             }
         }
 
-        //Attack Button
+        //Attack First Enemy Button
         private void RoundButton_Click(object sender, EventArgs e)
         {
             if (UI.hasAttacked)
@@ -201,8 +201,30 @@ namespace Project.Engine.Form
                 this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Player.Character, UI.Enemies[0]);
                 UI.hasAttacked = true;
             }
-
+            if (!UI.Enemies[0].isAlive)
+            {
+                this.RoundButton.Enabled = false;
+            }
         }
+        //Attack Second Enemy Button
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (UI.hasAttacked)
+            {
+                this.BattleConsole.Text += "\n You cannot attack or use a spell twice in the same turn!";
+            }
+            else
+            {
+                this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Player.Character, UI.Enemies[1]);
+                UI.hasAttacked = true;
+            }
+
+            if (!UI.Enemies[1].isAlive)
+            {
+                this.button3.Enabled = false;
+            }
+        }
+
         //Spell Button
         private void button1_Click(object sender, EventArgs e)
         {
@@ -216,8 +238,57 @@ namespace Project.Engine.Form
             }
             else
             {
-                this.BattleConsole.Text += "\n" + UI.HandleSpell(UI.Player.Character, UI.Enemies[0]);
-                UI.hasAttacked = true;
+                if (UI.gameType == GameType.OneVsOne)
+                {
+                    if (UI.Player.Character is IHeal)
+                    {
+                        this.BattleConsole.Text += "\n" + UI.HandleSpell(UI.Player.Character, UI.Player.Character);
+                    }
+                    else
+                    {
+                        this.BattleConsole.Text += "\n" + UI.HandleSpell(UI.Player.Character, UI.Enemies[0]);
+                    }
+                }
+                else
+                {
+                    if (UI.Player.Character is IHeal)
+                    {
+                        if (UI.Allies[0].isAlive && UI.Allies[0].Health < UI.Player.Character.Health)
+                        {
+                            this.BattleConsole.Text += "\n" + UI.HandleSpell(UI.Player.Character, UI.Allies[0]);
+                        }
+                        else
+                        {
+                            this.BattleConsole.Text += "\n" + UI.HandleSpell(UI.Player.Character, UI.Player.Character);
+                        }
+                    }
+                    else
+                    {
+                        if (UI.Enemies.TrueForAll(enemy => enemy.isAlive))
+                        {
+                            this.BattleConsole.Text += "\n" + UI.HandleSpell(UI.Player.Character, UI.Enemies[UI.rnd.Next(0, 2)]);
+                        }
+                        else if (!UI.Enemies[0].isAlive)
+                        {
+                            this.BattleConsole.Text += "\n" + UI.HandleSpell(UI.Player.Character, UI.Enemies[1]);
+                        }
+                        else
+                        {
+                            this.BattleConsole.Text += "\n" + UI.HandleSpell(UI.Player.Character, UI.Enemies[0]);
+                        }
+                    }
+                }
+
+                if (!UI.Enemies[1].isAlive)
+                {
+                    this.button3.Enabled = false;
+                }
+                if (!UI.Enemies[0].isAlive)
+                {
+                    this.RoundButton.Enabled = false;
+                }
+
+                UI.Player.Character.Mana -= UI.Player.Character.EntitySpell.SpellCost;
             }
         }
         //Turn End Button 
@@ -227,8 +298,8 @@ namespace Project.Engine.Form
             {
                 if (entity.isAlive)
                 {
-                    entity.Health += entity.Strength;
-                    entity.Mana += entity.Intellect;
+                    entity.Health += 10;
+                    entity.Mana += 15;
                 }
             });
             if (UI.Player.Character.isAlive)
@@ -236,11 +307,15 @@ namespace Project.Engine.Form
                 if (UI.Enemies.TrueForAll(entity => !entity.isAlive))
                 {
                     //Game Won.
+                    MessageBox.Show("GAME WON!");
+                    Application.Restart();
                 }
             }
             else
             {
                 //Game Lost.
+                MessageBox.Show("GAME LOST!");
+                Application.Restart();
             }
             UI.hasAttacked = false;
             EnemyOneMove();
@@ -253,6 +328,15 @@ namespace Project.Engine.Form
             UI.RoundCount++;
             UI.updateAllies();
             UI.updateEnemies();
+
+            if (!UI.Enemies[1].isAlive)
+            {
+                this.button3.Enabled = false;
+            }
+            if (!UI.Enemies[0].isAlive)
+            {
+                this.RoundButton.Enabled = false;
+            }
         }
 
         //Methods for the A.I.
@@ -264,35 +348,79 @@ namespace Project.Engine.Form
             }
             else
             {
-                if (UI.Enemies[0].isAlive)
+                if (UI.Allies[0] is IHeal)
                 {
-                    if (UI.Enemies[1].isAlive)
+                    if (UI.Player.Character.Health < UI.PlayerMaxHP)
                     {
-                        if (UI.Enemies[0] is IHeal)
+                        this.BattleConsole.Text += "\n" + UI.HandleSpell(UI.Allies[0], UI.Player.Character);
+                        UI.Allies[0].Mana -= UI.Allies[0].EntitySpell.SpellCost;
+                    }
+                    else
+                    {
+                        if (UI.Enemies[0].isAlive)
                         {
-                            this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Allies[0], UI.Enemies[0]);
-                        }
-                        else if (UI.Enemies[1] is IHeal)
-                        {
-                            this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Allies[0], UI.Enemies[1]);
-                        }
-                        else if (UI.Enemies[0].Health < UI.Enemies[1].Health)
-                        {
-                            this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Allies[0], UI.Enemies[0]);
+                            if (UI.Enemies[1].isAlive)
+                            {
+                                if (UI.Enemies[0] is IHeal)
+                                {
+                                    this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Allies[0], UI.Enemies[0]);
+                                }
+                                else if (UI.Enemies[1] is IHeal)
+                                {
+                                    this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Allies[0], UI.Enemies[1]);
+                                }
+                                else if (UI.Enemies[0].Health < UI.Enemies[1].Health)
+                                {
+                                    this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Allies[0], UI.Enemies[0]);
+                                }
+                                else
+                                {
+                                    this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Allies[0], UI.Enemies[1]);
+                                }
+                            }
+                            else
+                            {
+                                this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Allies[0], UI.Enemies[0]);
+                            }
                         }
                         else
                         {
                             this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Allies[0], UI.Enemies[1]);
                         }
                     }
-                    else
-                    {
-                        this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Allies[0], UI.Enemies[0]);
-                    }
                 }
                 else
                 {
-                    this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Allies[0], UI.Enemies[1]);
+                    if (UI.Enemies[0].isAlive)
+                    {
+                        if (UI.Enemies[1].isAlive)
+                        {
+                            if (UI.Enemies[0] is IHeal)
+                            {
+                                this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Allies[0], UI.Enemies[0]);
+                            }
+                            else if (UI.Enemies[1] is IHeal)
+                            {
+                                this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Allies[0], UI.Enemies[1]);
+                            }
+                            else if (UI.Enemies[0].Health < UI.Enemies[1].Health)
+                            {
+                                this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Allies[0], UI.Enemies[0]);
+                            }
+                            else
+                            {
+                                this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Allies[0], UI.Enemies[1]);
+                            }
+                        }
+                        else
+                        {
+                            this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Allies[0], UI.Enemies[0]);
+                        }
+                    }
+                    else
+                    {
+                        this.BattleConsole.Text += "\n" + UI.HandleAttack(UI.Allies[0], UI.Enemies[1]);
+                    }
                 }
             }
         }
@@ -308,15 +436,17 @@ namespace Project.Engine.Form
                 {
                     if (UI.Enemies[0] is IHeal)
                     {
-                        if (UI.Enemies[1].isAlive)
+                        if (UI.Enemies[1].isAlive && UI.Enemies[1].Health < UI.EnemyTwoMaxHP)
                         {
                             this.BattleConsole.Text += "\n" + UI.HandleSpell(UI.Enemies[0], UI.Enemies[1]);
+                            UI.Enemies[0].Mana -= UI.Enemies[0].EntitySpell.SpellCost;
                         }
                         else
                         {
-                            if (UI.Enemies[0].Health < 70)
+                            if (UI.Enemies[0].Health < UI.EnemyOneMaxHP)
                             {
                                 this.BattleConsole.Text += "\n" + UI.HandleSpell(UI.Enemies[0], UI.Enemies[0]);
+                                UI.Enemies[0].Mana -= UI.Enemies[0].EntitySpell.SpellCost;
                             }
                             else
                             {
@@ -391,15 +521,17 @@ namespace Project.Engine.Form
                 {
                     if (UI.Enemies[1] is IHeal)
                     {
-                        if (UI.Enemies[0].isAlive)
+                        if (UI.Enemies[0].isAlive && UI.Enemies[0].Health < UI.EnemyOneMaxHP)
                         {
                             this.BattleConsole.Text += "\n" + UI.HandleSpell(UI.Enemies[1], UI.Enemies[0]);
+                            UI.Enemies[1].Mana -= UI.Enemies[1].EntitySpell.SpellCost;
                         }
                         else
                         {
-                            if (UI.Enemies[1].Health < 70)
+                            if (UI.Enemies[1].Health < UI.EnemyTwoMaxHP)
                             {
                                 this.BattleConsole.Text += "\n" + UI.HandleSpell(UI.Enemies[1], UI.Enemies[1]);
+                                UI.Enemies[1].Mana -= UI.Enemies[1].EntitySpell.SpellCost;
                             }
                             else
                             {

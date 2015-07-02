@@ -51,71 +51,62 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Engine\Exceptions\InvalidItemPriceException.cs" />
-    <Compile Include="Engine\Exceptions\InvalidItemException.cs" />
-    <Compile Include="Engine\Form\CharacterCreate.cs">
+    <Compile Include="GameFiles\Exceptions\InvalidItemPriceException.cs" />
+    <Compile Include="GameFiles\Exceptions\InvalidItemException.cs" />
+    <Compile Include="GameFiles\Forms\CharacterCreate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Engine\Form\CharacterCreate.Designer.cs">
+    <Compile Include="GameFiles\Forms\CharacterCreate.Designer.cs">
       <DependentUpon>CharacterCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Engine\Interfaces\IEquippable.cs" />
-    <Compile Include="Engine\Items\ChestGear.cs" />
-    <Compile Include="Engine\Items\Consumable.cs" />
-    <Compile Include="Engine\Classes\Druid.cs" />
-    <Compile Include="Engine\Form\MainForm.cs">
+    <Compile Include="GameFiles\Interfaces\IEquippable.cs" />
+    <Compile Include="GameFiles\Items\ChestGear.cs" />
+    <Compile Include="GameFiles\Items\Consumable.cs" />
+    <Compile Include="GameFiles\Classes\Druid.cs" />
+    <Compile Include="GameFiles\Items\Equipped.cs" />
+    <Compile Include="GameFiles\Items\HandsGear.cs" />
+    <Compile Include="GameFiles\Items\HeadGear.cs" />
+    <Compile Include="GameFiles\Interfaces\IConsumable.cs" />
+    <Compile Include="GameFiles\Items\Inventory.cs" />
+    <Compile Include="GameFiles\Items\ItemCreate.cs" />
+    <Compile Include="GameFiles\Items\LegsGear.cs" />
+    <Compile Include="GameFiles\Items\Shop.cs" />
+    <Compile Include="GameFiles\Items\Weapon.cs" />
+    <Compile Include="GameFiles\Player.cs" />
+    <Compile Include="GameFiles\Classes\Entity.cs" />
+    <Compile Include="GameFiles\Interfaces\IDamage.cs" />
+    <Compile Include="GameFiles\Interfaces\IEntity.cs" />
+    <Compile Include="GameFiles\Interfaces\IHeal.cs" />
+    <Compile Include="GameFiles\Classes\Mage.cs" />
+    <Compile Include="GameFiles\Classes\Paladin.cs" />
+    <Compile Include="GameFiles\Program.cs" />
+    <Compile Include="GameFiles\Items\Equipable.cs" />
+    <Compile Include="GameFiles\Items\HealthPotion.cs" />
+    <Compile Include="GameFiles\Items\Item.cs" />
+    <Compile Include="GameFiles\Forms\GameMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Engine\Form\MainForm.designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Engine\Items\Equipped.cs" />
-    <Compile Include="Engine\Items\HandsGear.cs" />
-    <Compile Include="Engine\Items\HeadGear.cs" />
-    <Compile Include="Engine\Interfaces\IConsumable.cs" />
-    <Compile Include="Engine\Items\Inventory.cs" />
-    <Compile Include="Engine\Items\ItemCreate.cs" />
-    <Compile Include="Engine\Items\LegsGear.cs" />
-    <Compile Include="Engine\Items\Shop.cs" />
-    <Compile Include="Engine\Items\Weapon.cs" />
-    <Compile Include="Engine\Player.cs" />
-    <Compile Include="Engine\Classes\Entity.cs" />
-    <Compile Include="Engine\Interfaces\IDamage.cs" />
-    <Compile Include="Engine\Interfaces\IEntity.cs" />
-    <Compile Include="Engine\Interfaces\IHeal.cs" />
-    <Compile Include="Engine\Classes\Mage.cs" />
-    <Compile Include="Engine\Classes\Paladin.cs" />
-    <Compile Include="Engine\Program.cs" />
-    <Compile Include="Engine\Items\Equipable.cs" />
-    <Compile Include="Engine\Items\HealthPotion.cs" />
-    <Compile Include="Engine\Items\Item.cs" />
-    <Compile Include="Engine\Form\GameMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Engine\Form\GameMenu.Designer.cs">
+    <Compile Include="GameFiles\Forms\GameMenu.Designer.cs">
       <DependentUpon>GameMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Engine\UI.cs" />
-    <Compile Include="Engine\Classes\Warrior.cs" />
-    <Compile Include="Engine\Items\StatsPotion.cs" />
-    <Compile Include="Engine\Classes\Spell.cs" />
-    <EmbeddedResource Include="Engine\Form\CharacterCreate.resx">
+    <Compile Include="GameFiles\UI.cs" />
+    <Compile Include="GameFiles\Classes\Warrior.cs" />
+    <Compile Include="GameFiles\Items\StatsPotion.cs" />
+    <Compile Include="GameFiles\Classes\Spell.cs" />
+    <EmbeddedResource Include="GameFiles\Forms\CharacterCreate.resx">
       <DependentUpon>CharacterCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Engine\Form\GameMenu.resx">
+    <EmbeddedResource Include="GameFiles\Forms\GameMenu.resx">
       <DependentUpon>GameMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Engine\Form\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Engine\Engine Diagram.cd" />
-    <None Include="Engine\Entity Diagram.cd" />
+    <None Include="GameFiles\Engine Diagram.cd" />
+    <None Include="GameFiles\Entity Diagram.cd" />
     <None Include="Properties\DataSources\Project.Engine.Classes.Entity.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
